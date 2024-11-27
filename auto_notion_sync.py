@@ -507,62 +507,8 @@ class NotionSync:
             
             logging.info(f"Found section block: {section_block['id']}")
             
-            # Split content into chunks
-            chunks = []
-            lines = new_content.split('\n')
-            current_chunk = []
-            current_length = 0
-            
-            for line in lines:
-                line_length = len(line) + 1
-                if current_length + line_length > 1900:
-                    chunks.append('\n'.join(current_chunk))
-                    current_chunk = [line]
-                    current_length = line_length
-                else:
-                    current_chunk.append(line)
-                    current_length += line_length
-            
-            if current_chunk:
-                chunks.append('\n'.join(current_chunk))
-            
-            # Update content blocks
-            for i, chunk in enumerate(chunks):
-                if i < len(section_content_blocks):
-                    # Update existing block
-                    self._retry_request(
-                        lambda: self.notion.blocks.update(
-                            block_id=section_content_blocks[i]['id'],
-                            paragraph={
-                                "rich_text": [{
-                                    "type": "text",
-                                    "text": {"content": chunk}
-                                }]
-                            }
-                        )
-                    )
-                    logging.info(f"Updated block with {len(chunk)} characters")
-                else:
-                    # Add new block
-                    self._retry_request(
-                        lambda: self.notion.blocks.children.append(
-                            block_id=page_id,
-                            children=[{
-                                "object": "block",
-                                "type": "paragraph",
-                                "paragraph": {
-                                    "rich_text": [{
-                                        "type": "text",
-                                        "text": {"content": chunk}
-                                    }]
-                                }
-                            }]
-                        )
-                    )
-                    logging.info(f"Added new block with {len(chunk)} characters")
-            
-            # Archive any remaining old blocks
-            for block in section_content_blocks[len(chunks):]:
+            # Archive old blocks
+            for block in section_content_blocks:
                 self._retry_request(
                     lambda: self.notion.blocks.update(
                         block_id=block['id'],
@@ -570,6 +516,108 @@ class NotionSync:
                     )
                 )
                 logging.info(f"Archived block {block['id']}")
+            
+            # Convert markdown to Notion blocks
+            new_blocks = []
+            in_table = False
+            table_rows = []
+            
+            for line in new_content.split('\n'):
+                line = line.rstrip()
+                
+                if line.startswith('# ') and not line[2:].strip() == section_name:
+                    new_blocks.append({
+                        "object": "block",
+                        "type": "heading_1",
+                        "heading_1": {
+                            "rich_text": [{"type": "text", "text": {"content": line[2:]}}]
+                        }
+                    })
+                elif line.startswith('## '):
+                    new_blocks.append({
+                        "object": "block",
+                        "type": "heading_2",
+                        "heading_2": {
+                            "rich_text": [{"type": "text", "text": {"content": line[3:]}}]
+                        }
+                    })
+                elif line.startswith('### '):
+                    new_blocks.append({
+                        "object": "block",
+                        "type": "heading_3",
+                        "heading_3": {
+                            "rich_text": [{"type": "text", "text": {"content": line[4:]}}]
+                        }
+                    })
+                elif line.startswith('- '):
+                    new_blocks.append({
+                        "object": "block",
+                        "type": "bulleted_list_item",
+                        "bulleted_list_item": {
+                            "rich_text": [{"type": "text", "text": {"content": line[2:]}}]
+                        }
+                    })
+                elif line.startswith('|'):
+                    # Handle table rows
+                    cells = [cell.strip() for cell in line.strip('|').split('|')]
+                    if len(cells) > 1:  # Valid table row
+                        if not line.replace('|', '').replace('-', '').strip():
+                            continue  # Skip separator lines
+                        if not in_table:
+                            in_table = True
+                            table_rows = []
+                        table_rows.append(cells)
+                else:
+                    if in_table and table_rows:
+                        # End of table - add it to blocks
+                        new_blocks.append({
+                            "object": "block",
+                            "type": "table",
+                            "table": {
+                                "table_width": len(table_rows[0]),
+                                "has_column_header": True,
+                                "has_row_header": False,
+                                "children": [
+                                    {
+                                        "type": "table_row",
+                                        "table_row": {
+                                            "cells": [[{"type": "text", "text": {"content": cell}}] for cell in row]
+                                        }
+                                    } for row in table_rows
+                                ]
+                            }
+                        })
+                        in_table = False
+                        table_rows = []
+                    
+                    if line:  # Non-empty line
+                        new_blocks.append({
+                            "object": "block",
+                            "type": "paragraph",
+                            "paragraph": {
+                                "rich_text": [{"type": "text", "text": {"content": line}}]
+                            }
+                        })
+                    else:  # Empty line
+                        if new_blocks and new_blocks[-1]['type'] != 'paragraph':
+                            new_blocks.append({
+                                "object": "block",
+                                "type": "paragraph",
+                                "paragraph": {
+                                    "rich_text": []
+                                }
+                            })
+            
+            # Add new blocks in chunks
+            for i in range(0, len(new_blocks), 100):  # Notion API limit
+                chunk = new_blocks[i:i+100]
+                self._retry_request(
+                    lambda: self.notion.blocks.children.append(
+                        block_id=page_id,
+                        children=chunk
+                    )
+                )
+                logging.info(f"Added {len(chunk)} new blocks")
             
             return True
             
