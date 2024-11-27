@@ -488,11 +488,18 @@ class NotionSync:
             )
             
             section_block = None
+            section_content_blocks = []
+            in_section = False
+            
+            # Find section and its content blocks
             for block in blocks['results']:
-                if (block['type'] == 'heading_1' and 
-                    self._process_rich_text(block['heading_1']['rich_text']) == section_name):
+                if block['type'] == 'heading_1' and self._process_rich_text(block['heading_1']['rich_text']) == section_name:
                     section_block = block
-                    break
+                    in_section = True
+                elif in_section and block['type'] == 'heading_1':
+                    in_section = False
+                elif in_section:
+                    section_content_blocks.append(block)
             
             if not section_block:
                 logging.error(f"Section {section_name} not found")
@@ -500,24 +507,57 @@ class NotionSync:
             
             logging.info(f"Found section block: {section_block['id']}")
             
-            # Add new content as a new block after the section
-            response = self._retry_request(
-                lambda: self.notion.blocks.children.append(
-                    block_id=page_id,  # Add to page instead of section
-                    children=[{
-                        "object": "block",
-                        "type": "paragraph",
-                        "paragraph": {
-                            "rich_text": [{
-                                "type": "text",
-                                "text": {"content": new_content}
-                            }]
-                        }
-                    }]
-                )
-            )
+            # Archive old content blocks
+            for block in section_content_blocks:
+                try:
+                    self._retry_request(
+                        lambda: self.notion.blocks.update(
+                            block_id=block['id'],
+                            archived=True
+                        )
+                    )
+                    logging.info(f"Archived block {block['id']}")
+                except Exception as e:
+                    logging.error(f"Error archiving block: {str(e)}")
             
-            logging.info(f"Notion API response: {json.dumps(response, indent=2)}")
+            # Split and add new content
+            chunks = []
+            lines = new_content.split('\n')
+            current_chunk = []
+            current_length = 0
+            
+            for line in lines:
+                line_length = len(line) + 1
+                if current_length + line_length > 1900:
+                    chunks.append('\n'.join(current_chunk))
+                    current_chunk = [line]
+                    current_length = line_length
+                else:
+                    current_chunk.append(line)
+                    current_length += line_length
+            
+            if current_chunk:
+                chunks.append('\n'.join(current_chunk))
+            
+            # Add new content blocks
+            for chunk in chunks:
+                response = self._retry_request(
+                    lambda: self.notion.blocks.children.append(
+                        block_id=page_id,
+                        children=[{
+                            "object": "block",
+                            "type": "paragraph",
+                            "paragraph": {
+                                "rich_text": [{
+                                    "type": "text",
+                                    "text": {"content": chunk}
+                                }]
+                            }
+                        }]
+                    )
+                )
+                logging.info(f"Added new content block with {len(chunk)} characters")
+            
             return True
             
         except Exception as e:
@@ -567,6 +607,51 @@ class NotionSync:
             
         except Exception as e:
             logging.error(f"Error during synchronization: {str(e)}")
+            return False
+
+    def optimize_section_content(self, page_id, section_name, bullet_points):
+        """Optimiert bestimmte Bullet Points in einem Abschnitt"""
+        try:
+            # Hole aktuellen Inhalt
+            blocks = self._retry_request(
+                lambda: self.notion.blocks.children.list(page_id)
+            )
+            
+            section_block = None
+            section_content = []
+            in_section = False
+            
+            # Finde Abschnitt und Inhalt
+            for block in blocks['results']:
+                if block['type'] == 'heading_1' and self._process_rich_text(block['heading_1']['rich_text']) == section_name:
+                    section_block = block
+                    in_section = True
+                elif in_section and block['type'] == 'heading_1':
+                    break
+                elif in_section:
+                    content = self._process_rich_text(block.get(block['type'], {}).get('rich_text', []))
+                    if content.strip().startswith('-'):
+                        section_content.append({
+                            'id': block['id'],
+                            'content': content.strip()
+                        })
+            
+            # Optimiere ausgewählte Bullet Points
+            for bullet in bullet_points:
+                for content in section_content:
+                    if bullet in content['content']:
+                        self._retry_request(
+                            lambda: self.notion.blocks.update(
+                                block_id=content['id'],
+                                archived=True
+                            )
+                        )
+                        logging.info(f"Archivierter Bullet Point: {content['content']}")
+            
+            return True
+            
+        except Exception as e:
+            logging.error(f"Fehler beim Optimieren des Inhalts: {str(e)}")
             return False
 
 def setup_logging():

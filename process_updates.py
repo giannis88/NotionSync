@@ -15,39 +15,21 @@ class OllamaProcessor:
 
     def process_text(self, text, section):
         try:
-            prompt = f"""Analyze this note from my personal dashboard (section: {section}):
+            prompt = f"""Analysiere diese Notiz aus meinem persönlichen Dashboard (Bereich: {section}):
 
 {text}
 
-Please provide a detailed analysis with:
+Erstelle eine präzise Analyse mit:
+1. Kurze Zusammenfassung (Kernbotschaft & Kontext)
+2. Wichtige Erkenntnisse (Learnings, Implikationen, Chancen)
+3. Empfohlene Maßnahmen (konkrete Schritte, Ressourcen, Zeitplan)
+4. Muster & Verbindungen (Trends, größere Zusammenhänge)
+5. Weitere Gedanken (Risiken, Chancen, Follow-ups)
 
-1. Brief Summary
-- What is the key message?
-- What is the context?
+Formatiere mit Markdown-Überschriften (###) und Aufzählungspunkten. Sei spezifisch aber prägnant.
+Schreibe die Analyse auf Deutsch."""
 
-2. Key Insights
-- What are the main takeaways?
-- What implications does this have?
-- What opportunities or challenges are indicated?
-
-3. Suggested Actions
-- What specific steps should be taken?
-- What resources might be needed?
-- What timeline would be appropriate?
-
-4. Patterns & Connections
-- How does this relate to previous notes/events?
-- What trends or patterns might be emerging?
-- What broader implications exist?
-
-5. Additional Thoughts
-- What other considerations are important?
-- What potential risks or opportunities should be monitored?
-- What follow-up questions should be asked?
-
-Format your response using markdown headings (###) and bullet points. Be specific and actionable in your analysis."""
-
-            logging.info(f"Processing text for section {section}")
+            logging.info(f"Verarbeite Text für Bereich {section}")
             
             response = requests.post(
                 f"{self.api_base}/api/generate",
