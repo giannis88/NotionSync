@@ -370,3 +370,508 @@ The note from your personal dashboard highlights two key points about your codin
 2024-11-27 17:03:50,059 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
 2024-11-27 17:03:50,059 - INFO - Added new content block with 526 characters
 2024-11-27 17:03:50,060 - INFO - Successfully updated section: Business
+2024-11-27 17:16:10,233 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 17:16:10,465 - INFO - Starting synchronization...
+2024-11-27 17:16:10,934 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 17:16:11,865 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:16:12,260 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:16:14,010 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:16:14,338 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:16:14,830 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:16:16,794 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-80be-b6c0-c16faddce163&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:16:16,796 - INFO - Archived old file: master_dashboard_20241127_164814.md
+2024-11-27 17:16:16,797 - INFO - Saved: notion_export\master_dashboard_20241127_171616.md
+2024-11-27 17:16:16,804 - INFO - Synchronization successfully completed!
+2024-11-27 17:16:17,429 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
+2024-11-27 17:16:17,429 - INFO - Verarbeite komplettes Dashboard
+2024-11-27 17:17:19,019 - INFO - Successfully processed dashboard
+2024-11-27 17:17:19,020 - INFO - Attempting to update section 'ARCHIV' with content:
+2024-11-27 17:17:20,653 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:17:20,657 - ERROR - Section ARCHIV not found
+2024-11-27 17:17:20,657 - ERROR - Failed to update dashboard
+2024-11-27 17:18:27,928 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 17:18:28,164 - INFO - Starting synchronization...
+2024-11-27 17:18:28,497 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 17:18:29,453 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:18:32,226 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:18:32,849 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:18:33,393 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:18:33,992 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:18:34,460 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-80be-b6c0-c16faddce163&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:18:34,463 - INFO - Archived old file: master_dashboard_20241127_165457.md
+2024-11-27 17:18:34,463 - INFO - Saved: notion_export\master_dashboard_20241127_171834.md
+2024-11-27 17:18:34,470 - INFO - Synchronization successfully completed!
+2024-11-27 17:18:35,098 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
+2024-11-27 17:18:35,099 - INFO - Verarbeite komplettes Dashboard
+2024-11-27 17:22:31,683 - INFO - Successfully processed dashboard
+2024-11-27 17:22:31,684 - INFO - Attempting to update section 'Business' with content:
+2024-11-27 17:22:32,797 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:32,799 - INFO - Found section block: 14be4a7d-76a4-80d0-8a8c-d5af060364b2
+2024-11-27 17:22:33,614 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ec-906f-ed0757281299 "HTTP/1.1 200 OK"
+2024-11-27 17:22:33,615 - INFO - Archived block 14be4a7d-76a4-80ec-906f-ed0757281299
+2024-11-27 17:22:34,220 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-808a-9945-ede1f32b9bff "HTTP/1.1 200 OK"
+2024-11-27 17:22:34,221 - INFO - Archived block 14be4a7d-76a4-808a-9945-ede1f32b9bff
+2024-11-27 17:22:35,297 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80e9-96f1-ff633f03427c "HTTP/1.1 200 OK"
+2024-11-27 17:22:35,297 - INFO - Archived block 14be4a7d-76a4-80e9-96f1-ff633f03427c
+2024-11-27 17:22:36,497 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8076-9f2b-f3a70ccb89e4 "HTTP/1.1 200 OK"
+2024-11-27 17:22:36,497 - INFO - Archived block 14be4a7d-76a4-8076-9f2b-f3a70ccb89e4
+2024-11-27 17:22:37,817 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-803e-aa76-fbf4f50c5a65 "HTTP/1.1 200 OK"
+2024-11-27 17:22:37,817 - INFO - Archived block 14be4a7d-76a4-803e-aa76-fbf4f50c5a65
+2024-11-27 17:22:38,329 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8010-aae9-eb9b42443a46 "HTTP/1.1 200 OK"
+2024-11-27 17:22:38,329 - INFO - Archived block 14be4a7d-76a4-8010-aae9-eb9b42443a46
+2024-11-27 17:22:39,295 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ab-8c38-c7353fc8953a "HTTP/1.1 200 OK"
+2024-11-27 17:22:39,296 - INFO - Archived block 14be4a7d-76a4-80ab-8c38-c7353fc8953a
+2024-11-27 17:22:40,152 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-801d-89b2-e707a381647d "HTTP/1.1 200 OK"
+2024-11-27 17:22:40,153 - INFO - Archived block 14be4a7d-76a4-801d-89b2-e707a381647d
+2024-11-27 17:22:41,259 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ca-9c9f-c21eb0d8a747 "HTTP/1.1 200 OK"
+2024-11-27 17:22:41,260 - INFO - Archived block 14be4a7d-76a4-80ca-9c9f-c21eb0d8a747
+2024-11-27 17:22:41,658 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-804c-8d0b-f21baf5126e9 "HTTP/1.1 200 OK"
+2024-11-27 17:22:41,658 - INFO - Archived block 14be4a7d-76a4-804c-8d0b-f21baf5126e9
+2024-11-27 17:22:42,284 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:42,285 - INFO - Added new content block with 1845 characters
+2024-11-27 17:22:42,897 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:42,898 - INFO - Added new content block with 1803 characters
+2024-11-27 17:22:43,776 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:43,778 - INFO - Added new content block with 1859 characters
+2024-11-27 17:22:45,026 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:45,030 - INFO - Added new content block with 1831 characters
+2024-11-27 17:22:46,246 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:46,248 - INFO - Added new content block with 1899 characters
+2024-11-27 17:22:46,699 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:46,702 - INFO - Added new content block with 1877 characters
+2024-11-27 17:22:47,360 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:47,361 - INFO - Added new content block with 1864 characters
+2024-11-27 17:22:47,876 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:47,877 - INFO - Added new content block with 1896 characters
+2024-11-27 17:22:49,358 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:22:49,359 - INFO - Added new content block with 821 characters
+2024-11-27 17:22:49,360 - INFO - Successfully updated dashboard in section: Business
+2024-11-27 17:23:41,992 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 17:23:42,233 - INFO - Starting synchronization...
+2024-11-27 17:23:42,660 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 17:23:43,605 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:23:43,962 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:23:44,376 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:23:45,156 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:23:46,099 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:23:46,460 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-bf4b-d7328c361ff9&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:23:46,463 - INFO - Archived old file: master_dashboard_20241127_165840.md
+2024-11-27 17:23:46,463 - INFO - Saved: notion_export\master_dashboard_20241127_172346.md
+2024-11-27 17:23:46,470 - INFO - Synchronization successfully completed!
+2024-11-27 17:23:47,106 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
+2024-11-27 17:23:47,106 - INFO - Verarbeite komplettes Dashboard
+2024-11-27 17:24:56,938 - INFO - Successfully processed dashboard
+2024-11-27 17:24:56,939 - INFO - Attempting to update section 'Business' with content:
+2024-11-27 17:24:58,929 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:24:58,932 - INFO - Found section block: 14be4a7d-76a4-80d0-8a8c-d5af060364b2
+2024-11-27 17:25:03,210 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:25:03,211 - INFO - Added new content block with 1857 characters
+2024-11-27 17:25:03,864 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:25:03,865 - INFO - Added new content block with 1859 characters
+2024-11-27 17:25:04,488 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:25:04,489 - INFO - Added new content block with 1647 characters
+2024-11-27 17:25:04,489 - INFO - Successfully updated dashboard in section: Business
+2024-11-27 17:30:00,089 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 17:30:00,328 - INFO - Starting synchronization...
+2024-11-27 17:30:00,800 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 17:30:02,060 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:30:02,507 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:30:03,397 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:30:04,021 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:30:04,764 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:30:05,107 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:30:06,325 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-802e-b8b5-c9b2e4c8f130&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:30:06,334 - INFO - Archived old file: master_dashboard_20241127_170008.md
+2024-11-27 17:30:06,335 - INFO - Saved: notion_export\master_dashboard_20241127_173006.md
+2024-11-27 17:30:06,341 - INFO - Synchronization successfully completed!
+2024-11-27 17:30:06,959 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
+2024-11-27 17:30:06,959 - INFO - Optimiere Abschnitt: Master Dashboard
+2024-11-27 17:30:15,151 - INFO - Successfully optimized section: Master Dashboard
+2024-11-27 17:30:15,152 - INFO - Attempting to update section 'Master Dashboard' with content:
+2024-11-27 17:30:16,044 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:30:16,048 - ERROR - Section Master Dashboard not found
+2024-11-27 17:30:16,048 - ERROR - Failed to update section: Master Dashboard
+2024-11-27 17:30:16,048 - INFO - Optimiere Abschnitt: Gesundheit
+2024-11-27 17:31:10,846 - INFO - Successfully optimized section: Gesundheit
+2024-11-27 17:31:10,846 - INFO - Attempting to update section 'Gesundheit' with content:
+2024-11-27 17:31:11,750 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:31:11,752 - INFO - Found section block: 14be4a7d-76a4-80c7-b8ab-f21c1fa8af43
+2024-11-27 17:31:12,535 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c9-958b-c928770ef031 "HTTP/1.1 200 OK"
+2024-11-27 17:31:12,536 - INFO - Archived block 14be4a7d-76a4-80c9-958b-c928770ef031
+2024-11-27 17:31:13,512 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8005-bf42-cfdfa93c1752 "HTTP/1.1 200 OK"
+2024-11-27 17:31:13,512 - INFO - Archived block 14be4a7d-76a4-8005-bf42-cfdfa93c1752
+2024-11-27 17:31:14,175 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c "HTTP/1.1 200 OK"
+2024-11-27 17:31:14,175 - INFO - Archived block 14be4a7d-76a4-801c-b250-daff41fe107c
+2024-11-27 17:31:14,743 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80f9-af9f-fd333392eab5 "HTTP/1.1 200 OK"
+2024-11-27 17:31:14,744 - INFO - Archived block 14be4a7d-76a4-80f9-af9f-fd333392eab5
+2024-11-27 17:31:15,501 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ea-a29d-f331a8c71f19 "HTTP/1.1 200 OK"
+2024-11-27 17:31:15,502 - INFO - Archived block 14be4a7d-76a4-80ea-a29d-f331a8c71f19
+2024-11-27 17:31:16,511 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8061-a8e3-f822bdfbd051 "HTTP/1.1 200 OK"
+2024-11-27 17:31:16,512 - INFO - Archived block 14be4a7d-76a4-8061-a8e3-f822bdfbd051
+2024-11-27 17:31:17,329 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8027-ad08-ec474a8d2735 "HTTP/1.1 200 OK"
+2024-11-27 17:31:17,330 - INFO - Archived block 14be4a7d-76a4-8027-ad08-ec474a8d2735
+2024-11-27 17:31:18,493 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80b3-b1db-f2dcaae84452 "HTTP/1.1 200 OK"
+2024-11-27 17:31:18,494 - INFO - Archived block 14be4a7d-76a4-80b3-b1db-f2dcaae84452
+2024-11-27 17:31:21,290 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c7-8e59-e135f105fa06 "HTTP/1.1 200 OK"
+2024-11-27 17:31:21,290 - INFO - Archived block 14be4a7d-76a4-80c7-8e59-e135f105fa06
+2024-11-27 17:31:22,006 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80f5-903c-ecd60daa85a5 "HTTP/1.1 200 OK"
+2024-11-27 17:31:22,006 - INFO - Archived block 14be4a7d-76a4-80f5-903c-ecd60daa85a5
+2024-11-27 17:31:22,587 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80d5-80e3-f1aa72da1dba "HTTP/1.1 200 OK"
+2024-11-27 17:31:22,587 - INFO - Archived block 14be4a7d-76a4-80d5-80e3-f1aa72da1dba
+2024-11-27 17:31:25,929 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8014-8ee6-e0a01ec04f8b "HTTP/1.1 200 OK"
+2024-11-27 17:31:25,931 - INFO - Archived block 14be4a7d-76a4-8014-8ee6-e0a01ec04f8b
+2024-11-27 17:31:26,851 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80b2-89d6-db1506ec0719 "HTTP/1.1 200 OK"
+2024-11-27 17:31:26,851 - INFO - Archived block 14be4a7d-76a4-80b2-89d6-db1506ec0719
+2024-11-27 17:31:28,102 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8086-b914-ef589ebfa7c5 "HTTP/1.1 200 OK"
+2024-11-27 17:31:28,103 - INFO - Archived block 14be4a7d-76a4-8086-b914-ef589ebfa7c5
+2024-11-27 17:31:28,628 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80f2-9dd8-fb39fd0c1019 "HTTP/1.1 200 OK"
+2024-11-27 17:31:28,629 - INFO - Archived block 14be4a7d-76a4-80f2-9dd8-fb39fd0c1019
+2024-11-27 17:31:29,215 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-807a-9e96-df6c9037a91d "HTTP/1.1 200 OK"
+2024-11-27 17:31:29,216 - INFO - Archived block 14be4a7d-76a4-807a-9e96-df6c9037a91d
+2024-11-27 17:31:30,047 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8003-8277-d886124918d1 "HTTP/1.1 200 OK"
+2024-11-27 17:31:30,047 - INFO - Archived block 14be4a7d-76a4-8003-8277-d886124918d1
+2024-11-27 17:31:31,975 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80e9-8efa-f037a3272aa8 "HTTP/1.1 200 OK"
+2024-11-27 17:31:31,976 - INFO - Archived block 14be4a7d-76a4-80e9-8efa-f037a3272aa8
+2024-11-27 17:31:32,617 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8031-89ab-ed667c4bceb9 "HTTP/1.1 200 OK"
+2024-11-27 17:31:32,618 - INFO - Archived block 14be4a7d-76a4-8031-89ab-ed667c4bceb9
+2024-11-27 17:31:33,309 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8031-9bf9-e0991422711e "HTTP/1.1 200 OK"
+2024-11-27 17:31:33,309 - INFO - Archived block 14be4a7d-76a4-8031-9bf9-e0991422711e
+2024-11-27 17:31:37,722 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ed-9be0-e164971e6f55 "HTTP/1.1 200 OK"
+2024-11-27 17:31:37,723 - INFO - Archived block 14be4a7d-76a4-80ed-9be0-e164971e6f55
+2024-11-27 17:31:38,253 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-808f-bc23-c98087537c2f "HTTP/1.1 200 OK"
+2024-11-27 17:31:38,253 - INFO - Archived block 14be4a7d-76a4-808f-bc23-c98087537c2f
+2024-11-27 17:31:38,795 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80d3-acef-dfb067e6279f "HTTP/1.1 200 OK"
+2024-11-27 17:31:38,795 - INFO - Archived block 14be4a7d-76a4-80d3-acef-dfb067e6279f
+2024-11-27 17:31:39,472 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8030-a6ae-c7dc175e2fac "HTTP/1.1 200 OK"
+2024-11-27 17:31:39,472 - INFO - Archived block 14be4a7d-76a4-8030-a6ae-c7dc175e2fac
+2024-11-27 17:31:40,533 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8048-b42a-d93596e9f86d "HTTP/1.1 200 OK"
+2024-11-27 17:31:40,534 - INFO - Archived block 14be4a7d-76a4-8048-b42a-d93596e9f86d
+2024-11-27 17:31:41,934 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574 "HTTP/1.1 200 OK"
+2024-11-27 17:31:41,935 - INFO - Archived block 14be4a7d-76a4-8021-aa72-d391e0098574
+2024-11-27 17:31:42,887 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8004-8c80-e12c24c8bc50 "HTTP/1.1 200 OK"
+2024-11-27 17:31:42,887 - INFO - Archived block 14be4a7d-76a4-8004-8c80-e12c24c8bc50
+2024-11-27 17:31:43,348 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8042-9fdc-f4b64b7cfd2e "HTTP/1.1 200 OK"
+2024-11-27 17:31:43,348 - INFO - Archived block 14be4a7d-76a4-8042-9fdc-f4b64b7cfd2e
+2024-11-27 17:31:44,250 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8081-b62f-dab5d45b78fa "HTTP/1.1 200 OK"
+2024-11-27 17:31:44,251 - INFO - Archived block 14be4a7d-76a4-8081-b62f-dab5d45b78fa
+2024-11-27 17:31:45,985 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8097-98fa-e8437176ba70 "HTTP/1.1 200 OK"
+2024-11-27 17:31:45,985 - INFO - Archived block 14be4a7d-76a4-8097-98fa-e8437176ba70
+2024-11-27 17:31:46,928 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c1-89c6-f16a7cf7bc78 "HTTP/1.1 200 OK"
+2024-11-27 17:31:46,929 - INFO - Archived block 14be4a7d-76a4-80c1-89c6-f16a7cf7bc78
+2024-11-27 17:31:49,642 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80de-a7b6-c251cfe79dca "HTTP/1.1 200 OK"
+2024-11-27 17:31:49,643 - INFO - Archived block 14be4a7d-76a4-80de-a7b6-c251cfe79dca
+2024-11-27 17:31:50,507 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ed-bc66-d885a68ba936 "HTTP/1.1 200 OK"
+2024-11-27 17:31:50,508 - INFO - Archived block 14be4a7d-76a4-80ed-bc66-d885a68ba936
+2024-11-27 17:31:51,796 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80db-b314-cc101cffedec "HTTP/1.1 200 OK"
+2024-11-27 17:31:51,797 - INFO - Archived block 14be4a7d-76a4-80db-b314-cc101cffedec
+2024-11-27 17:31:52,500 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80a2-903e-c171eccffc23 "HTTP/1.1 200 OK"
+2024-11-27 17:31:52,501 - INFO - Archived block 14be4a7d-76a4-80a2-903e-c171eccffc23
+2024-11-27 17:31:55,554 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8002-b42d-c50aa6055c1b "HTTP/1.1 200 OK"
+2024-11-27 17:31:55,555 - INFO - Archived block 14be4a7d-76a4-8002-b42d-c50aa6055c1b
+2024-11-27 17:31:56,207 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8005-973d-ef8349839bbe "HTTP/1.1 200 OK"
+2024-11-27 17:31:56,207 - INFO - Archived block 14be4a7d-76a4-8005-973d-ef8349839bbe
+2024-11-27 17:31:57,429 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8016-9e6f-eff634fd3569 "HTTP/1.1 200 OK"
+2024-11-27 17:31:57,430 - INFO - Archived block 14be4a7d-76a4-8016-9e6f-eff634fd3569
+2024-11-27 17:31:58,148 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-801a-bc17-e8a1768ad0f5 "HTTP/1.1 200 OK"
+2024-11-27 17:31:58,149 - INFO - Archived block 14be4a7d-76a4-801a-bc17-e8a1768ad0f5
+2024-11-27 17:31:58,815 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80a8-9bb3-c82385320fce "HTTP/1.1 200 OK"
+2024-11-27 17:31:58,816 - INFO - Archived block 14be4a7d-76a4-80a8-9bb3-c82385320fce
+2024-11-27 17:32:00,832 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80b2-9859-f97ca0796cf1 "HTTP/1.1 200 OK"
+2024-11-27 17:32:00,833 - INFO - Archived block 14be4a7d-76a4-80b2-9859-f97ca0796cf1
+2024-11-27 17:32:02,306 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8051-8335-ca5452705085 "HTTP/1.1 200 OK"
+2024-11-27 17:32:02,307 - INFO - Archived block 14be4a7d-76a4-8051-8335-ca5452705085
+2024-11-27 17:32:03,534 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8025-a839-c325e0409d99 "HTTP/1.1 200 OK"
+2024-11-27 17:32:03,535 - INFO - Archived block 14be4a7d-76a4-8025-a839-c325e0409d99
+2024-11-27 17:32:05,089 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-804b-8f6b-e1f75506b479 "HTTP/1.1 200 OK"
+2024-11-27 17:32:05,090 - INFO - Archived block 14be4a7d-76a4-804b-8f6b-e1f75506b479
+2024-11-27 17:32:06,455 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80bd-93fe-db731836974a "HTTP/1.1 200 OK"
+2024-11-27 17:32:06,455 - INFO - Archived block 14be4a7d-76a4-80bd-93fe-db731836974a
+2024-11-27 17:32:07,544 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-805f-8526-d9500eeca323 "HTTP/1.1 200 OK"
+2024-11-27 17:32:07,544 - INFO - Archived block 14be4a7d-76a4-805f-8526-d9500eeca323
+2024-11-27 17:32:08,343 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8093-9eb0-f0c8e1ecc8f5 "HTTP/1.1 200 OK"
+2024-11-27 17:32:08,343 - INFO - Archived block 14be4a7d-76a4-8093-9eb0-f0c8e1ecc8f5
+2024-11-27 17:32:09,575 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80d3-90f9-ccf27ae2e52e "HTTP/1.1 200 OK"
+2024-11-27 17:32:09,576 - INFO - Archived block 14be4a7d-76a4-80d3-90f9-ccf27ae2e52e
+2024-11-27 17:32:10,261 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-803f-8a52-d7e03c7ffd1e "HTTP/1.1 200 OK"
+2024-11-27 17:32:10,262 - INFO - Archived block 14be4a7d-76a4-803f-8a52-d7e03c7ffd1e
+2024-11-27 17:32:11,262 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8092-a028-fda2c78e599c "HTTP/1.1 200 OK"
+2024-11-27 17:32:11,263 - INFO - Archived block 14be4a7d-76a4-8092-a028-fda2c78e599c
+2024-11-27 17:32:12,409 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8013-9c95-ca299c4feeb2 "HTTP/1.1 200 OK"
+2024-11-27 17:32:12,409 - INFO - Archived block 14be4a7d-76a4-8013-9c95-ca299c4feeb2
+2024-11-27 17:32:13,447 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80b0-b5e8-f9731fa325b2 "HTTP/1.1 200 OK"
+2024-11-27 17:32:13,448 - INFO - Archived block 14be4a7d-76a4-80b0-b5e8-f9731fa325b2
+2024-11-27 17:32:14,224 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c "HTTP/1.1 200 OK"
+2024-11-27 17:32:14,225 - INFO - Archived block 14be4a7d-76a4-80ce-91ab-f1f537b73a2c
+2024-11-27 17:32:15,768 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80a9-abf5-d47288abc032 "HTTP/1.1 200 OK"
+2024-11-27 17:32:15,769 - INFO - Archived block 14be4a7d-76a4-80a9-abf5-d47288abc032
+2024-11-27 17:32:16,239 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-808c-87cb-e360547d9e67 "HTTP/1.1 200 OK"
+2024-11-27 17:32:16,240 - INFO - Archived block 14be4a7d-76a4-808c-87cb-e360547d9e67
+2024-11-27 17:32:17,003 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-805f-8529-c08bf4f41ae9 "HTTP/1.1 200 OK"
+2024-11-27 17:32:17,003 - INFO - Archived block 14be4a7d-76a4-805f-8529-c08bf4f41ae9
+2024-11-27 17:32:17,887 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ba-85a3-c840efe30ee3 "HTTP/1.1 200 OK"
+2024-11-27 17:32:17,887 - INFO - Archived block 14be4a7d-76a4-80ba-85a3-c840efe30ee3
+2024-11-27 17:32:18,997 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8060-ad8d-e8d13987ac2c "HTTP/1.1 200 OK"
+2024-11-27 17:32:18,998 - INFO - Archived block 14be4a7d-76a4-8060-ad8d-e8d13987ac2c
+2024-11-27 17:32:19,485 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80aa-8b05-c284810e8a22 "HTTP/1.1 200 OK"
+2024-11-27 17:32:19,485 - INFO - Archived block 14be4a7d-76a4-80aa-8b05-c284810e8a22
+2024-11-27 17:32:22,821 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8012-98e6-fedfc5e585a1 "HTTP/1.1 200 OK"
+2024-11-27 17:32:22,822 - INFO - Archived block 14be4a7d-76a4-8012-98e6-fedfc5e585a1
+2024-11-27 17:32:25,504 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c8-8735-c7666f50d16e "HTTP/1.1 200 OK"
+2024-11-27 17:32:25,505 - INFO - Archived block 14be4a7d-76a4-80c8-8735-c7666f50d16e
+2024-11-27 17:32:26,302 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8091-a041-ce18fd15b36d "HTTP/1.1 200 OK"
+2024-11-27 17:32:26,303 - INFO - Archived block 14be4a7d-76a4-8091-a041-ce18fd15b36d
+2024-11-27 17:32:26,719 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ad-98e0-df4dbaeb8a73 "HTTP/1.1 200 OK"
+2024-11-27 17:32:26,720 - INFO - Archived block 14be4a7d-76a4-80ad-98e0-df4dbaeb8a73
+2024-11-27 17:32:27,355 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:32:27,356 - INFO - Added new content block with 1871 characters
+2024-11-27 17:32:27,955 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:32:27,956 - INFO - Added new content block with 1411 characters
+2024-11-27 17:32:27,956 - INFO - Successfully updated section: Gesundheit
+2024-11-27 17:32:27,956 - INFO - Optimiere Abschnitt: Business
+2024-11-27 17:32:40,344 - INFO - Successfully optimized section: Business
+2024-11-27 17:32:40,344 - INFO - Attempting to update section 'Business' with content:
+2024-11-27 17:32:42,333 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:32:42,335 - INFO - Found section block: 14be4a7d-76a4-80f0-b62a-cbc673bda7e8
+2024-11-27 17:32:43,042 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8075-b5e4-e6c420b98585 "HTTP/1.1 200 OK"
+2024-11-27 17:32:43,043 - INFO - Archived block 14be4a7d-76a4-8075-b5e4-e6c420b98585
+2024-11-27 17:32:43,711 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5 "HTTP/1.1 200 OK"
+2024-11-27 17:32:43,711 - INFO - Archived block 14be4a7d-76a4-80ee-90b7-f9dead4657f5
+2024-11-27 17:32:44,436 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8097-8567-f7645e89aa9f "HTTP/1.1 200 OK"
+2024-11-27 17:32:44,437 - INFO - Archived block 14be4a7d-76a4-8097-8567-f7645e89aa9f
+2024-11-27 17:32:45,040 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80cf-9494-c8b3e8147c5c "HTTP/1.1 200 OK"
+2024-11-27 17:32:45,041 - INFO - Archived block 14be4a7d-76a4-80cf-9494-c8b3e8147c5c
+2024-11-27 17:32:45,583 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8036-b88a-da711050a644 "HTTP/1.1 200 OK"
+2024-11-27 17:32:45,584 - INFO - Archived block 14be4a7d-76a4-8036-b88a-da711050a644
+2024-11-27 17:32:47,646 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c3-a238-ef70876e7a63 "HTTP/1.1 200 OK"
+2024-11-27 17:32:47,646 - INFO - Archived block 14be4a7d-76a4-80c3-a238-ef70876e7a63
+2024-11-27 17:32:48,462 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80f4-ad5c-ccea6d527cea "HTTP/1.1 200 OK"
+2024-11-27 17:32:48,463 - INFO - Archived block 14be4a7d-76a4-80f4-ad5c-ccea6d527cea
+2024-11-27 17:32:49,308 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-802e-b5c8-d48ee88cb756 "HTTP/1.1 200 OK"
+2024-11-27 17:32:49,308 - INFO - Archived block 14be4a7d-76a4-802e-b5c8-d48ee88cb756
+2024-11-27 17:32:52,189 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8050-b4aa-fc06f3b3006a "HTTP/1.1 200 OK"
+2024-11-27 17:32:52,190 - INFO - Archived block 14be4a7d-76a4-8050-b4aa-fc06f3b3006a
+2024-11-27 17:32:52,701 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8000-b404-c005af8c15fc "HTTP/1.1 200 OK"
+2024-11-27 17:32:52,702 - INFO - Archived block 14be4a7d-76a4-8000-b404-c005af8c15fc
+2024-11-27 17:32:53,239 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80be-aa85-f977e9b55d48 "HTTP/1.1 200 OK"
+2024-11-27 17:32:53,239 - INFO - Archived block 14be4a7d-76a4-80be-aa85-f977e9b55d48
+2024-11-27 17:32:57,532 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ad-87c6-ce5ca4fa1296 "HTTP/1.1 200 OK"
+2024-11-27 17:32:57,532 - INFO - Archived block 14be4a7d-76a4-80ad-87c6-ce5ca4fa1296
+2024-11-27 17:32:58,721 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8042-9435-d41ad0f13c2c "HTTP/1.1 200 OK"
+2024-11-27 17:32:58,722 - INFO - Archived block 14be4a7d-76a4-8042-9435-d41ad0f13c2c
+2024-11-27 17:32:59,476 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8099-9bd2-d6d45cf85c3f "HTTP/1.1 200 OK"
+2024-11-27 17:32:59,477 - INFO - Archived block 14be4a7d-76a4-8099-9bd2-d6d45cf85c3f
+2024-11-27 17:33:00,029 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ff-8972-c05522a2adfc "HTTP/1.1 200 OK"
+2024-11-27 17:33:00,030 - INFO - Archived block 14be4a7d-76a4-80ff-8972-c05522a2adfc
+2024-11-27 17:33:01,610 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80be-886a-f43591fb6d54 "HTTP/1.1 200 OK"
+2024-11-27 17:33:01,611 - INFO - Archived block 14be4a7d-76a4-80be-886a-f43591fb6d54
+2024-11-27 17:33:02,619 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80f0-b47f-c4aed330567e "HTTP/1.1 200 OK"
+2024-11-27 17:33:02,619 - INFO - Archived block 14be4a7d-76a4-80f0-b47f-c4aed330567e
+2024-11-27 17:33:03,137 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-806e-acdf-f8809477a398 "HTTP/1.1 200 OK"
+2024-11-27 17:33:03,138 - INFO - Archived block 14be4a7d-76a4-806e-acdf-f8809477a398
+2024-11-27 17:33:03,695 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8006-bf09-e66f515a1b5f "HTTP/1.1 200 OK"
+2024-11-27 17:33:03,696 - INFO - Archived block 14be4a7d-76a4-8006-bf09-e66f515a1b5f
+2024-11-27 17:33:04,775 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c4-882f-d2f46d99515e "HTTP/1.1 200 OK"
+2024-11-27 17:33:04,776 - INFO - Archived block 14be4a7d-76a4-80c4-882f-d2f46d99515e
+2024-11-27 17:33:05,300 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80e4-ad2e-dd635bb10b65 "HTTP/1.1 200 OK"
+2024-11-27 17:33:05,300 - INFO - Archived block 14be4a7d-76a4-80e4-ad2e-dd635bb10b65
+2024-11-27 17:33:05,861 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-807d-b407-de47feb712e0 "HTTP/1.1 200 OK"
+2024-11-27 17:33:05,861 - INFO - Archived block 14be4a7d-76a4-807d-b407-de47feb712e0
+2024-11-27 17:33:06,615 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:33:06,616 - INFO - Added new content block with 836 characters
+2024-11-27 17:33:06,616 - INFO - Successfully updated section: Business
+2024-11-27 17:33:06,616 - INFO - Optimiere Abschnitt: Langfristige Projekte & Geschäftsentwicklung
+2024-11-27 17:33:18,855 - INFO - Successfully optimized section: Langfristige Projekte & Geschäftsentwicklung
+2024-11-27 17:33:18,855 - INFO - Attempting to update section 'Langfristige Projekte & Geschäftsentwicklung' with content:
+2024-11-27 17:33:18,855 - INFO - # Langfristige Projekte & Geschäftsentwicklung
+
+- **Restaurant-Option auswerten und einsetzen**: Eine detaillierte Analyse der Restaurant-Marktorten durchführen, um eine erfolgreiche Einrichtung zu gewährleisten.
+
+- **Taxi-Unternehmen planen und starten**: Ein vollständiges Businessplan erstellen, inklusive Finanzierung, Vertriebsstrategie und Marktpositionierung. Die notwendigen Registrierungen und Genehmigungen einholen.
+
+- **Technologie-Projekte vorantreiben**: Neue Ideen für Technologien entwickeln und präsentieren. Ressourcen organisieren und das Projekt in die Umsetzung überführen.
+
+- **Monteurzimmer.de Vermietung optimieren**: Das Online-Geschäft intensivieren und den Service verbessern, um mehr Mieteinkommen zu erzielen.
+
+- **Ausgaben optimieren**: Eine gründliche Überprüfung aller Kosten durchführen und ineffiziente Ausgaben reduzieren. Finanzplanung und Budgetierung optimieren.
+
+- **Langfristige Planung implementieren**: ein langfristiges strategisches Handbuch erstellen, das Unternehmen auf die Zukunft fokussiert und Maßnahmen zur Stabilität und Fortschritt sorgt.
+2024-11-27 17:33:19,478 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:33:19,479 - INFO - Found section block: 14be4a7d-76a4-802d-947d-de1f7a375920
+2024-11-27 17:33:20,239 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8048-869a-f21be04d7415 "HTTP/1.1 200 OK"
+2024-11-27 17:33:20,239 - INFO - Archived block 14be4a7d-76a4-8048-869a-f21be04d7415
+2024-11-27 17:33:20,863 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80e1-939b-d1d87b70d6b3 "HTTP/1.1 200 OK"
+2024-11-27 17:33:20,863 - INFO - Archived block 14be4a7d-76a4-80e1-939b-d1d87b70d6b3
+2024-11-27 17:33:21,715 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8058-b9a9-fe9d6b7ceb00 "HTTP/1.1 200 OK"
+2024-11-27 17:33:21,716 - INFO - Archived block 14be4a7d-76a4-8058-b9a9-fe9d6b7ceb00
+2024-11-27 17:33:22,230 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-a85c-fcc64293ef26 "HTTP/1.1 200 OK"
+2024-11-27 17:33:22,230 - INFO - Archived block 14be4a7d-76a4-807e-a85c-fcc64293ef26
+2024-11-27 17:33:23,584 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8098-866e-eb093c2ace4c "HTTP/1.1 200 OK"
+2024-11-27 17:33:23,584 - INFO - Archived block 14be4a7d-76a4-8098-866e-eb093c2ace4c
+2024-11-27 17:33:24,530 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8075-94b5-d3c3bd6ebda2 "HTTP/1.1 200 OK"
+2024-11-27 17:33:24,530 - INFO - Archived block 14be4a7d-76a4-8075-94b5-d3c3bd6ebda2
+2024-11-27 17:33:25,691 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:33:25,694 - INFO - Added new content block with 1091 characters
+2024-11-27 17:33:25,694 - INFO - Successfully updated section: Langfristige Projekte & Geschäftsentwicklung
+2024-11-27 17:33:25,694 - INFO - Optimiere Abschnitt: Beziehung
+2024-11-27 17:33:31,675 - INFO - Successfully optimized section: Beziehung
+2024-11-27 17:33:31,675 - INFO - Attempting to update section 'Beziehung' with content:
+2024-11-27 17:33:31,676 - INFO - # Beziehung
+
+
+## Aktuelle Situation
+
+
+- Komplexe Dynamik mit Ayse
+
+- Balance zwischen Unterstützung und Selbstfürsorge etablieren
+
+- Klare Grenzen und Verhaltensregeln festlegen
+
+## Entwicklungen
+
+
+- Fortschritte in der Therapie von Ayse
+
+- Berufliche Perspektiven und Chancen für weitere Entwicklung
+
+- Verbesserung der Beziehungsqualität durch konsistente Kommunikation und maßgeschneiderte Unterstützung
+2024-11-27 17:33:32,305 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:33:32,306 - INFO - Found section block: 14be4a7d-76a4-80e9-a3b7-c4ed664e9a96
+2024-11-27 17:33:33,230 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-803c-a2a6-ff5482d9e7ea "HTTP/1.1 200 OK"
+2024-11-27 17:33:33,231 - INFO - Archived block 14be4a7d-76a4-803c-a2a6-ff5482d9e7ea
+2024-11-27 17:33:33,744 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-802a-8504-c6a4dbbed124 "HTTP/1.1 200 OK"
+2024-11-27 17:33:33,744 - INFO - Archived block 14be4a7d-76a4-802a-8504-c6a4dbbed124
+2024-11-27 17:33:34,248 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8094-a573-f5d60e73ada0 "HTTP/1.1 200 OK"
+2024-11-27 17:33:34,248 - INFO - Archived block 14be4a7d-76a4-8094-a573-f5d60e73ada0
+2024-11-27 17:33:34,949 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-809c-a639-e226fa053f3a "HTTP/1.1 200 OK"
+2024-11-27 17:33:34,949 - INFO - Archived block 14be4a7d-76a4-809c-a639-e226fa053f3a
+2024-11-27 17:33:35,431 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-802e-b8b5-c9b2e4c8f130 "HTTP/1.1 200 OK"
+2024-11-27 17:33:35,431 - INFO - Archived block 14be4a7d-76a4-802e-b8b5-c9b2e4c8f130
+2024-11-27 17:33:36,794 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8009-9cb1-ccfe0e071f36 "HTTP/1.1 200 OK"
+2024-11-27 17:33:36,795 - INFO - Archived block 14be4a7d-76a4-8009-9cb1-ccfe0e071f36
+2024-11-27 17:33:37,853 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-802a-888e-e707a30f06b2 "HTTP/1.1 200 OK"
+2024-11-27 17:33:37,853 - INFO - Archived block 14be4a7d-76a4-802a-888e-e707a30f06b2
+2024-11-27 17:33:38,636 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80fc-8166-de91e87ee0dc "HTTP/1.1 200 OK"
+2024-11-27 17:33:38,637 - INFO - Archived block 14be4a7d-76a4-80fc-8166-de91e87ee0dc
+2024-11-27 17:33:39,599 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8047-92ca-eb833d194a5a "HTTP/1.1 200 OK"
+2024-11-27 17:33:39,600 - INFO - Archived block 14be4a7d-76a4-8047-92ca-eb833d194a5a
+2024-11-27 17:33:41,803 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:33:41,804 - INFO - Added new content block with 406 characters
+2024-11-27 17:33:41,804 - INFO - Successfully updated section: Beziehung
+2024-11-27 17:33:41,804 - INFO - Optimiere Abschnitt: ARCHIV
+2024-11-27 17:34:50,184 - INFO - Successfully optimized section: ARCHIV
+2024-11-27 17:34:50,184 - INFO - Attempting to update section 'ARCHIV' with content:
+2024-11-27 17:34:50,184 - INFO - # ARCHIV
+
+
+Ioannis befindet sich in einer komplexen und dynamischen Lebensphase, in der verschiedene Aspekte seines Lebens—darunter berufliche Ziele, gesundheitliche Herausforderungen und zwischenmenschliche Beziehungen—gleichzeitig Einfluss nehmen. Seine Beziehung zu Ayse ist geprägt von intensiven Emotionen, gegenseitiger Zuneigung und wiederkehrenden Konflikten, insbesondere durch Eifersucht und impulsives Verhalten.
+
+
+Im Laufe der Beziehung gab es mehrere Vertrauensbrüche, die das Fundament der Partnerschaft erschüttert haben, etwa durch Ayses Zweifel an Ioannis’ Treue oder ihre Unsicherheiten gegenüber seinen sozialen Kontakten. Gleichzeitig zeigt Ayse Fortschritte: Sie hat Therapien begonnen und bemüht sich, persönliche Probleme wie Eifersucht und emotionale Instabilität in den Griff zu bekommen. Trotzdem treten alte Muster immer wieder auf, was Ioannis belastet.
+
+
+Beruflich steht Ioannis vor einer wichtigen Entscheidung: das Restaurant seiner Eltern zu übernehmen oder eigene unternehmerische Wege zu gehen. Das Familienrestaurant bietet Stabilität, doch Ioannis sieht Verbesserungspotenzial in der Preisgestaltung und im Speisenangebot. Langfristig zieht er jedoch die Gründung einer Taxi- und Mietwagenfirma in Betracht.
+
+
+Die Idee für ein Taxi- und Mietwagenunternehmen wurde auch im Kontext von Ayses beruflicher Zukunft diskutiert. Ayse erhält derzeit Bürgergeld und hat Interesse an einer Tätigkeit in diesem Bereich geäußert. Beide haben gemeinsam beim Jobcenter über Fördermöglichkeiten gesprochen, etwa die Finanzierung eines Führerscheins und eines Fahrzeugs. Obwohl Ioannis den entsprechenden Unternehmerführerschein besitzt und bereit wäre, Ayse zu unterstützen, zeigte sie zuletzt Bedenken, das Unternehmen auf seinen Namen laufen zu lassen, da sie insolvent ist und keine Kontrolle verlieren möchte.
+
+
+Ioannis ist sich bewusst, dass er gesundheitlich mehr für sich tun muss. Er hat in letzter Zeit etwas zugenommen und verspürt häufiger Übelkeit, was er auf ungesunde Ernährung zurückführt. Er hat gute Erfahrungen mit Intervallfasten gemacht und möchte dies wieder in seinen Alltag integrieren, um abzunehmen und sich fitter zu fühlen.
+
+
+Ein weiteres gesundheitliches Anliegen ist ein Knoten in seiner Oberlippe, der weiterhin beobachtet wird. Die Narbe benötigt ein Jahr zur Heilung, bevor eine chirurgische Behandlung in Betracht gezogen wird. Außerdem leidet Ioannis unter Sodbrennen und plant eine Magenspiegelung, um mögliche Ursachen abzuklären.
+
+
+Ioannis hat eine Leidenschaft für Technologie und Automatisierung. Er nutzt KI-Tools aktiv zur Strukturierung seiner Gedanken und planet, einen YouTube-Kanal zu erstellen, der sich auf Themen wie KI und Automatisierung fokussiert. Dabei sucht er ein erfolgversprechendes Nischenthema, um den Channel langfristig erfolgreich zu machen.
+
+
+Ein weiteres technisches Ziel ist die Einrichtung eines AnyDesk-Setups, mit dem Ioannis seinen Computer bequem vom Bett aus steuern kann. Auch die Nutzung des „Wireless Display”-Features steht auf seiner Liste, um die Arbeitsumgebung noch effizienter zu gestalten.
+
+
+Ioannis plant, seine aktuelle Wohnung über Monteurzimmer.de zu vermieten, nachdem ein Angebot von Paul und Alex nicht akzeptabel war. Die Wohnung wird voraussichtlich ab dem 20. November 2024 frei, und Ioannis arbeitet daran, eine transparente Abrechnung der bisherigen Einnahmen und Ausgaben zu erstellen, um die Verteilung der Ausstiegssumme zu klären.
+
+
+Ayse ist eine zentrale Person in Ioannis’ Leben, mit der er eine komplexe und intensive Beziehung führt. Sie hat eine schwierige Vergangenheit und bringt psychologische Herausforderungen mit, darunter Eifersucht, impulsives Verhalten und emotionale Unsicherheiten. Trotzdem zeigt sie auch die Bereitschaft, an sich zu arbeiten, und hat erste Schritte in Richtung Therapie unternommen.
+
+
+Ayse hat in letzter Zeit Therapien begonnen, darunter regelmäßige Gespräche mit einer Psychiaterin sowie einen Platz in einer Tagesklinik. Sie zeigt Interesse an Veränderung, auch wenn die Fortschritte oft inkonsistent sind. Immer wieder treten alte Muster auf, insbesondere in Form von Eifersucht und impulsivem Verhalten, die sich belastend auf die Beziehung auswirken.
+
+
+Ayse bezieht derzeit Bürgergeld und hat in der Vergangenheit als Prostituierte gearbeitet, eine Tätigkeit, die sie aus psychischen Gründen aufgegeben hat. Diese Entscheidung wurde von Ioannis unterstützt, doch Ayse empfindet dies manchmal als Hindernis in ihrem Leben. Die gemeinsame Planung eines Taxi-Unternehmens bietet eine mögliche berufliche Perspektive, bringt aber auch eigene Herausforderungen mit sich.
+
+
+Eine wiederkehrende Herausforderung in der Beziehung ist Ayses Eifersucht. Sie äußert oft Unsicherheiten, selbst nach entspannten und schönen Abenden. Diese Konflikte belasten Ioannis emotional, da sie oft nach positiven Momenten auftreten und ihn an der Möglichkeit langfristiger Harmonie zweifeln lassen.
+
+
+Trotz der Herausforderungen gibt es viele Momente, in denen Ioannis Ayses Zuneigung und Engagement spürt. Sie hat ihm in schwierigen Zeiten Unterstützung gezeigt und betont oft ihre Liebe zu ihm. An gemeinsamen Tagen, wenn sie zusammen kochen, Filme schauen oder Zeit miteinander verbringen, ist ihre Verbindung spürbar stark.
+
+**Aktionen:**
+- **Berufliche Entscheidung:** Ioannis sollte eine Unternehmerprüfung durchführen und ein Businessplan erstellen, um die besten Möglichkeiten für das Taxi- und Mietwagenunternehmen zu identifizieren.
+- **Gesundheit:** Ioannis sollte einen Arzttermin vereinbaren, um seine Übelkeit und Sodbrennen genauer zu untersuchen. Er sollte auch ein Intervallfasten aufnehmen und die Gesichtsaufnahme für die Magenspiegelung planen.
+- **Technologie:** Ioannis sollte AnyDesk installieren und das Wireless Display konfigurieren, um die Arbeitsumgebung zu verbessern.
+- **Wohlfühlen:** Ioannis sollte einen Lebensstil ändern, der gesundheitlich besser ist. Er sollte ein Intervallfasten aufnehmen und eine regelmäßige Bewegung finden.
+- **Finanzen:** Ioannis sollte eine transparente Abrechnung erstellen, um die Verteilung der Ausstiegssumme zu klären.
+2024-11-27 17:34:50,940 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:34:50,985 - INFO - Found section block: 14be4a7d-76a4-80dd-b5f4-e46f36a5df0a
+2024-11-27 17:34:52,146 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8088-8299-fa010ebb702d "HTTP/1.1 200 OK"
+2024-11-27 17:34:52,147 - INFO - Archived block 14be4a7d-76a4-8088-8299-fa010ebb702d
+2024-11-27 17:34:52,895 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8086-af3a-c2706f0566bb "HTTP/1.1 200 OK"
+2024-11-27 17:34:52,896 - INFO - Archived block 14be4a7d-76a4-8086-af3a-c2706f0566bb
+2024-11-27 17:34:53,847 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c3-a437-cc24f8bce55e "HTTP/1.1 200 OK"
+2024-11-27 17:34:53,848 - INFO - Archived block 14be4a7d-76a4-80c3-a437-cc24f8bce55e
+2024-11-27 17:34:54,535 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80f0-8cee-f94ad9f5ebb0 "HTTP/1.1 200 OK"
+2024-11-27 17:34:54,535 - INFO - Archived block 14be4a7d-76a4-80f0-8cee-f94ad9f5ebb0
+2024-11-27 17:34:55,442 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c9-ac01-fc5d2a5ae937 "HTTP/1.1 200 OK"
+2024-11-27 17:34:55,443 - INFO - Archived block 14be4a7d-76a4-80c9-ac01-fc5d2a5ae937
+2024-11-27 17:34:56,110 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80b5-8f79-fe80f1db57f5 "HTTP/1.1 200 OK"
+2024-11-27 17:34:56,111 - INFO - Archived block 14be4a7d-76a4-80b5-8f79-fe80f1db57f5
+2024-11-27 17:34:57,019 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-801e-b4c2-c9472c928c76 "HTTP/1.1 200 OK"
+2024-11-27 17:34:57,019 - INFO - Archived block 14be4a7d-76a4-801e-b4c2-c9472c928c76
+2024-11-27 17:34:58,727 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-8200-e38a78d28419 "HTTP/1.1 200 OK"
+2024-11-27 17:34:58,727 - INFO - Archived block 14be4a7d-76a4-805e-8200-e38a78d28419
+2024-11-27 17:34:59,218 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-802b-9d45-dc8084aa9572 "HTTP/1.1 200 OK"
+2024-11-27 17:34:59,219 - INFO - Archived block 14be4a7d-76a4-802b-9d45-dc8084aa9572
+2024-11-27 17:35:00,800 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-809c-bde5-fe34f0ee4ad3 "HTTP/1.1 200 OK"
+2024-11-27 17:35:00,803 - INFO - Archived block 14be4a7d-76a4-809c-bde5-fe34f0ee4ad3
+2024-11-27 17:35:02,129 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8008-bbe9-e795994a9140 "HTTP/1.1 200 OK"
+2024-11-27 17:35:02,140 - INFO - Archived block 14be4a7d-76a4-8008-bbe9-e795994a9140
+2024-11-27 17:35:03,195 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-9e1c-cf62564ad794 "HTTP/1.1 200 OK"
+2024-11-27 17:35:03,196 - INFO - Archived block 14be4a7d-76a4-80b1-9e1c-cf62564ad794
+2024-11-27 17:35:04,221 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80c4-ac8e-f5459bef4c91 "HTTP/1.1 200 OK"
+2024-11-27 17:35:04,222 - INFO - Archived block 14be4a7d-76a4-80c4-ac8e-f5459bef4c91
+2024-11-27 17:35:04,967 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80fd-9914-eb7c66171b67 "HTTP/1.1 200 OK"
+2024-11-27 17:35:04,968 - INFO - Archived block 14be4a7d-76a4-80fd-9914-eb7c66171b67
+2024-11-27 17:35:08,944 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-806e-904f-c9b1d04eaeed "HTTP/1.1 200 OK"
+2024-11-27 17:35:08,945 - INFO - Archived block 14be4a7d-76a4-806e-904f-c9b1d04eaeed
+2024-11-27 17:35:09,913 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81bc-a033-e8bc17b5f0bd "HTTP/1.1 200 OK"
+2024-11-27 17:35:09,913 - INFO - Archived block 14be4a7d-76a4-81bc-a033-e8bc17b5f0bd
+2024-11-27 17:35:10,909 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8122-94ca-ed35d0f5239e "HTTP/1.1 200 OK"
+2024-11-27 17:35:10,910 - INFO - Archived block 14be4a7d-76a4-8122-94ca-ed35d0f5239e
+2024-11-27 17:35:11,422 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8130-b37a-c5de3a7c13ad "HTTP/1.1 200 OK"
+2024-11-27 17:35:11,423 - INFO - Archived block 14be4a7d-76a4-8130-b37a-c5de3a7c13ad
+2024-11-27 17:35:12,338 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81c1-a418-c3e226d6e7c9 "HTTP/1.1 200 OK"
+2024-11-27 17:35:12,339 - INFO - Archived block 14be4a7d-76a4-81c1-a418-c3e226d6e7c9
+2024-11-27 17:35:13,388 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8100-aff4-f5b3f38af192 "HTTP/1.1 200 OK"
+2024-11-27 17:35:13,389 - INFO - Archived block 14be4a7d-76a4-8100-aff4-f5b3f38af192
+2024-11-27 17:35:14,118 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:35:14,121 - INFO - Added new content block with 1836 characters
+2024-11-27 17:35:14,826 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:35:14,828 - INFO - Added new content block with 1613 characters
+2024-11-27 17:35:15,456 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:35:15,457 - INFO - Added new content block with 1826 characters
+2024-11-27 17:35:16,423 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 17:35:16,423 - INFO - Added new content block with 840 characters
+2024-11-27 17:35:16,424 - INFO - Successfully updated section: ARCHIV
+2024-11-27 17:38:17,107 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 17:38:17,347 - INFO - Starting synchronization...
+2024-11-27 17:38:17,758 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 17:38:19,328 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:38:20,331 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:38:20,662 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:38:20,945 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:38:21,262 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:38:21,558 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:38:21,909 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 17:38:21,911 - INFO - Archived old file: master_dashboard_20241127_170206.md
+2024-11-27 17:38:21,912 - INFO - Saved: notion_export\master_dashboard_20241127_173821.md
+2024-11-27 17:38:21,918 - INFO - Synchronization successfully completed!

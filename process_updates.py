@@ -10,26 +10,29 @@ import requests
 class OllamaProcessor:
     def __init__(self):
         self.model_name = "qwen2.5-coder-extra-ctx:7b"
-        self.api_base = "http://localhost:11434"  # Standard Ollama API endpoint
+        self.api_base = "http://localhost:11434"
         logging.info(f"Using Ollama model: {self.model_name}")
 
-    def process_text(self, text, section):
+    def optimize_section(self, content, section_name):
+        """Optimiert einen bestimmten Abschnitt des Dashboards"""
         try:
-            prompt = f"""Analysiere diese Notiz aus meinem persönlichen Dashboard (Bereich: {section}):
+            prompt = f"""Du bist ein KI-Assistent, der einen Dashboard-Abschnitt optimiert.
+Hier ist der aktuelle Inhalt des {section_name}-Abschnitts:
 
-{text}
+{content}
 
-Erstelle eine präzise Analyse mit:
-1. Kurze Zusammenfassung (Kernbotschaft & Kontext)
-2. Wichtige Erkenntnisse (Learnings, Implikationen, Chancen)
-3. Empfohlene Maßnahmen (konkrete Schritte, Ressourcen, Zeitplan)
-4. Muster & Verbindungen (Trends, größere Zusammenhänge)
-5. Weitere Gedanken (Risiken, Chancen, Follow-ups)
+Bitte:
+1. Behalte die grundlegende Struktur bei
+2. Verbessere die Formulierungen
+3. Ergänze fehlende wichtige Informationen
+4. Mache den Text präziser und aktionsorientierter
+5. Behalte alle wichtigen Informationen bei
 
-Formatiere mit Markdown-Überschriften (###) und Aufzählungspunkten. Sei spezifisch aber prägnant.
-Schreibe die Analyse auf Deutsch."""
+Gib den optimierten Text im gleichen Format zurück.
+Behalte die Markdown-Formatierung bei.
+Füge keine Meta-Kommentare hinzu."""
 
-            logging.info(f"Verarbeite Text für Bereich {section}")
+            logging.info(f"Optimiere Abschnitt: {section_name}")
             
             response = requests.post(
                 f"{self.api_base}/api/generate",
@@ -46,45 +49,14 @@ Schreibe die Analyse auf Deutsch."""
             
             if response.status_code == 200:
                 result = response.json()
-                logging.info("Successfully processed text with Ollama")
+                logging.info(f"Successfully optimized section: {section_name}")
                 return result['response']
             else:
                 raise Exception(f"Ollama API returned status code {response.status_code}")
             
         except Exception as e:
-            logging.error(f"Error processing with Ollama: {str(e)}")
-            return f"Error processing note: {str(e)}"
-
-def process_updates_with_llm(updates_file):
-    """Process updates using Ollama LLM"""
-    try:
-        with open(updates_file, 'r', encoding='utf-8') as f:
-            updates = json.load(f)
-        
-        processor = OllamaProcessor()
-        processed_updates = []
-        
-        for update in updates:
-            section = update['section']
-            content = "\n".join(update['new_content'])
-            
-            logging.info(f"Processing update for section: {section}")
-            processed_content = processor.process_text(content, section)
-            
-            final_content = f"\n### AI Analysis ({datetime.now().strftime('%Y-%m-%d %H:%M')})\n"
-            final_content += processed_content
-            final_content += f"\n\n### Original Note\n{content}"
-            
-            processed_updates.append({
-                "section": section,
-                "content": final_content
-            })
-        
-        return processed_updates
-        
-    except Exception as e:
-        logging.error(f"Error processing with LLM: {str(e)}")
-        return None
+            logging.error(f"Error optimizing section: {str(e)}")
+            return content  # Return original content if optimization fails
 
 def main():
     setup_logging()
@@ -99,35 +71,64 @@ def main():
     
     syncer = NotionSync(NOTION_TOKEN)
     
-    # Find recent updates
-    updates = syncer.find_recent_updates()
-    if not updates:
-        logging.info("No new updates found")
+    # Get latest dashboard file
+    dashboard_files = sorted(
+        list(Path("notion_export").glob("master_dashboard_*.md")),
+        key=lambda x: x.stat().st_mtime,
+        reverse=True
+    )
+    
+    if not dashboard_files:
+        logging.error("No dashboard files found")
         return
+        
+    # Read latest dashboard content
+    content = dashboard_files[0].read_text(encoding='utf-8')
     
-    # Save updates for LLM processing
-    updates_file = syncer.save_updates_for_llm(updates)
-    if not updates_file:
-        logging.error("Failed to save updates")
-        return
+    # Split content into sections
+    sections = {}
+    current_section = None
+    current_content = []
     
-    # Process updates with LLM
-    processed_updates = process_updates_with_llm(updates_file)
+    for line in content.split('\n'):
+        if line.startswith('# '):
+            if current_section:
+                sections[current_section] = '\n'.join(current_content)
+            current_section = line[2:].strip()
+            current_content = [line]
+        else:
+            if current_section:
+                current_content.append(line)
     
-    # Update Notion with processed content
-    if processed_updates:
-        for update in processed_updates:
+    if current_section:
+        sections[current_section] = '\n'.join(current_content)
+    
+    # Process each section
+    processor = OllamaProcessor()
+    success = False
+    
+    for section_name, section_content in sections.items():
+        try:
+            # Optimize section content
+            optimized_content = processor.optimize_section(section_content, section_name)
+            
+            # Update in Notion
             success = syncer.update_notion_content(
                 DASHBOARD_ID,
-                update['section'],
-                update['content']
+                section_name,
+                optimized_content
             )
+            
             if success:
-                logging.info(f"Successfully updated section: {update['section']}")
+                logging.info(f"Successfully updated section: {section_name}")
             else:
-                logging.error(f"Failed to update section: {update['section']}")
-    else:
-        logging.error("No updates were processed")
+                logging.error(f"Failed to update section: {section_name}")
+                
+        except Exception as e:
+            logging.error(f"Error processing section {section_name}: {str(e)}")
+    
+    if not success:
+        logging.error("Failed to update any sections")
 
 if __name__ == "__main__":
     main() 

@@ -507,20 +507,7 @@ class NotionSync:
             
             logging.info(f"Found section block: {section_block['id']}")
             
-            # Archive old content blocks
-            for block in section_content_blocks:
-                try:
-                    self._retry_request(
-                        lambda: self.notion.blocks.update(
-                            block_id=block['id'],
-                            archived=True
-                        )
-                    )
-                    logging.info(f"Archived block {block['id']}")
-                except Exception as e:
-                    logging.error(f"Error archiving block: {str(e)}")
-            
-            # Split and add new content
+            # Split content into chunks
             chunks = []
             lines = new_content.split('\n')
             current_chunk = []
@@ -539,24 +526,50 @@ class NotionSync:
             if current_chunk:
                 chunks.append('\n'.join(current_chunk))
             
-            # Add new content blocks
-            for chunk in chunks:
-                response = self._retry_request(
-                    lambda: self.notion.blocks.children.append(
-                        block_id=page_id,
-                        children=[{
-                            "object": "block",
-                            "type": "paragraph",
-                            "paragraph": {
+            # Update content blocks
+            for i, chunk in enumerate(chunks):
+                if i < len(section_content_blocks):
+                    # Update existing block
+                    self._retry_request(
+                        lambda: self.notion.blocks.update(
+                            block_id=section_content_blocks[i]['id'],
+                            paragraph={
                                 "rich_text": [{
                                     "type": "text",
                                     "text": {"content": chunk}
                                 }]
                             }
-                        }]
+                        )
+                    )
+                    logging.info(f"Updated block with {len(chunk)} characters")
+                else:
+                    # Add new block
+                    self._retry_request(
+                        lambda: self.notion.blocks.children.append(
+                            block_id=page_id,
+                            children=[{
+                                "object": "block",
+                                "type": "paragraph",
+                                "paragraph": {
+                                    "rich_text": [{
+                                        "type": "text",
+                                        "text": {"content": chunk}
+                                    }]
+                                }
+                            }]
+                        )
+                    )
+                    logging.info(f"Added new block with {len(chunk)} characters")
+            
+            # Archive any remaining old blocks
+            for block in section_content_blocks[len(chunks):]:
+                self._retry_request(
+                    lambda: self.notion.blocks.update(
+                        block_id=block['id'],
+                        archived=True
                     )
                 )
-                logging.info(f"Added new content block with {len(chunk)} characters")
+                logging.info(f"Archived block {block['id']}")
             
             return True
             
