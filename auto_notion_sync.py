@@ -525,7 +525,11 @@ class NotionSync:
             for line in new_content.split('\n'):
                 line = line.rstrip()
                 
-                if line.startswith('# ') and not line[2:].strip() == section_name:
+                # Skip section header and empty lines at start
+                if line.startswith(f'# {section_name}') or (not line and not new_blocks):
+                    continue
+                    
+                if line.startswith('# '):
                     new_blocks.append({
                         "object": "block",
                         "type": "heading_1",
@@ -535,7 +539,7 @@ class NotionSync:
                     })
                 elif line.startswith('## '):
                     new_blocks.append({
-                        "object": "block",
+                        "object": "block", 
                         "type": "heading_2",
                         "heading_2": {
                             "rich_text": [{"type": "text", "text": {"content": line[3:]}}]
@@ -544,7 +548,7 @@ class NotionSync:
                 elif line.startswith('### '):
                     new_blocks.append({
                         "object": "block",
-                        "type": "heading_3",
+                        "type": "heading_3", 
                         "heading_3": {
                             "rich_text": [{"type": "text", "text": {"content": line[4:]}}]
                         }

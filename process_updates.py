@@ -21,16 +21,38 @@ Hier ist der aktuelle Inhalt des {section_name}-Abschnitts:
 
 {content}
 
-Bitte:
-1. Behalte die grundlegende Struktur bei
-2. Verbessere die Formulierungen
-3. Ergänze fehlende wichtige Informationen
-4. Mache den Text präziser und aktionsorientierter
-5. Behalte alle wichtigen Informationen bei
+Bitte formatiere den Inhalt nach diesem Schema:
 
-Gib den optimierten Text im gleichen Format zurück.
-Behalte die Markdown-Formatierung bei.
-Füge keine Meta-Kommentare hinzu."""
+# [Abschnittsname]
+
+## Übersicht & Status
+| Bereich | Status | Priorität | Nächste Aktion |
+| --- | --- | --- | --- |
+| [Bereich] | [✅ ⚠️ ❌] | [H/M/L] | [Konkrete Aktion] |
+
+## Aktuelle Situation
+- Maximal 3 Kernpunkte
+- Fokus auf das Wesentliche
+- Aktuelle Herausforderungen
+
+## Nächste Schritte
+1. [Konkrete Aktion] bis [Datum]
+2. [Konkrete Aktion] bis [Datum]
+3. [Konkrete Aktion] bis [Datum]
+
+## Tracking & Notizen
+- Messbare Erfolge
+- Blockaden & Lösungen
+- Wichtige Erkenntnisse
+
+Wichtig:
+1. Kurz und prägnant
+2. Konkrete Aktionen
+3. Messbare Ziele
+4. Klare Prioritäten
+5. Aktuelle Infos
+
+Gib nur den formatierten Inhalt zurück, keine Meta-Kommentare."""
 
             logging.info(f"Optimiere Abschnitt: {section_name}")
             
