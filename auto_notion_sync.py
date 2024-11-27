@@ -389,7 +389,19 @@ class NotionSync:
             )
             
             if len(dashboard_files) < 2:
-                logging.info("Not enough dashboard files to compare")
+                logging.info("First run or not enough files to compare")
+                # Bei erstem Lauf alles als neu behandeln
+                if len(dashboard_files) == 1:
+                    content = dashboard_files[0].read_text(encoding='utf-8')
+                    sections = self._split_into_sections(content)
+                    updates = []
+                    for section, content in sections.items():
+                        if content.strip():  # Nur nicht-leere Sektionen
+                            updates.append({
+                                "section": section,
+                                "new_content": [content.strip()]
+                            })
+                    return updates
                 return None
                 
             current = dashboard_files[0].read_text(encoding='utf-8')
@@ -402,7 +414,7 @@ class NotionSync:
             updates = []
             for section, content in current_sections.items():
                 if section not in previous_sections or content != previous_sections[section]:
-                    # Find new lines in this section
+                    # Nur den neuen Text finden
                     new_lines = self._find_new_lines(
                         previous_sections.get(section, ""),
                         content
@@ -417,7 +429,7 @@ class NotionSync:
                         })
             
             if not updates:
-                logging.info("No differences found between current and previous versions")
+                logging.info("No new content found")
             
             return updates
             

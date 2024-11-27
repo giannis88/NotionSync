@@ -19,14 +19,33 @@ class OllamaProcessor:
 
 {text}
 
-Please provide:
-1. Brief summary
-2. Key insights
-3. Suggested actions
-4. Patterns or connections
-5. Additional thoughts
+Please provide a detailed analysis with:
 
-Format your response using markdown headings."""
+1. Brief Summary
+- What is the key message?
+- What is the context?
+
+2. Key Insights
+- What are the main takeaways?
+- What implications does this have?
+- What opportunities or challenges are indicated?
+
+3. Suggested Actions
+- What specific steps should be taken?
+- What resources might be needed?
+- What timeline would be appropriate?
+
+4. Patterns & Connections
+- How does this relate to previous notes/events?
+- What trends or patterns might be emerging?
+- What broader implications exist?
+
+5. Additional Thoughts
+- What other considerations are important?
+- What potential risks or opportunities should be monitored?
+- What follow-up questions should be asked?
+
+Format your response using markdown headings (###) and bullet points. Be specific and actionable in your analysis."""
 
             logging.info(f"Processing text for section {section}")
             

@@ -273,6 +273,10 @@ Tools:
 
 - Wireless Display konfigurieren
 
+- ich benutze momentan cursor mit composer. bin sehr zufrieden
+
+- ich habe gelesen dass windsurf ähnlich gut sein soll, auf die liste setzen zum ausprobieren
+
 ## Automatisierung
 
 
