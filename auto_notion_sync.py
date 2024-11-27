@@ -8,6 +8,7 @@ import time
 import re
 from logging.handlers import RotatingFileHandler
 from dotenv import load_dotenv
+from markdown2 import markdown
 
 class DashboardValidator:
     def __init__(self):
@@ -20,7 +21,7 @@ class DashboardValidator:
             "ARCHIV"
         ]
         self.setup_logging()
-    
+
     def setup_logging(self):
         log_dir = self.base_path / "logs"
         log_dir.mkdir(exist_ok=True, parents=True)
@@ -122,7 +123,7 @@ class NotionSync:
         self.archive_path.mkdir(exist_ok=True)
         self.validator = DashboardValidator()
         self.max_retries = 3
-        self.page_size = 250  # Increase from 100 to get more content per request
+        self.page_size = 250
 
     def _process_rich_text(self, rich_text_list):
         """Processes rich text array and combines all text content"""

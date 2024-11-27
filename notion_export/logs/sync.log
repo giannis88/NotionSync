@@ -377,3 +377,59 @@
 2024-11-27 15:12:53,761 - INFO - Archived old file: master_dashboard_20241127_135858.md
 2024-11-27 15:12:53,762 - INFO - Saved: notion_export\master_dashboard_20241127_151253.md
 2024-11-27 15:12:53,768 - INFO - Synchronization successfully completed!
+2024-11-27 15:26:10,189 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 15:26:10,425 - INFO - Starting synchronization...
+2024-11-27 15:26:11,394 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,189 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,496 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,499 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:26:13,500 - INFO - Processing table with 5 total rows
+2024-11-27 15:26:13,500 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:26:13,832 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,833 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 15:26:13,833 - INFO - Processing table with 8 total rows
+2024-11-27 15:26:13,833 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 15:26:14,413 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:14,417 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 15:26:14,418 - INFO - Processing table with 4 total rows
+2024-11-27 15:26:14,418 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 15:26:15,072 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:15,073 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 15:26:15,073 - INFO - Processing table with 16 total rows
+2024-11-27 15:26:15,074 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 15:26:15,876 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807b-9939-ea31ffe03399/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:15,877 - INFO - Table processing: Got 6 rows, has_more: False
+2024-11-27 15:26:15,877 - INFO - Processing table with 6 total rows
+2024-11-27 15:26:15,877 - INFO - Table processing complete: 5 data rows processed
+2024-11-27 15:26:16,471 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-80ec-906f-ed0757281299&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:16,474 - INFO - Archived old file: master_dashboard_20241127_140006.md
+2024-11-27 15:26:16,475 - INFO - Saved: notion_export\master_dashboard_20241127_152616.md
+2024-11-27 15:26:16,482 - INFO - Synchronization successfully completed!
+2024-11-27 15:36:22,052 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 15:36:22,289 - INFO - Starting synchronization...
+2024-11-27 15:36:22,779 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 15:36:25,871 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:26,887 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:26,888 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:36:26,888 - INFO - Processing table with 5 total rows
+2024-11-27 15:36:26,888 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:36:27,423 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:27,425 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 15:36:27,426 - INFO - Processing table with 8 total rows
+2024-11-27 15:36:27,426 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 15:36:27,808 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:27,808 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 15:36:27,809 - INFO - Processing table with 4 total rows
+2024-11-27 15:36:27,809 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 15:36:28,849 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:28,850 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 15:36:28,850 - INFO - Processing table with 16 total rows
+2024-11-27 15:36:28,851 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 15:36:30,521 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807b-9939-ea31ffe03399/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:30,532 - INFO - Table processing: Got 6 rows, has_more: False
+2024-11-27 15:36:30,532 - INFO - Processing table with 6 total rows
+2024-11-27 15:36:30,532 - INFO - Table processing complete: 5 data rows processed
+2024-11-27 15:36:31,553 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-80ec-906f-ed0757281299&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:31,557 - INFO - Archived old file: master_dashboard_20241127_141519.md
+2024-11-27 15:36:31,558 - INFO - Saved: notion_export\master_dashboard_20241127_153631.md
+2024-11-27 15:36:31,566 - INFO - Synchronization successfully completed!
