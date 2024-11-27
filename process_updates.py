@@ -6,17 +6,40 @@ from auto_notion_sync import NotionSync, setup_logging
 from dotenv import load_dotenv
 import os
 import requests
+import time
+import sys
 
 class OllamaProcessor:
-    def __init__(self):
-        self.model_name = "qwen2.5-coder-extra-ctx:7b"
-        self.api_base = "http://localhost:11434"
-        logging.info(f"Using Ollama model: {self.model_name}")
-
-    def optimize_section(self, content, section_name):
-        """Optimiert einen bestimmten Abschnitt des Dashboards"""
+    def __init__(self, model_name="qwen2.5-coder-extra-ctx:7b", api_base="http://localhost:11434"):
+        self.model_name = model_name
+        self.api_base = api_base
+        self.session = requests.Session()  # Wiederverwendbare Session
         try:
-            prompt = f"""Du bist ein KI-Assistent, der einen Dashboard-Abschnitt optimiert.
+            self._validate_connection()
+        except Exception as e:
+            logging.error(f"Failed to initialize OllamaProcessor: {str(e)}")
+            raise
+    
+    def _validate_connection(self):
+        """Überprüft die Verbindung zum Ollama-Server"""
+        try:
+            response = self.session.get(f"{self.api_base}/api/version")
+            if response.status_code != 200:
+                raise ConnectionError(f"Ollama server not responding correctly: {response.status_code}")
+            logging.info(f"Successfully connected to Ollama server")
+        except Exception as e:
+            logging.error(f"Failed to connect to Ollama server: {str(e)}")
+            raise
+
+    def optimize_section(self, content, section_name, retries=3):
+        if not content.strip():
+            logging.warning(f"Empty content received for section: {section_name}")
+            return content
+        
+        """Optimiert einen bestimmten Abschnitt mit Retry-Logik"""
+        for attempt in range(retries):
+            try:
+                prompt = f"""Du bist ein KI-Assistent, der einen Dashboard-Abschnitt optimiert.
 Hier ist der aktuelle Inhalt des {section_name}-Abschnitts:
 
 {content}
@@ -54,31 +77,34 @@ Wichtig:
 
 Gib nur den formatierten Inhalt zurück, keine Meta-Kommentare."""
 
-            logging.info(f"Optimiere Abschnitt: {section_name}")
-            
-            response = requests.post(
-                f"{self.api_base}/api/generate",
-                json={
-                    "model": self.model_name,
-                    "prompt": prompt,
-                    "stream": False,
-                    "options": {
-                        "temperature": 0.7,
-                        "top_p": 0.9
-                    }
-                }
-            )
-            
-            if response.status_code == 200:
+                logging.info(f"Optimiere Abschnitt: {section_name}")
+                
+                response = self.session.post(
+                    f"{self.api_base}/api/generate",
+                    json={
+                        "model": self.model_name,
+                        "prompt": prompt,
+                        "stream": False,
+                        "options": {
+                            "temperature": 0.7,
+                            "top_p": 0.9,
+                            "timeout": 30  # Timeout in Sekunden
+                        }
+                    },
+                    timeout=35  # Request timeout
+                )
+                
+                response.raise_for_status()
                 result = response.json()
                 logging.info(f"Successfully optimized section: {section_name}")
                 return result['response']
-            else:
-                raise Exception(f"Ollama API returned status code {response.status_code}")
-            
-        except Exception as e:
-            logging.error(f"Error optimizing section: {str(e)}")
-            return content  # Return original content if optimization fails
+                
+            except requests.exceptions.RequestException as e:
+                if attempt == retries - 1:
+                    logging.error(f"Failed to optimize section after {retries} attempts: {str(e)}")
+                    return content
+                logging.warning(f"Attempt {attempt + 1} failed, retrying...")
+                time.sleep(2 ** attempt)  # Exponential backoff
 
 def main():
     setup_logging()
@@ -89,9 +115,13 @@ def main():
     
     if not all([NOTION_TOKEN, DASHBOARD_ID]):
         logging.error("Missing required environment variables")
-        return
+        sys.exit(1)
     
-    syncer = NotionSync(NOTION_TOKEN)
+    try:
+        syncer = NotionSync(NOTION_TOKEN)
+    except Exception as e:
+        logging.error(f"Failed to initialize NotionSync: {str(e)}")
+        sys.exit(1)
     
     # Get latest dashboard file
     dashboard_files = sorted(
@@ -101,12 +131,15 @@ def main():
     )
     
     if not dashboard_files:
-        logging.error("No dashboard files found")
-        return
-        
-    # Read latest dashboard content
-    content = dashboard_files[0].read_text(encoding='utf-8')
+        logging.error("No dashboard files found in notion_export directory")
+        sys.exit(1)
     
+    try:
+        content = dashboard_files[0].read_text(encoding='utf-8')
+    except Exception as e:
+        logging.error(f"Failed to read dashboard file: {str(e)}")
+        sys.exit(1)
+        
     # Split content into sections
     sections = {}
     current_section = None

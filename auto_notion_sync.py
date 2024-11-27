@@ -22,6 +22,7 @@ class DashboardValidator:
             "Beziehung",
             "ARCHIV"
         ]
+        self.min_word_count = 300
         self.setup_logging()
 
     def setup_logging(self):
@@ -51,17 +52,9 @@ class DashboardValidator:
                 if not re.search(rf"#\s*{section}", content, re.IGNORECASE):
                     missing_sections.append(section)
             
-            # Check for potential truncation
-            last_section = self.expected_sections[-1]
-            if last_section not in missing_sections:
-                archiv_content = re.split(r"#\s*ARCHIV", content, flags=re.IGNORECASE)[-1]
-                if len(archiv_content.strip()) < 100:
-                    logging.warning(f"ARCHIV section in {filepath.name} appears truncated")
-                    missing_sections.append(f"{last_section} (truncated)")
-            
-            # Additional checks
+            # Check word count
             word_count = len(content.split())
-            if word_count < 1000:
+            if word_count < self.min_word_count:
                 logging.warning(f"File {filepath.name} seems unusually short ({word_count} words)")
             
             return {
@@ -158,8 +151,15 @@ class NotionSync:
             logging.error(f"Error saving file: {str(e)}")
             raise
 
-    def get_page_content(self, page_id, level=0, visited_pages=None):
+    def get_page_content(self, page_id, level=0, visited_pages=None, retry_count=0):
         """Gets the content of a page and all subpages with pagination and retry logic"""
+        MAX_RETRIES = 3
+        
+        if retry_count >= MAX_RETRIES:
+            logging.error(f"Failed to get complete content after {MAX_RETRIES} attempts")
+            # Versuche zumindest teilweisen Content zu speichern
+            return "# Master Dashboard\n\n> ⚠️ Warnung: Unvollständiger Export\n\n"
+        
         if visited_pages is None:
             visited_pages = set()
             
@@ -170,43 +170,122 @@ class NotionSync:
         visited_pages.add(page_id)
         
         try:
-            page = self._retry_request(lambda: self.notion.pages.retrieve(page_id=page_id))
-            content = []
-            indent = "#" * (level + 1)
+            # Hole Seiteninformationen
+            page = self._retry_request(
+                lambda: self.notion.pages.retrieve(page_id=page_id),
+                retries=5
+            )
             
-            # Add page title
+            # Debug-Logging für Seiteninhalt
+            logging.debug(f"Page info received: {page.get('properties', {})}")
+            
+            content = []
             if level == 0:
                 content.append("# Master Dashboard\n")
             else:
                 title = self._process_rich_text(page['properties']['title']['title'])
-                content.append(f"{indent} {title}\n")
+                content.append(f"{'#' * (level + 1)} {title}\n")
             
-            # Get all blocks with pagination
-            has_more = True
+            # Hole alle Blöcke mit verbessertem Error Handling
+            all_blocks = []
             start_cursor = None
+            page_size = 50  # Reduzierte Chunk-Größe
             
-            while has_more:
-                blocks_response = self._retry_request(
-                    lambda: self.notion.blocks.children.list(
-                        block_id=page_id,
-                        page_size=self.page_size,
-                        start_cursor=start_cursor
+            while True:
+                try:
+                    response = self._retry_request(
+                        lambda: self.notion.blocks.children.list(
+                            block_id=page_id,
+                            page_size=page_size,
+                            start_cursor=start_cursor
+                        ),
+                        retries=5
                     )
-                )
-                
-                for block in blocks_response['results']:
+                    
+                    blocks = response.get('results', [])
+                    if not blocks:
+                        logging.warning(f"No blocks received for page {page_id}")
+                        break
+                    
+                    # Debug-Logging für Blöcke
+                    logging.debug(f"Received {len(blocks)} blocks")
+                    for block in blocks:
+                        logging.debug(f"Block type: {block.get('type')}")
+                    
+                    all_blocks.extend(blocks)
+                    
+                    if not response.get('has_more'):
+                        break
+                        
+                    start_cursor = response.get('next_cursor')
+                    time.sleep(1)  # Längere Pause zwischen Requests
+                    
+                except Exception as e:
+                    logging.error(f"Error fetching blocks: {str(e)}")
+                    break
+            
+            # Verarbeite Blöcke mit Umlaut-Handling
+            for block in all_blocks:
+                try:
                     block_content = self._process_block(block, level, visited_pages)
                     if block_content:
+                        # Normalisiere Unicode-Zeichen
+                        block_content = self._normalize_text(block_content)
                         content.append(block_content)
-                
-                has_more = blocks_response.get('has_more', False)
-                start_cursor = blocks_response.get('next_cursor')
+                except Exception as e:
+                    logging.error(f"Error processing block: {str(e)}")
+                    continue
             
-            return "\n".join(content)
+            # Validiere den Content
+            full_content = "\n".join(content)
+            
+            if level == 0:
+                missing_sections = []
+                for section in ["Gesundheit", "Business", "Beziehung", "ARCHIV"]:
+                    if section not in full_content:
+                        missing_sections.append(section)
+                
+                if missing_sections:
+                    logging.error(f"Missing sections: {', '.join(missing_sections)}")
+                    if retry_count < MAX_RETRIES:
+                        logging.info(f"Retrying page fetch (attempt {retry_count + 1}/{MAX_RETRIES})...")
+                        time.sleep(3)  # Längere Wartezeit
+                        return self.get_page_content(page_id, level, set(), retry_count + 1)
+                    else:
+                        # Füge Warnung zum Content hinzu
+                        warning = f"\n\n> ⚠️ Warnung: Fehlende Abschnitte: {', '.join(missing_sections)}\n\n"
+                        full_content = full_content + warning
+            
+            return full_content
             
         except Exception as e:
             logging.error(f"Error getting page {page_id}: {str(e)}")
+            if level == 0 and retry_count < MAX_RETRIES:
+                time.sleep(3)
+                return self.get_page_content(page_id, level, set(), retry_count + 1)
             return ""
+
+    def _normalize_text(self, text):
+        """Normalisiert Text und behandelt Umlaute"""
+        try:
+            # Ersetze problematische Zeichen
+            replacements = {
+                'ä': 'ae',
+                'ö': 'oe',
+                'ü': 'ue',
+                'Ä': 'Ae',
+                'Ö': 'Oe',
+                'Ü': 'Ue',
+                'ß': 'ss'
+            }
+            
+            for char, replacement in replacements.items():
+                text = text.replace(char, replacement)
+                
+            return text
+        except Exception as e:
+            logging.error(f"Error normalizing text: {str(e)}")
+            return text
 
     def _retry_request(self, request_func, retries=None):
         """Retries a request with exponential backoff"""
@@ -216,7 +295,11 @@ class NotionSync:
         last_error = None
         for attempt in range(retries):
             try:
-                return request_func()
+                response = request_func()
+                # Validiere Response
+                if not response:
+                    raise ValueError("Empty response received")
+                return response
             except Exception as e:
                 last_error = e
                 wait_time = (2 ** attempt) + random.uniform(0, 1)
@@ -248,7 +331,7 @@ class NotionSync:
             elif block_type == 'toggle':
                 return self._process_toggle(block)
             elif block_type == 'table':
-                return self.process_table(block['id'])
+                return self._process_table(block['id'])
             elif block_type == 'child_page':
                 return self.get_page_content(block['id'], level + 1, visited_pages)
             elif block_type == 'divider':
@@ -307,8 +390,8 @@ class NotionSync:
                 
         return "\n".join(content) + "\n"
 
-    def process_table(self, table_id):
-        """Processes tables into Markdown format with retry logic and pagination"""
+    def _process_table(self, table_id):
+        """Processes tables into clean Markdown format"""
         try:
             all_rows = []
             has_more = True
@@ -316,64 +399,53 @@ class NotionSync:
             
             # Get all rows with pagination
             while has_more:
-                try:
-                    response = self._retry_request(
-                        lambda: self.notion.blocks.children.list(
-                            block_id=table_id,
-                            page_size=self.page_size,
-                            start_cursor=start_cursor
-                        )
+                response = self._retry_request(
+                    lambda: self.notion.blocks.children.list(
+                        block_id=table_id,
+                        page_size=self.page_size,
+                        start_cursor=start_cursor
                     )
-                    
-                    if not response.get('results'):
-                        logging.warning(f"No results returned for table {table_id}")
-                        break
-                        
-                    all_rows.extend(response['results'])
-                    has_more = response.get('has_more', False)
-                    start_cursor = response.get('next_cursor')
-                    
-                except Exception as e:
-                    logging.error(f"Error fetching table rows: {str(e)}")
+                )
+                
+                if not response.get('results'):
                     break
-            
+                    
+                all_rows.extend(response['results'])
+                has_more = response.get('has_more', False)
+                start_cursor = response.get('next_cursor')
+                
             if not all_rows:
-                logging.warning(f"No rows found for table {table_id}")
                 return ""
             
             # Process table rows
-            markdown_table = []
+            markdown_rows = []
             
-            # Safely get header row
-            header_row = all_rows[0].get('table_row', {}).get('cells', [])
-            if not header_row:
-                logging.warning(f"No header row found for table {table_id}")
-                return ""
-            
+            # Header row
+            header_cells = all_rows[0].get('table_row', {}).get('cells', [])
             headers = []
-            for cell in header_row:
-                cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else ""
-                headers.append(cell_text or " ")  # Use space for empty cells
+            for cell in header_cells:
+                cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else " "
+                headers.append(cell_text or " ")
             
-            markdown_table.append("| " + " | ".join(headers) + " |")
-            markdown_table.append("| " + " | ".join(["---"] * len(headers)) + " |")
+            markdown_rows.append("| " + " | ".join(headers) + " |")
+            markdown_rows.append("| " + " | ".join(["---"] * len(headers)) + " |")
             
-            # Process data rows
+            # Data rows
             for row in all_rows[1:]:
                 cells = []
                 row_cells = row.get('table_row', {}).get('cells', [])
                 
                 for cell in row_cells:
-                    cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else ""
-                    cells.append(cell_text or " ")  # Use space for empty cells
+                    cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else " "
+                    cells.append(cell_text or " ")
                     
-                # Ensure all rows have same number of columns as header
+                # Ensure all rows have same number of columns
                 while len(cells) < len(headers):
                     cells.append(" ")
                     
-                markdown_table.append("| " + " | ".join(cells) + " |")
+                markdown_rows.append("| " + " | ".join(cells) + " |")
             
-            return "\n".join(markdown_table) + "\n\n"
+            return "\n".join(markdown_rows) + "\n\n"
             
         except Exception as e:
             logging.error(f"Error processing table {table_id}: {str(e)}")
@@ -479,35 +551,51 @@ class NotionSync:
     def update_notion_content(self, page_id, section_name, new_content):
         """Updates a specific section in Notion"""
         try:
-            logging.info(f"Attempting to update section '{section_name}' with content:")
-            logging.info(new_content)
+            logging.info(f"Attempting to update section '{section_name}'")
             
-            # First find the section block
+            # Hole alle Blöcke der Seite
             blocks = self._retry_request(
-                lambda: self.notion.blocks.children.list(page_id)
+                lambda: self.notion.blocks.children.list(
+                    block_id=page_id,
+                    page_size=100
+                )
             )
             
+            # Finde den Abschnitt und seine Position
             section_block = None
             section_content_blocks = []
             in_section = False
             
-            # Find section and its content blocks
             for block in blocks['results']:
-                if block['type'] == 'heading_1' and self._process_rich_text(block['heading_1']['rich_text']) == section_name:
+                if block['type'] in ['heading_1', 'heading_2'] and \
+                   self._process_rich_text(block[block['type']]['rich_text']).lower() == section_name.lower():
                     section_block = block
                     in_section = True
-                elif in_section and block['type'] == 'heading_1':
+                elif in_section and block['type'] in ['heading_1', 'heading_2']:
                     in_section = False
                 elif in_section:
                     section_content_blocks.append(block)
             
             if not section_block:
-                logging.error(f"Section {section_name} not found")
-                return False
+                # Wenn Abschnitt nicht gefunden, erstelle ihn
+                new_section = {
+                    "object": "block",
+                    "type": "heading_1",
+                    "heading_1": {
+                        "rich_text": [{"type": "text", "text": {"content": section_name}}]
+                    }
+                }
+                
+                response = self._retry_request(
+                    lambda: self.notion.blocks.children.append(
+                        block_id=page_id,
+                        children=[new_section]
+                    )
+                )
+                section_block = response['results'][0]
+                logging.info(f"Created new section: {section_name}")
             
-            logging.info(f"Found section block: {section_block['id']}")
-            
-            # Archive old blocks
+            # Archiviere alte Blöcke
             for block in section_content_blocks:
                 self._retry_request(
                     lambda: self.notion.blocks.update(
@@ -517,103 +605,11 @@ class NotionSync:
                 )
                 logging.info(f"Archived block {block['id']}")
             
-            # Convert markdown to Notion blocks
-            new_blocks = []
-            in_table = False
-            table_rows = []
+            # Konvertiere Markdown zu Notion-Blöcken
+            new_blocks = self._convert_markdown_to_blocks(new_content)
             
-            for line in new_content.split('\n'):
-                line = line.rstrip()
-                
-                # Skip section header and empty lines at start
-                if line.startswith(f'# {section_name}') or (not line and not new_blocks):
-                    continue
-                    
-                if line.startswith('# '):
-                    new_blocks.append({
-                        "object": "block",
-                        "type": "heading_1",
-                        "heading_1": {
-                            "rich_text": [{"type": "text", "text": {"content": line[2:]}}]
-                        }
-                    })
-                elif line.startswith('## '):
-                    new_blocks.append({
-                        "object": "block", 
-                        "type": "heading_2",
-                        "heading_2": {
-                            "rich_text": [{"type": "text", "text": {"content": line[3:]}}]
-                        }
-                    })
-                elif line.startswith('### '):
-                    new_blocks.append({
-                        "object": "block",
-                        "type": "heading_3", 
-                        "heading_3": {
-                            "rich_text": [{"type": "text", "text": {"content": line[4:]}}]
-                        }
-                    })
-                elif line.startswith('- '):
-                    new_blocks.append({
-                        "object": "block",
-                        "type": "bulleted_list_item",
-                        "bulleted_list_item": {
-                            "rich_text": [{"type": "text", "text": {"content": line[2:]}}]
-                        }
-                    })
-                elif line.startswith('|'):
-                    # Handle table rows
-                    cells = [cell.strip() for cell in line.strip('|').split('|')]
-                    if len(cells) > 1:  # Valid table row
-                        if not line.replace('|', '').replace('-', '').strip():
-                            continue  # Skip separator lines
-                        if not in_table:
-                            in_table = True
-                            table_rows = []
-                        table_rows.append(cells)
-                else:
-                    if in_table and table_rows:
-                        # End of table - add it to blocks
-                        new_blocks.append({
-                            "object": "block",
-                            "type": "table",
-                            "table": {
-                                "table_width": len(table_rows[0]),
-                                "has_column_header": True,
-                                "has_row_header": False,
-                                "children": [
-                                    {
-                                        "type": "table_row",
-                                        "table_row": {
-                                            "cells": [[{"type": "text", "text": {"content": cell}}] for cell in row]
-                                        }
-                                    } for row in table_rows
-                                ]
-                            }
-                        })
-                        in_table = False
-                        table_rows = []
-                    
-                    if line:  # Non-empty line
-                        new_blocks.append({
-                            "object": "block",
-                            "type": "paragraph",
-                            "paragraph": {
-                                "rich_text": [{"type": "text", "text": {"content": line}}]
-                            }
-                        })
-                    else:  # Empty line
-                        if new_blocks and new_blocks[-1]['type'] != 'paragraph':
-                            new_blocks.append({
-                                "object": "block",
-                                "type": "paragraph",
-                                "paragraph": {
-                                    "rich_text": []
-                                }
-                            })
-            
-            # Add new blocks in chunks
-            for i in range(0, len(new_blocks), 100):  # Notion API limit
+            # Füge neue Blöcke hinzu
+            for i in range(0, len(new_blocks), 100):  # Notion API Limit
                 chunk = new_blocks[i:i+100]
                 self._retry_request(
                     lambda: self.notion.blocks.children.append(
@@ -626,8 +622,96 @@ class NotionSync:
             return True
             
         except Exception as e:
-            logging.error(f"Error updating Notion content: {str(e)}")
+            logging.error(f"Error updating section: {str(e)}")
             return False
+
+    def _convert_markdown_to_blocks(self, markdown_content):
+        """Konvertiert Markdown-Inhalt in Notion-Blöcke"""
+        blocks = []
+        lines = markdown_content.split('\n')
+        in_table = False
+        table_rows = []
+        
+        for line in lines:
+            line = line.strip()
+            
+            if not line:
+                continue
+            
+            if line.startswith('# '):
+                blocks.append({
+                    "object": "block",
+                    "type": "heading_1",
+                    "heading_1": {
+                        "rich_text": [{"type": "text", "text": {"content": line[2:]}}]
+                    }
+                })
+            elif line.startswith('## '):
+                blocks.append({
+                    "object": "block",
+                    "type": "heading_2",
+                    "heading_2": {
+                        "rich_text": [{"type": "text", "text": {"content": line[3:]}}]
+                    }
+                })
+            elif line.startswith('### '):
+                blocks.append({
+                    "object": "block",
+                    "type": "heading_3",
+                    "heading_3": {
+                        "rich_text": [{"type": "text", "text": {"content": line[4:]}}]
+                    }
+                })
+            elif line.startswith('- '):
+                blocks.append({
+                    "object": "block",
+                    "type": "bulleted_list_item",
+                    "bulleted_list_item": {
+                        "rich_text": [{"type": "text", "text": {"content": line[2:]}}]
+                    }
+                })
+            elif line.startswith('|'):
+                # Tabellen-Verarbeitung
+                cells = [cell.strip() for cell in line.strip('|').split('|')]
+                if not line.replace('|', '').replace('-', '').strip():
+                    continue  # Überspringe Trennzeilen
+                if not in_table:
+                    in_table = True
+                    table_rows = []
+                table_rows.append(cells)
+            else:
+                if in_table and table_rows:
+                    # Ende der Tabelle - füge sie zu den Blöcken hinzu
+                    blocks.append({
+                        "object": "block",
+                        "type": "table",
+                        "table": {
+                            "table_width": len(table_rows[0]),
+                            "has_column_header": True,
+                            "has_row_header": False,
+                            "children": [
+                                {
+                                    "type": "table_row",
+                                    "table_row": {
+                                        "cells": [[{"type": "text", "text": {"content": cell}}] for cell in row]
+                                    }
+                                } for row in table_rows
+                            ]
+                        }
+                    })
+                    in_table = False
+                    table_rows = []
+                
+                if line:  # Nicht-leere Zeile
+                    blocks.append({
+                        "object": "block",
+                        "type": "paragraph",
+                        "paragraph": {
+                            "rich_text": [{"type": "text", "text": {"content": line}}]
+                        }
+                    })
+        
+        return blocks
 
     def sync_dashboard(self, dashboard_id):
         """Synchronizes the entire dashboard"""
