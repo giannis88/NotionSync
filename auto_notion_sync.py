@@ -78,29 +78,31 @@ class DashboardValidator:
             source_content = source_file.read_text(encoding='utf-8')
             reference_content = reference_file.read_text(encoding='utf-8')
             
-            # Find the last complete section in source
-            sections = re.split(r'(?=# )', source_content)
-            reference_sections = re.split(r'(?=# )', reference_content)
+            # Wenn die Quelldatei nur eine Warnung enthält, verwende die Referenzdatei
+            if "⚠️ Warnung:" in source_content and len(source_content.split('\n')) < 5:
+                fixed_content = reference_content
+            else:
+                # Teile beide Dateien in Abschnitte
+                source_sections = self._split_into_sections(source_content)
+                reference_sections = self._split_into_sections(reference_content)
+                
+                # Verwende Referenzabschnitte für fehlende Abschnitte
+                for section in self.expected_sections:
+                    if section not in source_sections and section in reference_sections:
+                        source_sections[section] = reference_sections[section]
+                
+                # Stelle die richtige Reihenfolge wieder her
+                fixed_content = []
+                for section in self.expected_sections:
+                    if section in source_sections:
+                        fixed_content.append(source_sections[section])
+                
+                fixed_content = '\n'.join(fixed_content)
             
-            # Compare sections and identify truncation point
-            complete_content = []
-            for i, section in enumerate(sections):
-                if section.strip():
-                    complete_content.append(section)
-                    
-                    # Check if this section is truncated
-                    matching_ref_section = next(
-                        (s for s in reference_sections if s.startswith(section.split('\n')[0])),
-                        None
-                    )
-                    if matching_ref_section and len(section) < len(matching_ref_section) * 0.8:
-                        # Section appears truncated, use reference content
-                        complete_content[-1] = matching_ref_section
-            
-            # Save fixed content
+            # Speichere den fixierten Inhalt
             fixed_filename = source_file.stem + "_fixed.md"
             fixed_file = source_file.parent / fixed_filename
-            fixed_file.write_text('\n'.join(complete_content), encoding='utf-8')
+            fixed_file.write_text(fixed_content, encoding='utf-8')
             
             logging.info(f"Created fixed file: {fixed_filename}")
             return fixed_file
@@ -108,6 +110,27 @@ class DashboardValidator:
         except Exception as e:
             logging.error(f"Error fixing truncation: {str(e)}")
             return None
+
+    def _split_into_sections(self, content):
+        """Splits content into sections"""
+        sections = {}
+        current_section = None
+        current_content = []
+        
+        for line in content.split('\n'):
+            if line.startswith('# '):
+                if current_section:
+                    sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
+                current_section = line[2:].strip()
+                current_content = [line]
+            else:
+                if current_section:
+                    current_content.append(line)
+        
+        if current_section:
+            sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
+        
+        return sections
 
 class NotionSync:
     def __init__(self, token):
@@ -175,6 +198,8 @@ class NotionSync:
             )
             
             content = []
+            processed_blocks = set()  # Track bereits verarbeitete Block-IDs
+            
             if level == 0:
                 content.append("# Master Dashboard\n")
             else:
@@ -201,7 +226,11 @@ class NotionSync:
                     if not blocks:
                         break
                     
-                    all_blocks.extend(blocks)
+                    # Füge nur neue Blöcke hinzu
+                    for block in blocks:
+                        if block['id'] not in processed_blocks:
+                            all_blocks.append(block)
+                            processed_blocks.add(block['id'])
                     
                     if not response.get('has_more'):
                         break
@@ -414,17 +443,20 @@ class NotionSync:
                 return ""
             
             # Process table rows
-            markdown_rows = []
+            markdown_table = []
             
             # Header row
             header_cells = all_rows[0].get('table_row', {}).get('cells', [])
+            if not header_cells:
+                return ""
+            
             headers = []
             for cell in header_cells:
                 cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else " "
-                headers.append(cell_text or " ")
+                headers.append(cell_text.strip() or " ")
             
-            markdown_rows.append("| " + " | ".join(headers) + " |")
-            markdown_rows.append("| " + " | ".join(["---"] * len(headers)) + " |")
+            markdown_table.append("| " + " | ".join(headers) + " |")
+            markdown_table.append("|" + "|".join(["---"] * len(headers)) + "|")
             
             # Data rows
             for row in all_rows[1:]:
@@ -433,15 +465,16 @@ class NotionSync:
                 
                 for cell in row_cells:
                     cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else " "
-                    cells.append(cell_text or " ")
+                    cells.append(cell_text.strip() or " ")
                     
                 # Ensure all rows have same number of columns
                 while len(cells) < len(headers):
                     cells.append(" ")
                     
-                markdown_rows.append("| " + " | ".join(cells) + " |")
+                markdown_table.append("| " + " | ".join(cells) + " |")
             
-            return "\n".join(markdown_rows) + "\n\n"
+            # Return table with minimal spacing
+            return "\n".join(markdown_table) + "\n\n"
             
         except Exception as e:
             logging.error(f"Error processing table {table_id}: {str(e)}")
@@ -506,32 +539,24 @@ class NotionSync:
             return None
 
     def _split_into_sections(self, content):
-        """Splits dashboard content into sections and removes duplicates"""
+        """Splits content into sections"""
         sections = {}
         current_section = None
         current_content = []
-        seen_sections = set()
         
         for line in content.split('\n'):
             if line.startswith('# '):
-                section_name = line[2:].strip()
-                # Wenn wir diesen Abschnitt schon gesehen haben, überspringen wir ihn
-                if section_name in seen_sections:
-                    current_section = None
-                    continue
-                
                 if current_section:
-                    sections[current_section] = self._clean_section_content('\n'.join(current_content))
-                current_section = section_name
-                seen_sections.add(section_name)
+                    sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
+                current_section = line[2:].strip()
                 current_content = [line]
             else:
                 if current_section:
                     current_content.append(line)
         
         if current_section:
-            sections[current_section] = self._clean_section_content('\n'.join(current_content))
-            
+            sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
+        
         return sections
 
     def _clean_section_content(self, content):
@@ -753,32 +778,37 @@ class NotionSync:
             self.archive_old_files()
             self.save_to_file(content, filename)
             
-            # Validate the export
-            validation_result = self.validator.validate_file(self.base_path / f"{filename}.md")
+            current_file = self.base_path / f"{filename}.md"
+            validation_result = self.validator.validate_file(current_file)
             
-            if not validation_result['complete']:
+            if not validation_result['complete'] or validation_result['word_count'] < 300:
                 logging.warning("Export appears incomplete!")
-                logging.warning(f"Missing sections: {', '.join(validation_result['missing_sections'])}")
+                if validation_result['missing_sections']:
+                    logging.warning(f"Missing sections: {', '.join(validation_result['missing_sections'])}")
                 
-                # Try to fix using the last known good export
+                # Versuche die letzte gute Version zu finden
                 previous_files = sorted(
-                    list(self.base_path.glob("master_dashboard_*.md")),
+                    [f for f in self.base_path.glob("master_dashboard_*.md") 
+                     if f != current_file and not f.name.endswith('_fixed.md')],
                     key=lambda x: x.stat().st_mtime,
                     reverse=True
                 )
                 
-                if len(previous_files) > 1:
-                    reference_file = previous_files[1]  # Use second most recent file as reference
-                    fixed_file = self.validator.fix_truncation(
-                        self.base_path / f"{filename}.md",
-                        reference_file
-                    )
+                if previous_files:
+                    reference_file = previous_files[0]
+                    ref_validation = self.validator.validate_file(reference_file)
                     
-                    if fixed_file:
-                        logging.info("Created fixed version of truncated export")
+                    if ref_validation['complete'] and ref_validation['word_count'] >= 300:
+                        fixed_file = self.validator.fix_truncation(current_file, reference_file)
+                        if fixed_file:
+                            logging.info("Created fixed version of truncated export")
+                        else:
+                            logging.error("Failed to fix truncated export")
                     else:
-                        logging.error("Failed to fix truncated export")
-                        
+                        logging.warning("No valid reference file found for fixing")
+                else:
+                    logging.warning("No previous files found for reference")
+            
             logging.info("Synchronization successfully completed!")
             return True
             

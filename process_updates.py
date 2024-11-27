@@ -38,35 +38,47 @@ class OllamaProcessor:
         
         for attempt in range(retries):
             try:
-                prompt = f"""Als KI-Assistent optimierst du einen Dashboard-Abschnitt.
-Hier ist der aktuelle Inhalt des {section_name}-Abschnitts:
+                prompt = f"""Du bist ein KI-Assistent, der einen Dashboard-Abschnitt für {section_name} optimiert.
+Hier ist der aktuelle Inhalt:
 
 {content}
 
-Formatiere den Inhalt EXAKT nach diesem Schema, behalte dabei den bestehenden Inhalt bei:
+Formatiere den Inhalt EXAKT nach diesem Schema:
 
 # {section_name}
 
 ### Übersicht & Status
 | Bereich | Status | Priorität | Nächste Aktion |
 | --- | --- | --- | --- |
-[Bestehende Tabelle beibehalten]
+[Bestehende Tabelle mit Emojis für Status: ✅ ⚠️ ❌]
 
 ### Aktuelle Situation
-[Bestehende Punkte beibehalten]
+- Maximal 3 wichtigste Kernpunkte
+- Fokus auf aktuelle Herausforderungen
+- Klare, actionable Aussagen
 
 ### Nächste Schritte
-[Bestehende Schritte beibehalten]
+1. [Konkrete Aktion] bis [Datum]
+2. [Konkrete Aktion] bis [Datum]
+3. [Konkrete Aktion] bis [Datum]
 
 ### Tracking & Notizen
-[Bestehende Notizen beibehalten]
+- Messbare Erfolge/KPIs
+- Blockaden & Lösungen
+- Wichtige Erkenntnisse
 
-Wichtige Regeln:
-1. Keine Abschnitte duplizieren
-2. Exakte Reihenfolge der Überschriften einhalten
-3. Bestehenden Inhalt nicht verändern
-4. Keine zusätzlichen Kommentare oder Platzhalter
-5. Keine leeren Überschriften
+Spezielle Regeln für {section_name}:
+- Gesundheit: Laborwerte und Medikation priorisieren
+- Business: Fokus auf konkrete Projekte und Deadlines
+- Beziehung: Klare Grenzen und Kommunikationsziele
+- ARCHIV: Nur relevante Hintergrundinformationen
+
+Wichtig:
+1. Behalte alle wichtigen Informationen bei
+2. Nutze klare, actionable Formulierungen
+3. Setze konkrete Termine
+4. Priorisiere nach Dringlichkeit
+5. Behalte medizinische Details bei
 
 Gib NUR den formatierten Inhalt zurück."""
 
@@ -79,7 +91,7 @@ Gib NUR den formatierten Inhalt zurück."""
                         "prompt": prompt,
                         "stream": False,
                         "options": {
-                            "temperature": 0.3,  # Reduziert für konsistentere Ergebnisse
+                            "temperature": 0.3,
                             "top_p": 0.9,
                             "timeout": 30
                         }
