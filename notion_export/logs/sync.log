@@ -937,3 +937,24 @@
 2024-11-28 00:03:13,539 - INFO - Archived old file: master_dashboard_20241127_233834_fixed.md
 2024-11-28 00:03:13,540 - INFO - Saved: notion_export\master_dashboard_20241128_000313.md
 2024-11-28 00:03:13,548 - INFO - Synchronization successfully completed!
+2024-11-28 00:05:27,063 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-28 00:05:27,298 - INFO - Starting synchronization...
+2024-11-28 00:05:28,282 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-28 00:05:29,300 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
+2024-11-28 00:05:30,767 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
+2024-11-28 00:05:32,283 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
+2024-11-28 00:05:35,392 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-811e-868f-e9562814e783&page_size=50 "HTTP/1.1 200 OK"
+2024-11-28 00:05:36,774 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-816a-b499-debafad49b67&page_size=50 "HTTP/1.1 200 OK"
+2024-11-28 00:05:37,612 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:38,054 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:38,337 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:38,767 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:39,094 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:39,390 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817a-b53f-c05ed2266812/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:40,046 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817c-942b-c33e97f37d9c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:40,391 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-8897-e36ac4542318/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:40,692 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81c4-b28b-f1ba5fc51a3d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:41,009 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-8f62-f84e2ba5f2d1/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-28 00:05:41,011 - INFO - Archived old file: master_dashboard_20241127_234057.md
+2024-11-28 00:05:41,012 - INFO - Saved: notion_export\master_dashboard_20241128_000541.md
+2024-11-28 00:05:41,018 - INFO - Synchronization successfully completed!
