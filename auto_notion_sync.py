@@ -1,14 +1,16 @@
-import os
-from notion_client import Client
-from datetime import datetime
-from pathlib import Path
+from datetime import datetime, timedelta
 import logging
+import os
 import random
-import time
 import re
+import time
 from logging.handlers import RotatingFileHandler
+from pathlib import Path
+from typing import List
+import json
+
 from dotenv import load_dotenv
-from markdown2 import markdown
+from notion_client import Client
 
 class DashboardValidator:
     def __init__(self):
@@ -124,7 +126,9 @@ class NotionSync:
         self.validator = DashboardValidator()
         self.max_retries = 3
         self.page_size = 250
-
+        self.updates_path = self.base_path / "updates"
+        self.updates_path.mkdir(exist_ok=True)
+        
     def _process_rich_text(self, rich_text_list):
         """Processes rich text array and combines all text content"""
         if not rich_text_list:
@@ -312,52 +316,202 @@ class NotionSync:
             
             # Get all rows with pagination
             while has_more:
-                response = self._retry_request(
-                    lambda: self.notion.blocks.children.list(
-                        block_id=table_id,
-                        page_size=self.page_size,
-                        start_cursor=start_cursor
+                try:
+                    response = self._retry_request(
+                        lambda: self.notion.blocks.children.list(
+                            block_id=table_id,
+                            page_size=self.page_size,
+                            start_cursor=start_cursor
+                        )
                     )
-                )
-                
-                all_rows.extend(response['results'])
-                has_more = response.get('has_more', False)
-                start_cursor = response.get('next_cursor')
-                logging.info(f"Table processing: Got {len(response['results'])} rows, has_more: {has_more}")
-                
+                    
+                    if not response.get('results'):
+                        logging.warning(f"No results returned for table {table_id}")
+                        break
+                        
+                    all_rows.extend(response['results'])
+                    has_more = response.get('has_more', False)
+                    start_cursor = response.get('next_cursor')
+                    
+                except Exception as e:
+                    logging.error(f"Error fetching table rows: {str(e)}")
+                    break
+            
             if not all_rows:
+                logging.warning(f"No rows found for table {table_id}")
                 return ""
             
-            logging.info(f"Processing table with {len(all_rows)} total rows")
-            
+            # Process table rows
             markdown_table = []
+            
+            # Safely get header row
+            header_row = all_rows[0].get('table_row', {}).get('cells', [])
+            if not header_row:
+                logging.warning(f"No header row found for table {table_id}")
+                return ""
+            
             headers = []
+            for cell in header_row:
+                cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else ""
+                headers.append(cell_text or " ")  # Use space for empty cells
             
-            # Process header with full rich text
-            for cell in all_rows[0]['table_row']['cells']:
-                cell_text = "".join(t['plain_text'] for t in cell) if cell else ""
-                headers.append(cell_text)
-            
-            # Create Markdown table header
             markdown_table.append("| " + " | ".join(headers) + " |")
             markdown_table.append("| " + " | ".join(["---"] * len(headers)) + " |")
             
-            # Process data rows with full rich text
-            row_count = 0
+            # Process data rows
             for row in all_rows[1:]:
                 cells = []
-                for cell in row['table_row']['cells']:
-                    cell_text = "".join(t['plain_text'] for t in cell) if cell else ""
-                    cells.append(cell_text)
-                markdown_table.append("| " + " | ".join(cells) + " |")
-                row_count += 1
+                row_cells = row.get('table_row', {}).get('cells', [])
                 
-            logging.info(f"Table processing complete: {row_count} data rows processed")
+                for cell in row_cells:
+                    cell_text = "".join(t.get('plain_text', '') for t in cell) if cell else ""
+                    cells.append(cell_text or " ")  # Use space for empty cells
+                    
+                # Ensure all rows have same number of columns as header
+                while len(cells) < len(headers):
+                    cells.append(" ")
+                    
+                markdown_table.append("| " + " | ".join(cells) + " |")
+            
             return "\n".join(markdown_table) + "\n\n"
             
         except Exception as e:
-            logging.error(f"Error processing table: {str(e)}")
-            return ""        
+            logging.error(f"Error processing table {table_id}: {str(e)}")
+            return ""
+
+    def find_recent_updates(self):
+        """Finds updates by comparing the latest two dashboard files"""
+        try:
+            dashboard_files = sorted(
+                list(self.base_path.glob("master_dashboard_*.md")),
+                key=lambda x: x.stat().st_mtime,
+                reverse=True
+            )
+            
+            if len(dashboard_files) < 2:
+                logging.info("Not enough dashboard files to compare")
+                return None
+                
+            current = dashboard_files[0].read_text(encoding='utf-8')
+            previous = dashboard_files[1].read_text(encoding='utf-8')
+            
+            # Find new content by comparing files
+            current_sections = self._split_into_sections(current)
+            previous_sections = self._split_into_sections(previous)
+            
+            updates = []
+            for section, content in current_sections.items():
+                if section not in previous_sections or content != previous_sections[section]:
+                    # Find new lines in this section
+                    new_lines = self._find_new_lines(
+                        previous_sections.get(section, ""),
+                        content
+                    )
+                    if new_lines:
+                        logging.info(f"Found new content in section {section}:")
+                        for line in new_lines:
+                            logging.info(f"  {line}")
+                        updates.append({
+                            "section": section,
+                            "new_content": new_lines
+                        })
+            
+            if not updates:
+                logging.info("No differences found between current and previous versions")
+            
+            return updates
+            
+        except Exception as e:
+            logging.error(f"Error finding updates: {str(e)}")
+            return None
+
+    def _split_into_sections(self, content):
+        """Splits dashboard content into sections"""
+        sections = {}
+        current_section = None
+        current_content = []
+        
+        for line in content.split('\n'):
+            if line.startswith('# '):
+                if current_section:
+                    sections[current_section] = '\n'.join(current_content)
+                current_section = line[2:].strip()
+                current_content = []
+            elif current_section:
+                current_content.append(line)
+                
+        if current_section:
+            sections[current_section] = '\n'.join(current_content)
+            
+        return sections
+
+    def _find_new_lines(self, old_content, new_content):
+        """Finds new lines in new_content that aren't in old_content"""
+        old_lines = set(old_content.split('\n'))
+        new_lines = new_content.split('\n')
+        return [line for line in new_lines if line and line not in old_lines]
+
+    def save_updates_for_llm(self, updates):
+        """Saves updates to a JSON file for LLM processing"""
+        if not updates:
+            return None
+            
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        update_file = self.updates_path / f"updates_{timestamp}.json"
+        
+        with open(update_file, 'w', encoding='utf-8') as f:
+            json.dump(updates, f, indent=2)
+            
+        return update_file
+
+    def update_notion_content(self, page_id, section_name, new_content):
+        """Updates a specific section in Notion"""
+        try:
+            logging.info(f"Attempting to update section '{section_name}' with content:")
+            logging.info(new_content)
+            
+            # First find the section block
+            blocks = self._retry_request(
+                lambda: self.notion.blocks.children.list(page_id)
+            )
+            
+            section_block = None
+            for block in blocks['results']:
+                if (block['type'] == 'heading_1' and 
+                    self._process_rich_text(block['heading_1']['rich_text']) == section_name):
+                    section_block = block
+                    break
+            
+            if not section_block:
+                logging.error(f"Section {section_name} not found")
+                return False
+            
+            logging.info(f"Found section block: {section_block['id']}")
+            
+            # Add new content as a new block after the section
+            response = self._retry_request(
+                lambda: self.notion.blocks.children.append(
+                    block_id=page_id,  # Add to page instead of section
+                    children=[{
+                        "object": "block",
+                        "type": "paragraph",
+                        "paragraph": {
+                            "rich_text": [{
+                                "type": "text",
+                                "text": {"content": new_content}
+                            }]
+                        }
+                    }]
+                )
+            )
+            
+            logging.info(f"Notion API response: {json.dumps(response, indent=2)}")
+            return True
+            
+        except Exception as e:
+            logging.error(f"Error updating Notion content: {str(e)}")
+            return False
+
     def sync_dashboard(self, dashboard_id):
         """Synchronizes the entire dashboard"""
         logging.info("Starting synchronization...")

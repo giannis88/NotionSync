@@ -1,0 +1,39 @@
+[
+  {
+    "section": "Business",
+    "new_content": [
+      "test 123355"
+    ]
+  },
+  {
+    "section": "ARCHIV",
+    "new_content": [
+      "### AI Analysis (2024-11-27 16:13)",
+      "Error processing note: Message: ",
+      "Stacktrace:",
+      "\tGetHandleVerifier [0x00007FF6415A6CB5+28821]",
+      "\t(No symbol) [0x00007FF641513840]",
+      "\t(No symbol) [0x00007FF6413B578A]",
+      "\t(No symbol) [0x00007FF6414091BE]",
+      "\t(No symbol) [0x00007FF6414094AC]",
+      "\t(No symbol) [0x00007FF641452647]",
+      "\t(No symbol) [0x00007FF64142F33F]",
+      "\t(No symbol) [0x00007FF64144F412]",
+      "\t(No symbol) [0x00007FF64142F0A3]",
+      "\t(No symbol) [0x00007FF6413FA778]",
+      "\t(No symbol) [0x00007FF6413FB8E1]",
+      "\tGetHandleVerifier [0x00007FF6418DFCAD+3408013]",
+      "\tGetHandleVerifier [0x00007FF6418F741F+3504127]",
+      "\tGetHandleVerifier [0x00007FF6418EB5FD+3455453]",
+      "\tGetHandleVerifier [0x00007FF64166BDBB+835995]",
+      "\t(No symbol) [0x00007FF64151EB5F]",
+      "\t(No symbol) [0x00007FF64151A814]",
+      "\t(No symbol) [0x00007FF64151A9AD]",
+      "\t(No symbol) [0x00007FF64150A199]",
+      "\tBaseThreadInitThunk [0x00007FF96382E8D7+23]",
+      "\tRtlUserThreadStart [0x00007FF964B7FBCC+44]",
+      "### Original Note",
+      "test 1233"
+    ]
+  }
+]

@@ -157,20 +157,20 @@ Vorbereitungscheckliste:
 | Zeitpunkt | Aufgabe | Status |
 | --- | --- | --- |
 | Morgens | Medikamente 10:00 | ✅ |
-|  | Energie-Level (1-10) | ⬜ |
-|  | Schmerzlevel (1-10) | ⬜ |
-|  | Wundversorgung + Foto | ✅ |
-|  | Wasseraufnahme | ⬜ |
+|   | Energie-Level (1-10) | ⬜ |
+|   | Schmerzlevel (1-10) | ⬜ |
+|   | Wundversorgung + Foto | ✅ |
+|   | Wasseraufnahme | ⬜ |
 | Mittags | Energie-Level (1-10) | ⬜ |
-|  | Aktivitätslevel | ⬜ |
-|  | Wasseraufnahme | ⬜ |
-|  | Stuhlgang | ⬜ |
+|   | Aktivitätslevel | ⬜ |
+|   | Wasseraufnahme | ⬜ |
+|   | Stuhlgang | ⬜ |
 | Abends | Medikamente 16:00 | ✅ |
-|  | Energie-Level (1-10) | ⬜ |
-|  | Heilungsfortschritt | ✅ |
-|  | Wasseraufnahme | ⬜ |
-|  | Wohlbefinden | ⬜ |
-|  | Schlafqualität (1-10) | ⬜ |
+|   | Energie-Level (1-10) | ⬜ |
+|   | Heilungsfortschritt | ✅ |
+|   | Wasseraufnahme | ⬜ |
+|   | Wohlbefinden | ⬜ |
+|   | Schlafqualität (1-10) | ⬜ |
 
 
 ## Tagesaufgaben (27.11.2024)
@@ -272,6 +272,11 @@ Tools:
 - AnyDesk Setup einrichten
 
 - Wireless Display konfigurieren
+
+- Cursor mit Comoser, probiere ich gerade aus.
+
+- windsurf sieht interesant aus, vielleicht besser als cursor mit composer?
+test 123355
 
 ## Automatisierung
 
@@ -393,4 +398,35 @@ Eine wiederkehrende Herausforderung in der Beziehung ist Ayses Eifersucht. Sie �
 Trotz der Herausforderungen gibt es viele Momente, in denen Ioannis Ayses Zuneigung und Engagement spürt. Sie hat ihm in schwierigen Zeiten Unterstützung gezeigt und betont oft ihre Liebe zu ihm. An gemeinsamen Tagen, wenn sie zusammen kochen, Filme schauen oder Zeit miteinander verbringen, ist ihre Verbindung spürbar stark.
 
 
+
+
+
+### AI Analysis (2024-11-27 16:13)
+Error processing note: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6415A6CB5+28821]
+	(No symbol) [0x00007FF641513840]
+	(No symbol) [0x00007FF6413B578A]
+	(No symbol) [0x00007FF6414091BE]
+	(No symbol) [0x00007FF6414094AC]
+	(No symbol) [0x00007FF641452647]
+	(No symbol) [0x00007FF64142F33F]
+	(No symbol) [0x00007FF64144F412]
+	(No symbol) [0x00007FF64142F0A3]
+	(No symbol) [0x00007FF6413FA778]
+	(No symbol) [0x00007FF6413FB8E1]
+	GetHandleVerifier [0x00007FF6418DFCAD+3408013]
+	GetHandleVerifier [0x00007FF6418F741F+3504127]
+	GetHandleVerifier [0x00007FF6418EB5FD+3455453]
+	GetHandleVerifier [0x00007FF64166BDBB+835995]
+	(No symbol) [0x00007FF64151EB5F]
+	(No symbol) [0x00007FF64151A814]
+	(No symbol) [0x00007FF64151A9AD]
+	(No symbol) [0x00007FF64150A199]
+	BaseThreadInitThunk [0x00007FF96382E8D7+23]
+	RtlUserThreadStart [0x00007FF964B7FBCC+44]
+
+
+### Original Note
+test 1233
 

@@ -2,10 +2,10 @@
 
 | Bereich | Status | Priorität | Nächste Aktion |
 | --- | --- | --- | --- |
-| Gesundheit | ⚠️ Monitoring | Hoch | Laborwerte nachverfolgen |
-| Therapie | 🔄 In Bearbeitung | Hoch | Therapeuten kontaktieren |
-| Business | 📊 Planung | Mittel | YouTube Setup |
-| Beziehung | 💭 Reflexion | Hoch | Grenzen definieren |
+| Gesundheit | ⚠️ Monitoring | Hoch | Laborwerte nachverfolgen, Wundheilung beobachten |
+| Therapie | 🔄 In Bearbeitung | Hoch | Therapeuten kontaktieren, Ayse unterstützen |
+| Business | 📊 Planung | Mittel | YouTube Setup, Notion-Projekt vorantreiben |
+| Beziehung | 💭 Reflexion | Hoch | Regeln definieren, Kommunikation verbessern |
 
 
 # Gesundheit
@@ -40,6 +40,15 @@ Blutbild-Interpretation:
 
 - Leber-, Nieren- und Elektrolytwerte optimal
 
+Proktologe (27.11.2024):
+
+
+- Wundheilung verläuft gut
+
+- Weiterhin wie bisher pflegen
+
+- Nächster Termin: 27.01.2025, 08:55 Uhr bei Kai Kunstreich
+
 Optimierungsstrategie:
 
 
@@ -56,19 +65,19 @@ Optimierungsstrategie:
 
 ☐ Eisensupplementierung besprechen
 
-☐ Ery-Werte bei nächster Kontrolle überwachen
+☐ Ery-Werte bei nächster Kontrolle überwachen (27.01.2025)
 
-☐ Energie-Level-Tracking einführen (3x täglich)
+✓ Energie-Level-Tracking einführen (3x täglich)
 
-☐ Wundheilung dokumentieren mit Fotos
+✓ Wundheilung dokumentieren mit Fotos (Proktologe: gut)
 
-☐ Hydration-Tracking implementieren
+✓ Hydration-Tracking implementieren
 
 ☐ Intervallfasten-Plan erstellen
 
 ☐ Magenspiegelung planen
 
-☐ Knoten in Oberlippe dokumentieren
+✓ Knoten in Oberlippe dokumentieren (nächster Termin ansprechen)
 
 ☐ Ernährung optimieren
 
@@ -97,13 +106,13 @@ Bei Bedarf:
 ## Termine & Vorbereitung
 
 
-Nächster Termin: 27.11.2024
+Nächster Termin: 27.01.2025, 08:55 Uhr (Proktologe, Kai Kunstreich)
 
 
 Checkliste für Termin:
 
 
-☐ Wundheilungsverlauf dokumentieren
+✓ Wundheilungsverlauf dokumentieren (Proktologe: gut)
 
 ☐ Aktivitätsfreigaben besprechen
 
@@ -121,6 +130,8 @@ Checkliste für Termin:
 
 ☐ Sodbrennen-Problematik besprechen
 
+☐ Knoten in Oberlippe ansprechen
+
 Vorbereitungscheckliste:
 
 
@@ -134,52 +145,64 @@ Vorbereitungscheckliste:
 
 ☐ Diagnoseübersicht
 
-☐ Energie-Level-Protokoll
+✓ Energie-Level-Protokoll
 
-☐ Wundheilungsfotos
+✓ Wundheilungsfotos
 
-☐ Hydrationstracking-Daten
+✓ Hydrationstracking-Daten
 
-## Tagestracking
+## Tagestracking (27.11.2024)
 
 
 | Zeitpunkt | Aufgabe | Status |
 | --- | --- | --- |
-| Morgens | Medikamente 10:00 | ⬜ |
-|  | Energie-Level (1-10) | ⬜ |
-|  | Schmerzlevel (1-10) | ⬜ |
-|  | Wundversorgung + Foto | ⬜ |
-|  | Wasseraufnahme | ⬜ |
+| Morgens | Medikamente 10:00 | ✅ |
+|   | Energie-Level (1-10) | ⬜ |
+|   | Schmerzlevel (1-10) | ⬜ |
+|   | Wundversorgung + Foto | ✅ |
+|   | Wasseraufnahme | ⬜ |
 | Mittags | Energie-Level (1-10) | ⬜ |
-|  | Aktivitätslevel | ⬜ |
-|  | Wasseraufnahme | ⬜ |
-|  | Stuhlgang | ⬜ |
-| Abends | Medikamente 16:00 | ⬜ |
-|  | Energie-Level (1-10) | ⬜ |
-|  | Heilungsfortschritt | ⬜ |
-|  | Wasseraufnahme | ⬜ |
-|  | Wohlbefinden | ⬜ |
-|  | Schlafqualität (1-10) | ⬜ |
+|   | Aktivitätslevel | ⬜ |
+|   | Wasseraufnahme | ⬜ |
+|   | Stuhlgang | ⬜ |
+| Abends | Medikamente 16:00 | ✅ |
+|   | Energie-Level (1-10) | ⬜ |
+|   | Heilungsfortschritt | ✅ |
+|   | Wasseraufnahme | ⬜ |
+|   | Wohlbefinden | ⬜ |
+|   | Schlafqualität (1-10) | ⬜ |
 
 
-## Tagesaufgaben
+## Tagesaufgaben (27.11.2024)
 
 
-☐ Medikamente (10:00)
+✓ Medikamente (10:00)
+
 ☐ Meditation (10 min)
-☐ Leichte Bewegung angepasst an Energie
-☐ Gesundes Frühstück
-☐ Tagesplanung
-☐ Wasseraufnahme tracken
-☐ Medikamente (16:00)
-☐ Wundversorgung
-☐ Hauptaktivitäten
-☐ Gesundheits-Check
-☐ Tagesreflexion
-☐ Erfolge notieren
-☐ Nächster Tag planen
-☐ Gesundheit: __/10
 
+☐ Leichte Bewegung angepasst an Energie
+
+☐ Gesundes Frühstück
+
+☐ Tagesplanung
+
+✓ Wasseraufnahme tracken
+
+✓ Medikamente (16:00)
+
+✓ Wundversorgung (Proktologe: gut)
+
+✓ Hauptaktivitäten (Notion Dashboard, Synchronisation)
+
+☐ Gesundheits-Check
+
+☐ Tagesreflexion
+
+☐ Erfolge notieren
+
+☐ Nächster Tag planen
+
+☐ Gesundheit: \\/10
 
 ## Wissensbasis
 
@@ -210,6 +233,7 @@ Vorbereitungscheckliste:
 | Jörg Bublitz | ✅ Aktiv | - | Anrufen |
 | Maike Lindken | ⏸️ Warteliste | 1.32 km | Frühling 2025 |
 | S. Bohnhof-Jegminat | ❌ Geschlossen | - | - |
+| Kai Kunstreich (Proktologe) | ✅ Aktiv | - | Nächster Termin: 27.01.25, 08:55 Uhr |
 
 
 ## Projekte Status
@@ -252,13 +276,15 @@ Tools:
 ## Automatisierung
 
 
-☐ Workflow testen
+✓ Workflow testen
 
 ☐ Prozesse dokumentieren
 
 ☐ Optimierungen identifizieren
 
-☐ test 123
+✓ test 123 (gelöscht da unnötig)
+
+✓ Notion Dashboard & Synchronisation bearbeitet
 
 # Langfristige Projekte & Geschäftsentwicklung
 
@@ -269,7 +295,7 @@ Tools:
 
 - Tech-Projekte vorantreiben
 
-- Monteurzimmer.de
+- Monteurzimmer.de Vermietung
 
 - Ausgaben optimieren
 
@@ -287,7 +313,9 @@ Tools:
 
 - Klare Grenzen etablieren
 
-- test 123
+- Ayse möchte Beziehung wieder aufnehmen, hat Einsicht gezeigt (nüchtern)
+
+- Ayse hat mich 30x angerufen (nicht rangegangen, bis sie nüchtern war)
 
 ## Entwicklungen
 
@@ -298,7 +326,29 @@ Tools:
 
 - Beziehungsqualität verbessern
 
+- Regeln für die Beziehung werden von Ayse eingefordert
+
+## Aktionspunkte Beziehung
+
+
+✓ Kommunikation nur im nüchternen Zustand
+
+☐ Liste mit Regeln von Ayse anfordern und prüfen
+
+☐ Gemeinsame Therapie oder Beratung in Erwägung ziehen
+
+☐ Klare Erwartungen und Grenzen definieren und kommunizieren
+
+☐ Konsequenzen bei Nichteinhaltung der Regeln festlegen
+
+☐ Positive gemeinsame Aktivitäten planen (nüchtern)
+
+☐ Zeit für Selbstreflexion und Selbstfürsorge einplanen
+
 # ARCHIV
+
+
+Hinweis: Der Archiv-Teil bleibt unverändert, da die grundlegenden Informationen zur Beziehung und den Herausforderungen weiterhin relevant sind.
 
 
 Ioannis befindet sich in einer komplexen und dynamischen Lebensphase, in der verschiedene Aspekte seines Lebens—darunter berufliche Ziele, gesundheitliche Herausforderungen und zwischenmenschliche Beziehungen—gleichzeitig Einfluss nehmen. Seine Beziehung zu Ayse ist geprägt von intensiven Emotionen, gegenseitiger Zuneigung und wiederkehrenden Konflikten, insbesondere durch Eifersucht und impulsives Verhalten.
@@ -325,7 +375,7 @@ Ioannis hat eine Leidenschaft für Technologie und Automatisierung. Er nutzt KI-
 Ein weiteres technisches Ziel ist die Einrichtung eines AnyDesk-Setups, mit dem Ioannis seinen Computer bequem vom Bett aus steuern kann. Auch die Nutzung des „Wireless Display”-Features steht auf seiner Liste, um die Arbeitsumgebung noch effizienter zu gestalten.
 
 
-Ioannis plant, seine aktuelle Wohnung über 
+Ioannis plant, seine aktuelle Wohnung über Monteurzimmer.de zu vermieten, nachdem ein Angebot von Paul und Alex nicht akzeptabel war. Die Wohnung wird voraussichtlich ab dem 20. November 2024 frei, und Ioannis arbeitet daran, eine transparente Abrechnung der bisherigen Einnahmen und Ausgaben zu erstellen, um die Verteilung der Ausstiegssumme zu klären.
 
 
 Ayse ist eine zentrale Person in Ioannis’ Leben, mit der er eine komplexe und intensive Beziehung führt. Sie hat eine schwierige Vergangenheit und bringt psychologische Herausforderungen mit, darunter Eifersucht, impulsives Verhalten und emotionale Unsicherheiten. Trotzdem zeigt sie auch die Bereitschaft, an sich zu arbeiten, und hat erste Schritte in Richtung Therapie unternommen.

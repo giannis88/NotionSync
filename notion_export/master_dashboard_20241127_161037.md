@@ -157,20 +157,20 @@ Vorbereitungscheckliste:
 | Zeitpunkt | Aufgabe | Status |
 | --- | --- | --- |
 | Morgens | Medikamente 10:00 | ✅ |
-|  | Energie-Level (1-10) | ⬜ |
-|  | Schmerzlevel (1-10) | ⬜ |
-|  | Wundversorgung + Foto | ✅ |
-|  | Wasseraufnahme | ⬜ |
+|   | Energie-Level (1-10) | ⬜ |
+|   | Schmerzlevel (1-10) | ⬜ |
+|   | Wundversorgung + Foto | ✅ |
+|   | Wasseraufnahme | ⬜ |
 | Mittags | Energie-Level (1-10) | ⬜ |
-|  | Aktivitätslevel | ⬜ |
-|  | Wasseraufnahme | ⬜ |
-|  | Stuhlgang | ⬜ |
+|   | Aktivitätslevel | ⬜ |
+|   | Wasseraufnahme | ⬜ |
+|   | Stuhlgang | ⬜ |
 | Abends | Medikamente 16:00 | ✅ |
-|  | Energie-Level (1-10) | ⬜ |
-|  | Heilungsfortschritt | ✅ |
-|  | Wasseraufnahme | ⬜ |
-|  | Wohlbefinden | ⬜ |
-|  | Schlafqualität (1-10) | ⬜ |
+|   | Energie-Level (1-10) | ⬜ |
+|   | Heilungsfortschritt | ✅ |
+|   | Wasseraufnahme | ⬜ |
+|   | Wohlbefinden | ⬜ |
+|   | Schlafqualität (1-10) | ⬜ |
 
 
 ## Tagesaufgaben (27.11.2024)
@@ -272,6 +272,11 @@ Tools:
 - AnyDesk Setup einrichten
 
 - Wireless Display konfigurieren
+
+- Cursor mit Comoser, probiere ich gerade aus.
+
+- windsurf sieht interesant aus, vielleicht besser als cursor mit composer?
+test 123
 
 ## Automatisierung
 
