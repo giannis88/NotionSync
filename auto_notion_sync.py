@@ -157,27 +157,22 @@ class NotionSync:
         
         if retry_count >= MAX_RETRIES:
             logging.error(f"Failed to get complete content after {MAX_RETRIES} attempts")
-            # Versuche zumindest teilweisen Content zu speichern
             return "# Master Dashboard\n\n> ⚠️ Warnung: Unvollständiger Export\n\n"
         
         if visited_pages is None:
             visited_pages = set()
-            
+        
         if page_id in visited_pages:
             logging.warning(f"Circular reference detected for page {page_id}")
             return ""
-            
+        
         visited_pages.add(page_id)
         
         try:
-            # Hole Seiteninformationen
             page = self._retry_request(
                 lambda: self.notion.pages.retrieve(page_id=page_id),
                 retries=5
             )
-            
-            # Debug-Logging für Seiteninhalt
-            logging.debug(f"Page info received: {page.get('properties', {})}")
             
             content = []
             if level == 0:
@@ -186,10 +181,10 @@ class NotionSync:
                 title = self._process_rich_text(page['properties']['title']['title'])
                 content.append(f"{'#' * (level + 1)} {title}\n")
             
-            # Hole alle Blöcke mit verbessertem Error Handling
+            # Hole alle Blöcke
             all_blocks = []
             start_cursor = None
-            page_size = 50  # Reduzierte Chunk-Größe
+            page_size = 50
             
             while True:
                 try:
@@ -204,13 +199,7 @@ class NotionSync:
                     
                     blocks = response.get('results', [])
                     if not blocks:
-                        logging.warning(f"No blocks received for page {page_id}")
                         break
-                    
-                    # Debug-Logging für Blöcke
-                    logging.debug(f"Received {len(blocks)} blocks")
-                    for block in blocks:
-                        logging.debug(f"Block type: {block.get('type')}")
                     
                     all_blocks.extend(blocks)
                     
@@ -218,41 +207,48 @@ class NotionSync:
                         break
                         
                     start_cursor = response.get('next_cursor')
-                    time.sleep(1)  # Längere Pause zwischen Requests
+                    time.sleep(1)
                     
                 except Exception as e:
                     logging.error(f"Error fetching blocks: {str(e)}")
                     break
             
-            # Verarbeite Blöcke mit Umlaut-Handling
+            # Verarbeite Blöcke
             for block in all_blocks:
                 try:
                     block_content = self._process_block(block, level, visited_pages)
                     if block_content:
-                        # Normalisiere Unicode-Zeichen
                         block_content = self._normalize_text(block_content)
                         content.append(block_content)
                 except Exception as e:
                     logging.error(f"Error processing block: {str(e)}")
                     continue
             
-            # Validiere den Content
-            full_content = "\n".join(content)
+            # Bereinige und validiere Content
+            full_content = self._clean_section_content('\n'.join(content))
             
             if level == 0:
+                sections = self._split_into_sections(full_content)
+                # Stelle sicher, dass die Reihenfolge korrekt ist
+                ordered_content = []
+                for section in self.validator.expected_sections:
+                    if section in sections:
+                        ordered_content.append(sections[section])
+                
+                full_content = '\n'.join(ordered_content)
+                
+                # Prüfe auf fehlende Abschnitte
                 missing_sections = []
-                for section in ["Gesundheit", "Business", "Beziehung", "ARCHIV"]:
-                    if section not in full_content:
+                for section in self.validator.expected_sections:
+                    if section not in sections:
                         missing_sections.append(section)
                 
                 if missing_sections:
-                    logging.error(f"Missing sections: {', '.join(missing_sections)}")
                     if retry_count < MAX_RETRIES:
                         logging.info(f"Retrying page fetch (attempt {retry_count + 1}/{MAX_RETRIES})...")
-                        time.sleep(3)  # Längere Wartezeit
+                        time.sleep(3)
                         return self.get_page_content(page_id, level, set(), retry_count + 1)
                     else:
-                        # Füge Warnung zum Content hinzu
                         warning = f"\n\n> ⚠️ Warnung: Fehlende Abschnitte: {', '.join(missing_sections)}\n\n"
                         full_content = full_content + warning
             
@@ -510,24 +506,56 @@ class NotionSync:
             return None
 
     def _split_into_sections(self, content):
-        """Splits dashboard content into sections"""
+        """Splits dashboard content into sections and removes duplicates"""
         sections = {}
         current_section = None
         current_content = []
+        seen_sections = set()
         
         for line in content.split('\n'):
             if line.startswith('# '):
-                if current_section:
-                    sections[current_section] = '\n'.join(current_content)
-                current_section = line[2:].strip()
-                current_content = []
-            elif current_section:
-                current_content.append(line)
+                section_name = line[2:].strip()
+                # Wenn wir diesen Abschnitt schon gesehen haben, überspringen wir ihn
+                if section_name in seen_sections:
+                    current_section = None
+                    continue
                 
+                if current_section:
+                    sections[current_section] = self._clean_section_content('\n'.join(current_content))
+                current_section = section_name
+                seen_sections.add(section_name)
+                current_content = [line]
+            else:
+                if current_section:
+                    current_content.append(line)
+        
         if current_section:
-            sections[current_section] = '\n'.join(current_content)
+            sections[current_section] = self._clean_section_content('\n'.join(current_content))
             
         return sections
+
+    def _clean_section_content(self, content):
+        """Bereinigt den Inhalt eines Abschnitts"""
+        # Entferne aufeinanderfolgende Leerzeilen
+        lines = content.split('\n')
+        cleaned_lines = []
+        last_line_empty = False
+        
+        for line in lines:
+            is_empty = not line.strip()
+            if is_empty and last_line_empty:
+                continue
+            cleaned_lines.append(line)
+            last_line_empty = is_empty
+        
+        # Entferne Leerzeilen am Ende
+        while cleaned_lines and not cleaned_lines[-1].strip():
+            cleaned_lines.pop()
+        
+        # Füge eine Leerzeile am Ende hinzu
+        cleaned_lines.append('')
+        
+        return '\n'.join(cleaned_lines)
 
     def _find_new_lines(self, old_content, new_content):
         """Finds new lines in new_content that aren't in old_content"""

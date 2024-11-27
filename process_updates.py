@@ -36,46 +36,39 @@ class OllamaProcessor:
             logging.warning(f"Empty content received for section: {section_name}")
             return content
         
-        """Optimiert einen bestimmten Abschnitt mit Retry-Logik"""
         for attempt in range(retries):
             try:
-                prompt = f"""Du bist ein KI-Assistent, der einen Dashboard-Abschnitt optimiert.
+                prompt = f"""Als KI-Assistent optimierst du einen Dashboard-Abschnitt.
 Hier ist der aktuelle Inhalt des {section_name}-Abschnitts:
 
 {content}
 
-Bitte formatiere den Inhalt nach diesem Schema:
+Formatiere den Inhalt EXAKT nach diesem Schema, behalte dabei den bestehenden Inhalt bei:
 
-# [Abschnittsname]
+# {section_name}
 
-## Übersicht & Status
+### Übersicht & Status
 | Bereich | Status | Priorität | Nächste Aktion |
 | --- | --- | --- | --- |
-| [Bereich] | [✅ ⚠️ ❌] | [H/M/L] | [Konkrete Aktion] |
+[Bestehende Tabelle beibehalten]
 
-## Aktuelle Situation
-- Maximal 3 Kernpunkte
-- Fokus auf das Wesentliche
-- Aktuelle Herausforderungen
+### Aktuelle Situation
+[Bestehende Punkte beibehalten]
 
-## Nächste Schritte
-1. [Konkrete Aktion] bis [Datum]
-2. [Konkrete Aktion] bis [Datum]
-3. [Konkrete Aktion] bis [Datum]
+### Nächste Schritte
+[Bestehende Schritte beibehalten]
 
-## Tracking & Notizen
-- Messbare Erfolge
-- Blockaden & Lösungen
-- Wichtige Erkenntnisse
+### Tracking & Notizen
+[Bestehende Notizen beibehalten]
 
-Wichtig:
-1. Kurz und prägnant
-2. Konkrete Aktionen
-3. Messbare Ziele
-4. Klare Prioritäten
-5. Aktuelle Infos
+Wichtige Regeln:
+1. Keine Abschnitte duplizieren
+2. Exakte Reihenfolge der Überschriften einhalten
+3. Bestehenden Inhalt nicht verändern
+4. Keine zusätzlichen Kommentare oder Platzhalter
+5. Keine leeren Überschriften
 
-Gib nur den formatierten Inhalt zurück, keine Meta-Kommentare."""
+Gib NUR den formatierten Inhalt zurück."""
 
                 logging.info(f"Optimiere Abschnitt: {section_name}")
                 
@@ -86,12 +79,12 @@ Gib nur den formatierten Inhalt zurück, keine Meta-Kommentare."""
                         "prompt": prompt,
                         "stream": False,
                         "options": {
-                            "temperature": 0.7,
+                            "temperature": 0.3,  # Reduziert für konsistentere Ergebnisse
                             "top_p": 0.9,
-                            "timeout": 30  # Timeout in Sekunden
+                            "timeout": 30
                         }
                     },
-                    timeout=35  # Request timeout
+                    timeout=35
                 )
                 
                 response.raise_for_status()
@@ -104,7 +97,7 @@ Gib nur den formatierten Inhalt zurück, keine Meta-Kommentare."""
                     logging.error(f"Failed to optimize section after {retries} attempts: {str(e)}")
                     return content
                 logging.warning(f"Attempt {attempt + 1} failed, retrying...")
-                time.sleep(2 ** attempt)  # Exponential backoff
+                time.sleep(2 ** attempt)
 
 def main():
     setup_logging()
