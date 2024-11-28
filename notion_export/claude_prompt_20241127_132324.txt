@@ -1,0 +1,50 @@
+Please analyze my current health dashboard data and provide insights:
+
+Current Health Metrics:
+| Wert | Aktuell | Normalbereich | Status |
+| --- | --- | --- | --- |
+| HB | 12.4 g/dl | 13.5-17.2 | ⚠️ Unter normal |
+| MCV | 68.8 fl | 80-99 | ⚠️ Unter normal |
+| MCH | 20.6 pg | 27-33.5 | ⚠️ Unter normal |
+| Ery | 6.0 c/pl | 4.3-5.8 | ⚠️ Über normal |
+| Leberwerte | Normal | - | ✅ |
+| Nierenwerte | Normal | - | ✅ |
+| Elektrolyte | Normal | - | ✅ |
+
+
+
+
+Current medications:
+| Uhrzeit | Medikament | Dosis | Status |
+| --- | --- | --- | --- |
+| 10:00 | Escitalopram | 20mg | ✅ |
+| 10:00 | Medikinet | 10mg | ✅ |
+| 16:00 | Medikinet | 10mg | ✅ |
+
+
+
+
+Daily Health Tasks:
+Tagesaufgaben:
+☐ Medikamente (10:00)
+☐ Meditation (10 min)
+☐ Leichte Bewegung
+☐ Gesundes Frühstück
+☐ Tagesplanung
+☐ Medikamente (16:00)
+☐ Wundversorgung
+☐ Hauptaktivitäten
+☐ Gesundheits-Check
+☐ Tagesreflexion
+☐ Erfolge notieren
+☐ Nächster Tag planen
+
+☐ Gesundheit: __/10
+
+
+Please provide:
+1. Analysis of blood values and their implications
+2. Recommendations for health optimization
+3. Suggestions for daily routine improvements
+4. Any concerning patterns or areas needing attention
+5. Specific questions I should ask at my next appointment

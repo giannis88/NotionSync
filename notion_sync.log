@@ -1,0 +1,57 @@
+[20241128_022957] Starting Notion Sync 
+[20241128_022957] Changed to directory: c:\Notion 
+[20241128_022957] Activating virtual environment 
+[20241128_022957] Running auto_notion_sync.py 
+[20241128_022957] Running process_updates.py 
+[20241128_022957] Cleaning up old log files 
+[20241128_022957] Successfully completed all operations 
+[20241128_023223] Starting Notion Sync 
+[20241128_023223] Changed to directory: c:\Notion 
+[20241128_023223] Activating virtual environment 
+[20241128_023223] Running auto_notion_sync.py 
+[20241128_023223] Running process_updates.py 
+[20241128_023223] Cleaning up old log files 
+[20241128_023223] Successfully completed all operations 
+[20241128_023413] Starting Notion Sync 
+[20241128_023413] Changed to directory: c:\Notion 
+[20241128_023413] Activating virtual environment 
+[20241128_023413] Running auto_notion_sync.py 
+[20241128_023413] Running process_updates.py 
+[20241128_023413] Cleaning up old log files 
+[20241128_023413] Successfully completed all operations 
+[20241128_023611] Starting Notion Sync 
+[20241128_023611] Changed to directory: c:\Notion 
+[20241128_023611] Activating virtual environment 
+[20241128_023611] Running auto_notion_sync.py 
+[20241128_023611] Running process_updates.py 
+[20241128_023611] Cleaning up old log files 
+[20241128_023611] Successfully completed all operations 
+[20241128_023924] Starting Notion Sync 
+[20241128_023924] Changed to directory: c:\Notion 
+[20241128_023924] Activating virtual environment 
+[20241128_023924] Running auto_notion_sync.py 
+[20241128_023924] Running process_updates.py 
+[20241128_023924] Cleaning up old log files 
+[20241128_023924] Successfully completed all operations 
+[20241128_024136] Starting Notion Sync 
+[20241128_024136] Changed to directory: c:\Notion 
+[20241128_024136] Activating virtual environment 
+[20241128_024136] Running auto_notion_sync.py 
+[20241128_024136] Running process_updates.py 
+[20241128_024136] Cleaning up old log files 
+[20241128_024136] Successfully completed all operations 
+[20241128_024329] Starting Notion Sync 
+[20241128_024329] Changed to directory: c:\Notion 
+[20241128_024329] Activating virtual environment 
+[20241128_024329] Running auto_notion_sync.py 
+[20241128_024329] Running process_updates.py 
+[20241128_024329] Cleaning up old log files 
+[20241128_024329] Successfully completed all operations 
+[20241128_025832] Starting Notion Sync 
+[20241128_025832] Changed to directory: c:\Notion 
+[20241128_025832] Checking notion-optimizer model 
+[20241128_025832] Activating virtual environment 
+[20241128_025832] Running auto_notion_sync.py 
+[20241128_025832] Running content optimization with LLM 
+[20241128_025832] Cleaning up old log files 
+[20241128_025832] Successfully completed all operations 

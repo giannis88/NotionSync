@@ -1,1159 +1,435 @@
-2024-11-27 18:33:20,489 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:33:20,728 - INFO - Starting synchronization...
-2024-11-27 18:33:21,202 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:33:21,481 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:33:21,482 - INFO - Saved: notion_export\master_dashboard_20241127_183321.md
-2024-11-27 18:33:21,487 - WARNING - File master_dashboard_20241127_183321.md seems unusually short (3 words)
-2024-11-27 18:33:21,488 - WARNING - Export appears incomplete!
-2024-11-27 18:33:21,488 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:33:21,488 - INFO - Synchronization successfully completed!
-2024-11-27 18:43:19,970 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:43:20,207 - INFO - Starting synchronization...
-2024-11-27 18:43:20,633 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:43:20,891 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:43:20,893 - INFO - Saved: notion_export\master_dashboard_20241127_184320.md
-2024-11-27 18:43:20,894 - WARNING - File master_dashboard_20241127_184320.md seems unusually short (3 words)
-2024-11-27 18:43:20,894 - WARNING - Export appears incomplete!
-2024-11-27 18:43:20,894 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:43:20,894 - INFO - Synchronization successfully completed!
-2024-11-27 18:44:10,420 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:44:10,652 - INFO - Starting synchronization...
-2024-11-27 18:44:11,027 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:44:11,340 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:44:11,341 - INFO - Saved: notion_export\master_dashboard_20241127_184411.md
-2024-11-27 18:44:11,343 - WARNING - File master_dashboard_20241127_184411.md seems unusually short (3 words)
-2024-11-27 18:44:11,343 - WARNING - Export appears incomplete!
-2024-11-27 18:44:11,343 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:44:11,344 - INFO - Created fixed file: master_dashboard_20241127_184411_fixed.md
-2024-11-27 18:44:11,344 - INFO - Created fixed version of truncated export
-2024-11-27 18:44:11,344 - INFO - Synchronization successfully completed!
-2024-11-27 18:44:11,831 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
-2024-11-27 18:44:11,831 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 18:44:26,108 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 18:44:26,108 - INFO - Attempting to update section 'Master Dashboard' with content:
-2024-11-27 18:44:27,727 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:44:27,727 - ERROR - Section Master Dashboard not found
-2024-11-27 18:44:27,727 - ERROR - Failed to update section: Master Dashboard
-2024-11-27 18:44:27,727 - ERROR - Failed to update any sections
-2024-11-27 18:45:43,382 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:45:43,615 - INFO - Starting synchronization...
-2024-11-27 18:45:44,028 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:45:45,296 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:45:45,502 - INFO - Saved: notion_export\master_dashboard_20241127_184545.md
-2024-11-27 18:45:45,507 - WARNING - ARCHIV section in master_dashboard_20241127_184545.md appears truncated
-2024-11-27 18:45:45,508 - WARNING - File master_dashboard_20241127_184545.md seems unusually short (19 words)
-2024-11-27 18:45:45,508 - WARNING - Export appears incomplete!
-2024-11-27 18:45:45,508 - WARNING - Missing sections: ARCHIV (truncated)
-2024-11-27 18:45:45,509 - INFO - Created fixed file: master_dashboard_20241127_184545_fixed.md
-2024-11-27 18:45:45,509 - INFO - Created fixed version of truncated export
-2024-11-27 18:45:45,510 - INFO - Synchronization successfully completed!
-2024-11-27 18:45:46,035 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
-2024-11-27 18:45:46,035 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 18:45:49,012 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 18:45:49,012 - INFO - Attempting to update section 'Master Dashboard' with content:
-2024-11-27 18:45:49,012 - INFO - # Master Dashboard
-
-
-(Platzhaltertext)
-2024-11-27 18:45:49,807 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:45:49,808 - INFO - Found section block: 14be4a7d-76a4-8058-9c9c-dc1e204478c6
-2024-11-27 18:45:50,612 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80db-a138-eb1156d81827 "HTTP/1.1 200 OK"
-2024-11-27 18:45:50,612 - INFO - Archived block 14be4a7d-76a4-80db-a138-eb1156d81827
-2024-11-27 18:45:53,763 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:45:53,765 - INFO - Added 1 new blocks
-2024-11-27 18:45:53,765 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 18:45:53,765 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-27 18:46:11,380 - INFO - Successfully optimized section: Gesundheit
-2024-11-27 18:46:11,381 - INFO - Attempting to update section 'Gesundheit' with content:
-2024-11-27 18:46:11,851 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:46:11,852 - INFO - Found section block: 14be4a7d-76a4-8072-93fe-fa6885eb0511
-2024-11-27 18:46:12,692 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-803d-8db4-c94b0c340068 "HTTP/1.1 200 OK"
-2024-11-27 18:46:12,693 - INFO - Archived block 14be4a7d-76a4-803d-8db4-c94b0c340068
-2024-11-27 18:46:13,801 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:46:13,802 - INFO - Added 24 new blocks
-2024-11-27 18:46:13,802 - INFO - Successfully updated section: Gesundheit
-2024-11-27 18:46:13,802 - INFO - Optimiere Abschnitt: Business
-2024-11-27 18:46:24,846 - INFO - Successfully optimized section: Business
-2024-11-27 18:46:24,847 - INFO - Attempting to update section 'Business' with content:
-2024-11-27 18:46:25,428 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:46:25,429 - INFO - Found section block: 14be4a7d-76a4-803a-be99-f179e283f2ec
-2024-11-27 18:46:26,727 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8014-867d-d99a7a952d53 "HTTP/1.1 200 OK"
-2024-11-27 18:46:26,728 - INFO - Archived block 14be4a7d-76a4-8014-867d-d99a7a952d53
-2024-11-27 18:46:28,853 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:46:28,858 - INFO - Added 16 new blocks
-2024-11-27 18:46:28,858 - INFO - Successfully updated section: Business
-2024-11-27 18:46:28,858 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-27 18:46:39,313 - INFO - Successfully optimized section: Beziehung
-2024-11-27 18:46:39,314 - INFO - Attempting to update section 'Beziehung' with content:
-2024-11-27 18:46:40,084 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:46:40,085 - INFO - Found section block: 14be4a7d-76a4-8086-9c74-fa5456f499aa
-2024-11-27 18:46:40,778 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8036-aa1b-deccc063056f "HTTP/1.1 200 OK"
-2024-11-27 18:46:40,778 - INFO - Archived block 14be4a7d-76a4-8036-aa1b-deccc063056f
-2024-11-27 18:46:42,045 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:46:42,046 - INFO - Added 16 new blocks
-2024-11-27 18:46:42,047 - INFO - Successfully updated section: Beziehung
-2024-11-27 18:46:42,047 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-27 18:46:54,915 - INFO - Successfully optimized section: ARCHIV
-2024-11-27 18:46:54,916 - INFO - Attempting to update section 'ARCHIV' with content:
-2024-11-27 18:47:04,666 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:47:04,717 - INFO - Found section block: 14be4a7d-76a4-802b-bb77-e52dc5fe9505
-2024-11-27 18:47:06,220 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-809f-9945-fa68d749ce43 "HTTP/1.1 200 OK"
-2024-11-27 18:47:06,221 - INFO - Archived block 14be4a7d-76a4-809f-9945-fa68d749ce43
-2024-11-27 18:47:07,268 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ae-8848-dbfcf9be7628 "HTTP/1.1 200 OK"
-2024-11-27 18:47:07,268 - INFO - Archived block 14be4a7d-76a4-80ae-8848-dbfcf9be7628
-2024-11-27 18:47:11,254 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81d2-bffe-c4080213ef13 "HTTP/1.1 200 OK"
-2024-11-27 18:47:11,255 - INFO - Archived block 14be4a7d-76a4-81d2-bffe-c4080213ef13
-2024-11-27 18:47:12,200 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-a7ac-ea766407305f "HTTP/1.1 200 OK"
-2024-11-27 18:47:12,200 - INFO - Archived block 14be4a7d-76a4-815c-a7ac-ea766407305f
-2024-11-27 18:47:12,745 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-819b-869e-e940358795e3 "HTTP/1.1 200 OK"
-2024-11-27 18:47:12,745 - INFO - Archived block 14be4a7d-76a4-819b-869e-e940358795e3
-2024-11-27 18:47:14,203 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8131-9bd1-c5972964410c "HTTP/1.1 200 OK"
-2024-11-27 18:47:14,204 - INFO - Archived block 14be4a7d-76a4-8131-9bd1-c5972964410c
-2024-11-27 18:47:15,653 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8123-9aec-e5948a167363 "HTTP/1.1 200 OK"
-2024-11-27 18:47:15,654 - INFO - Archived block 14be4a7d-76a4-8123-9aec-e5948a167363
-2024-11-27 18:47:16,224 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8185-8b23-cade1a1b458a "HTTP/1.1 200 OK"
-2024-11-27 18:47:16,224 - INFO - Archived block 14be4a7d-76a4-8185-8b23-cade1a1b458a
-2024-11-27 18:47:16,702 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81f7-9284-c49332b823d9 "HTTP/1.1 200 OK"
-2024-11-27 18:47:16,703 - INFO - Archived block 14be4a7d-76a4-81f7-9284-c49332b823d9
-2024-11-27 18:47:17,257 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-814e-a4c3-cbd7cc3fa32f "HTTP/1.1 200 OK"
-2024-11-27 18:47:17,258 - INFO - Archived block 14be4a7d-76a4-814e-a4c3-cbd7cc3fa32f
-2024-11-27 18:47:18,819 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81a0-8c9c-ff6f194beba6 "HTTP/1.1 200 OK"
-2024-11-27 18:47:18,819 - INFO - Archived block 14be4a7d-76a4-81a0-8c9c-ff6f194beba6
-2024-11-27 18:47:20,745 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81ec-af1a-d45824b12f34 "HTTP/1.1 200 OK"
-2024-11-27 18:47:20,746 - INFO - Archived block 14be4a7d-76a4-81ec-af1a-d45824b12f34
-2024-11-27 18:47:22,148 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-813e-b176-e10c8ea8b33c "HTTP/1.1 200 OK"
-2024-11-27 18:47:22,149 - INFO - Archived block 14be4a7d-76a4-813e-b176-e10c8ea8b33c
-2024-11-27 18:47:22,775 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8104-affb-e87fe2878a8e "HTTP/1.1 200 OK"
-2024-11-27 18:47:22,776 - INFO - Archived block 14be4a7d-76a4-8104-affb-e87fe2878a8e
-2024-11-27 18:47:23,228 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8159-9718-f397c051ab0e "HTTP/1.1 200 OK"
-2024-11-27 18:47:23,228 - INFO - Archived block 14be4a7d-76a4-8159-9718-f397c051ab0e
-2024-11-27 18:47:24,994 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-810a-a8c8-ed641febc5fc "HTTP/1.1 200 OK"
-2024-11-27 18:47:24,995 - INFO - Archived block 14be4a7d-76a4-810a-a8c8-ed641febc5fc
-2024-11-27 18:47:25,672 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81e3-aff8-d709ff694302 "HTTP/1.1 200 OK"
-2024-11-27 18:47:25,673 - INFO - Archived block 14be4a7d-76a4-81e3-aff8-d709ff694302
-2024-11-27 18:47:26,946 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-819d-a1ac-ef2c02769bb4 "HTTP/1.1 200 OK"
-2024-11-27 18:47:26,946 - INFO - Archived block 14be4a7d-76a4-819d-a1ac-ef2c02769bb4
-2024-11-27 18:47:27,698 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8174-82ac-f22285ae2f2a "HTTP/1.1 200 OK"
-2024-11-27 18:47:27,699 - INFO - Archived block 14be4a7d-76a4-8174-82ac-f22285ae2f2a
-2024-11-27 18:47:28,979 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8178-8c3b-edf82071703d "HTTP/1.1 200 OK"
-2024-11-27 18:47:28,979 - INFO - Archived block 14be4a7d-76a4-8178-8c3b-edf82071703d
-2024-11-27 18:47:29,489 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-813a-8d89-deba3ddb7488 "HTTP/1.1 200 OK"
-2024-11-27 18:47:29,490 - INFO - Archived block 14be4a7d-76a4-813a-8d89-deba3ddb7488
-2024-11-27 18:47:30,388 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81e0-a4f3-dc65af59ea34 "HTTP/1.1 200 OK"
-2024-11-27 18:47:30,389 - INFO - Archived block 14be4a7d-76a4-81e0-a4f3-dc65af59ea34
-2024-11-27 18:47:30,946 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81d6-9cea-d15478f1ea69 "HTTP/1.1 200 OK"
-2024-11-27 18:47:30,946 - INFO - Archived block 14be4a7d-76a4-81d6-9cea-d15478f1ea69
-2024-11-27 18:47:33,285 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8132-9845-c5384d54ab2c "HTTP/1.1 200 OK"
-2024-11-27 18:47:33,297 - INFO - Archived block 14be4a7d-76a4-8132-9845-c5384d54ab2c
-2024-11-27 18:47:34,121 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8158-b4a5-e19a3dc5a162 "HTTP/1.1 200 OK"
-2024-11-27 18:47:34,121 - INFO - Archived block 14be4a7d-76a4-8158-b4a5-e19a3dc5a162
-2024-11-27 18:47:35,423 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8117-b8b8-d5ace24fdc3b "HTTP/1.1 200 OK"
-2024-11-27 18:47:35,424 - INFO - Archived block 14be4a7d-76a4-8117-b8b8-d5ace24fdc3b
-2024-11-27 18:47:35,883 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8176-a802-d88478343f38 "HTTP/1.1 200 OK"
-2024-11-27 18:47:35,883 - INFO - Archived block 14be4a7d-76a4-8176-a802-d88478343f38
-2024-11-27 18:47:36,918 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81cd-935b-e7a5bdd980cc "HTTP/1.1 200 OK"
-2024-11-27 18:47:36,919 - INFO - Archived block 14be4a7d-76a4-81cd-935b-e7a5bdd980cc
-2024-11-27 18:47:39,003 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8102-9716-e57cdf1c59a6 "HTTP/1.1 200 OK"
-2024-11-27 18:47:39,003 - INFO - Archived block 14be4a7d-76a4-8102-9716-e57cdf1c59a6
-2024-11-27 18:47:39,496 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-811b-8ef9-f59f663c73fe "HTTP/1.1 200 OK"
-2024-11-27 18:47:39,497 - INFO - Archived block 14be4a7d-76a4-811b-8ef9-f59f663c73fe
-2024-11-27 18:47:40,406 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8130-9cc1-e31651761cac "HTTP/1.1 200 OK"
-2024-11-27 18:47:40,406 - INFO - Archived block 14be4a7d-76a4-8130-9cc1-e31651761cac
-2024-11-27 18:47:41,587 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8142-9ae1-cb25a3efa330 "HTTP/1.1 200 OK"
-2024-11-27 18:47:41,587 - INFO - Archived block 14be4a7d-76a4-8142-9ae1-cb25a3efa330
-2024-11-27 18:47:43,045 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-9cc4-f19800f9e7a3 "HTTP/1.1 200 OK"
-2024-11-27 18:47:43,046 - INFO - Archived block 14be4a7d-76a4-814b-9cc4-f19800f9e7a3
-2024-11-27 18:47:43,714 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-817e-a0ed-d7cc1539f970 "HTTP/1.1 200 OK"
-2024-11-27 18:47:43,714 - INFO - Archived block 14be4a7d-76a4-817e-a0ed-d7cc1539f970
-2024-11-27 18:47:44,539 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81b6-b2be-e0c31c7c5d63 "HTTP/1.1 200 OK"
-2024-11-27 18:47:44,540 - INFO - Archived block 14be4a7d-76a4-81b6-b2be-e0c31c7c5d63
-2024-11-27 18:47:46,014 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-811d-adae-c7dc483b10b3 "HTTP/1.1 200 OK"
-2024-11-27 18:47:46,014 - INFO - Archived block 14be4a7d-76a4-811d-adae-c7dc483b10b3
-2024-11-27 18:47:46,938 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81ce-bb93-f275e1fbbe9c "HTTP/1.1 200 OK"
-2024-11-27 18:47:46,938 - INFO - Archived block 14be4a7d-76a4-81ce-bb93-f275e1fbbe9c
-2024-11-27 18:47:47,545 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81cc-b416-f8fafe74ed12 "HTTP/1.1 200 OK"
-2024-11-27 18:47:47,546 - INFO - Archived block 14be4a7d-76a4-81cc-b416-f8fafe74ed12
-2024-11-27 18:47:49,903 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8101-85d1-ed0d2ee4f643 "HTTP/1.1 200 OK"
-2024-11-27 18:47:49,904 - INFO - Archived block 14be4a7d-76a4-8101-85d1-ed0d2ee4f643
-2024-11-27 18:47:50,653 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81c2-93ad-ffdea86c8f07 "HTTP/1.1 200 OK"
-2024-11-27 18:47:50,654 - INFO - Archived block 14be4a7d-76a4-81c2-93ad-ffdea86c8f07
-2024-11-27 18:47:51,136 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81d0-a8a3-f3a790bec583 "HTTP/1.1 200 OK"
-2024-11-27 18:47:51,136 - INFO - Archived block 14be4a7d-76a4-81d0-a8a3-f3a790bec583
-2024-11-27 18:47:51,594 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81e5-8cd7-e5124202f671 "HTTP/1.1 200 OK"
-2024-11-27 18:47:51,595 - INFO - Archived block 14be4a7d-76a4-81e5-8cd7-e5124202f671
-2024-11-27 18:47:52,839 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81e4-8202-f9f6fd75b2c2 "HTTP/1.1 200 OK"
-2024-11-27 18:47:52,845 - INFO - Archived block 14be4a7d-76a4-81e4-8202-f9f6fd75b2c2
-2024-11-27 18:47:53,447 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-817b-8c65-d3668526ac0a "HTTP/1.1 200 OK"
-2024-11-27 18:47:53,448 - INFO - Archived block 14be4a7d-76a4-817b-8c65-d3668526ac0a
-2024-11-27 18:47:53,930 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81b4-9312-ff7a61dc7aec "HTTP/1.1 200 OK"
-2024-11-27 18:47:53,930 - INFO - Archived block 14be4a7d-76a4-81b4-9312-ff7a61dc7aec
-2024-11-27 18:47:57,001 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81e5-a7e3-c206fa40064a "HTTP/1.1 200 OK"
-2024-11-27 18:47:57,003 - INFO - Archived block 14be4a7d-76a4-81e5-a7e3-c206fa40064a
-2024-11-27 18:47:57,621 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8139-a109-d9952e9dfbbf "HTTP/1.1 200 OK"
-2024-11-27 18:47:57,621 - INFO - Archived block 14be4a7d-76a4-8139-a109-d9952e9dfbbf
-2024-11-27 18:47:58,158 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81af-820b-c16966bb37d5 "HTTP/1.1 200 OK"
-2024-11-27 18:47:58,159 - INFO - Archived block 14be4a7d-76a4-81af-820b-c16966bb37d5
-2024-11-27 18:48:02,639 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8165-997c-fd076275b7d6 "HTTP/1.1 200 OK"
-2024-11-27 18:48:02,640 - INFO - Archived block 14be4a7d-76a4-8165-997c-fd076275b7d6
-2024-11-27 18:48:03,108 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8147-ad3a-ddec12a07eac "HTTP/1.1 200 OK"
-2024-11-27 18:48:03,109 - INFO - Archived block 14be4a7d-76a4-8147-ad3a-ddec12a07eac
-2024-11-27 18:48:04,408 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81ed-970c-cb6dc999812a "HTTP/1.1 200 OK"
-2024-11-27 18:48:04,409 - INFO - Archived block 14be4a7d-76a4-81ed-970c-cb6dc999812a
-2024-11-27 18:48:04,857 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-818f-8e84-e32ab2981e14 "HTTP/1.1 200 OK"
-2024-11-27 18:48:04,858 - INFO - Archived block 14be4a7d-76a4-818f-8e84-e32ab2981e14
-2024-11-27 18:48:05,447 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8157-b8b7-d09f0a723487 "HTTP/1.1 200 OK"
-2024-11-27 18:48:05,448 - INFO - Archived block 14be4a7d-76a4-8157-b8b7-d09f0a723487
-2024-11-27 18:48:07,917 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8175-bde1-dd3053f296b1 "HTTP/1.1 200 OK"
-2024-11-27 18:48:07,918 - INFO - Archived block 14be4a7d-76a4-8175-bde1-dd3053f296b1
-2024-11-27 18:48:08,440 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-814e-b670-f249de293337 "HTTP/1.1 200 OK"
-2024-11-27 18:48:08,441 - INFO - Archived block 14be4a7d-76a4-814e-b670-f249de293337
-2024-11-27 18:48:09,303 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81e3-915c-cf57200069a5 "HTTP/1.1 200 OK"
-2024-11-27 18:48:09,303 - INFO - Archived block 14be4a7d-76a4-81e3-915c-cf57200069a5
-2024-11-27 18:48:11,321 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81d7-9968-df4cd79c8ad9 "HTTP/1.1 200 OK"
-2024-11-27 18:48:11,322 - INFO - Archived block 14be4a7d-76a4-81d7-9968-df4cd79c8ad9
-2024-11-27 18:48:12,506 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8149-89d2-fd80fdda8ffd "HTTP/1.1 200 OK"
-2024-11-27 18:48:12,507 - INFO - Archived block 14be4a7d-76a4-8149-89d2-fd80fdda8ffd
-2024-11-27 18:48:13,168 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-81ed-92bf-c235cafb8756 "HTTP/1.1 200 OK"
-2024-11-27 18:48:13,169 - INFO - Archived block 14be4a7d-76a4-81ed-92bf-c235cafb8756
-2024-11-27 18:48:17,928 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:48:17,928 - INFO - Added 17 new blocks
-2024-11-27 18:48:17,929 - INFO - Successfully updated section: ARCHIV
-2024-11-27 18:49:44,447 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:49:44,689 - INFO - Starting synchronization...
-2024-11-27 18:49:45,315 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:49:45,668 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:49:47,142 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80a6-ac33-c6726a28b524/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:49:47,148 - INFO - Saved: notion_export\master_dashboard_20241127_184947.md
-2024-11-27 18:49:47,154 - WARNING - File master_dashboard_20241127_184947.md seems unusually short (122 words)
-2024-11-27 18:49:47,154 - WARNING - Export appears incomplete!
-2024-11-27 18:49:47,154 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:49:47,156 - INFO - Created fixed file: master_dashboard_20241127_184947_fixed.md
-2024-11-27 18:49:47,156 - INFO - Created fixed version of truncated export
-2024-11-27 18:49:47,156 - INFO - Synchronization successfully completed!
-2024-11-27 18:49:47,645 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
-2024-11-27 18:49:47,645 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 18:50:02,269 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 18:50:02,270 - INFO - Attempting to update section 'Master Dashboard' with content:
-2024-11-27 18:50:02,704 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:50:02,706 - INFO - Found section block: 14be4a7d-76a4-80c9-8e5f-f9b4998172f6
-2024-11-27 18:50:03,577 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80b3-83fd-f6d1e357f04b "HTTP/1.1 200 OK"
-2024-11-27 18:50:03,578 - INFO - Archived block 14be4a7d-76a4-80b3-83fd-f6d1e357f04b
-2024-11-27 18:50:04,634 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80a6-ac33-c6726a28b524 "HTTP/1.1 200 OK"
-2024-11-27 18:50:04,635 - INFO - Archived block 14be4a7d-76a4-80a6-ac33-c6726a28b524
-2024-11-27 18:50:06,283 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-802e-a287-dc27de95fb1e "HTTP/1.1 200 OK"
-2024-11-27 18:50:06,284 - INFO - Archived block 14be4a7d-76a4-802e-a287-dc27de95fb1e
-2024-11-27 18:50:10,660 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8078-884c-f34674955259 "HTTP/1.1 200 OK"
-2024-11-27 18:50:10,661 - INFO - Archived block 14be4a7d-76a4-8078-884c-f34674955259
-2024-11-27 18:50:11,743 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8098-963b-e9e15f114deb "HTTP/1.1 200 OK"
-2024-11-27 18:50:11,743 - INFO - Archived block 14be4a7d-76a4-8098-963b-e9e15f114deb
-2024-11-27 18:50:12,365 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-805f-ad97-f24de2056460 "HTTP/1.1 200 OK"
-2024-11-27 18:50:12,365 - INFO - Archived block 14be4a7d-76a4-805f-ad97-f24de2056460
-2024-11-27 18:50:13,349 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80a4-9dfa-d3612e35503e "HTTP/1.1 200 OK"
-2024-11-27 18:50:13,349 - INFO - Archived block 14be4a7d-76a4-80a4-9dfa-d3612e35503e
-2024-11-27 18:50:14,981 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8023-b586-eb59c73f4ec3 "HTTP/1.1 200 OK"
-2024-11-27 18:50:14,982 - INFO - Archived block 14be4a7d-76a4-8023-b586-eb59c73f4ec3
-2024-11-27 18:50:16,076 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80e5-809a-daf74d61aaa6 "HTTP/1.1 200 OK"
-2024-11-27 18:50:16,077 - INFO - Archived block 14be4a7d-76a4-80e5-809a-daf74d61aaa6
-2024-11-27 18:50:16,644 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-800d-b4a5-c22e125df0a2 "HTTP/1.1 200 OK"
-2024-11-27 18:50:16,645 - INFO - Archived block 14be4a7d-76a4-800d-b4a5-c22e125df0a2
-2024-11-27 18:50:17,114 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-802b-8735-e5f1c8378e6f "HTTP/1.1 200 OK"
-2024-11-27 18:50:17,114 - INFO - Archived block 14be4a7d-76a4-802b-8735-e5f1c8378e6f
-2024-11-27 18:50:17,739 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80d1-9351-c483553b34f2 "HTTP/1.1 200 OK"
-2024-11-27 18:50:17,740 - INFO - Archived block 14be4a7d-76a4-80d1-9351-c483553b34f2
-2024-11-27 18:50:20,490 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-af5d-eabc56b5effe "HTTP/1.1 200 OK"
-2024-11-27 18:50:20,491 - INFO - Archived block 14be4a7d-76a4-80ce-af5d-eabc56b5effe
-2024-11-27 18:50:20,953 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d-76a4-8043-b031-e204f5b9f8f9 "HTTP/1.1 200 OK"
-2024-11-27 18:50:20,955 - INFO - Archived block 14be4a7d-76a4-8043-b031-e204f5b9f8f9
-2024-11-27 18:50:21,796 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:50:21,797 - INFO - Added 16 new blocks
-2024-11-27 18:50:21,797 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 18:50:21,797 - INFO - Optimiere Abschnitt: Übersicht & Status
-2024-11-27 18:50:34,763 - INFO - Successfully optimized section: Übersicht & Status
-2024-11-27 18:50:34,763 - INFO - Attempting to update section 'Übersicht & Status' with content:
-2024-11-27 18:50:35,212 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:50:35,213 - ERROR - Section Übersicht & Status not found
-2024-11-27 18:50:35,213 - ERROR - Failed to update section: Übersicht & Status
-2024-11-27 18:50:35,213 - INFO - Optimiere Abschnitt: Aktuelle Situation
-2024-11-27 18:50:48,047 - INFO - Successfully optimized section: Aktuelle Situation
-2024-11-27 18:50:48,047 - INFO - Attempting to update section 'Aktuelle Situation' with content:
-2024-11-27 18:50:48,795 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:50:48,812 - ERROR - Section Aktuelle Situation not found
-2024-11-27 18:50:48,813 - ERROR - Failed to update section: Aktuelle Situation
-2024-11-27 18:50:48,813 - INFO - Optimiere Abschnitt: Nächste Schritte
-2024-11-27 18:51:02,271 - INFO - Successfully optimized section: Nächste Schritte
-2024-11-27 18:51:02,272 - INFO - Attempting to update section 'Nächste Schritte' with content:
-2024-11-27 18:51:02,892 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:51:02,898 - ERROR - Section Nächste Schritte not found
-2024-11-27 18:51:02,899 - ERROR - Failed to update section: Nächste Schritte
-2024-11-27 18:51:02,899 - INFO - Optimiere Abschnitt: Tracking & Notizen
-2024-11-27 18:51:17,602 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:51:17,837 - INFO - Starting synchronization...
-2024-11-27 18:51:18,233 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:51:20,020 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:51:20,998 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:51:20,999 - INFO - Archived old file: master_dashboard_20241127_184320.md
-2024-11-27 18:51:21,000 - INFO - Archived old file: master_dashboard_20241127_184411.md
-2024-11-27 18:51:21,001 - INFO - Saved: notion_export\master_dashboard_20241127_185120.md
-2024-11-27 18:51:21,007 - WARNING - File master_dashboard_20241127_185120.md seems unusually short (151 words)
-2024-11-27 18:51:21,007 - WARNING - Export appears incomplete!
-2024-11-27 18:51:21,007 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:51:21,008 - INFO - Created fixed file: master_dashboard_20241127_185120_fixed.md
-2024-11-27 18:51:21,008 - INFO - Created fixed version of truncated export
-2024-11-27 18:51:21,008 - INFO - Synchronization successfully completed!
-2024-11-27 18:51:21,495 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
-2024-11-27 18:51:21,496 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 18:51:33,772 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 18:51:33,773 - INFO - Attempting to update section 'Master Dashboard' with content:
-2024-11-27 18:51:34,211 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:51:34,211 - ERROR - Section Master Dashboard not found
-2024-11-27 18:51:34,212 - ERROR - Failed to update section: Master Dashboard
-2024-11-27 18:51:34,212 - INFO - Optimiere Abschnitt: Übersicht & Status
-2024-11-27 18:51:48,474 - INFO - Successfully optimized section: Übersicht & Status
-2024-11-27 18:51:48,474 - INFO - Attempting to update section 'Übersicht & Status' with content:
-2024-11-27 18:51:49,186 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:51:49,187 - ERROR - Section Übersicht & Status not found
-2024-11-27 18:51:49,187 - ERROR - Failed to update section: Übersicht & Status
-2024-11-27 18:51:49,187 - INFO - Optimiere Abschnitt: Aktuelle Situation
-2024-11-27 18:52:02,843 - INFO - Successfully optimized section: Aktuelle Situation
-2024-11-27 18:52:02,844 - INFO - Attempting to update section 'Aktuelle Situation' with content:
-2024-11-27 18:52:03,771 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:52:03,772 - ERROR - Section Aktuelle Situation not found
-2024-11-27 18:52:03,772 - ERROR - Failed to update section: Aktuelle Situation
-2024-11-27 18:52:03,772 - INFO - Optimiere Abschnitt: Nächste Schritte
-2024-11-27 18:52:16,272 - INFO - Successfully optimized section: Nächste Schritte
-2024-11-27 18:52:16,272 - INFO - Attempting to update section 'Nächste Schritte' with content:
-2024-11-27 18:52:16,781 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:52:16,782 - ERROR - Section Nächste Schritte not found
-2024-11-27 18:52:16,782 - ERROR - Failed to update section: Nächste Schritte
-2024-11-27 18:52:16,782 - INFO - Optimiere Abschnitt: Tracking & Notizen
-2024-11-27 18:52:30,509 - INFO - Successfully optimized section: Tracking & Notizen
-2024-11-27 18:52:30,510 - INFO - Attempting to update section 'Tracking & Notizen' with content:
-2024-11-27 18:52:31,174 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:52:31,186 - ERROR - Section Tracking & Notizen not found
-2024-11-27 18:52:31,186 - ERROR - Failed to update section: Tracking & Notizen
-2024-11-27 18:52:31,187 - ERROR - Failed to update any sections
-2024-11-27 18:56:41,789 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:56:42,027 - INFO - Starting synchronization...
-2024-11-27 18:56:43,734 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:56:44,558 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:56:45,030 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:56:45,032 - INFO - Archived old file: master_dashboard_20241127_184411_fixed.md
-2024-11-27 18:56:45,032 - INFO - Archived old file: master_dashboard_20241127_184545.md
-2024-11-27 18:56:45,033 - INFO - Saved: notion_export\master_dashboard_20241127_185645.md
-2024-11-27 18:56:45,034 - WARNING - File master_dashboard_20241127_185645.md seems unusually short (151 words)
-2024-11-27 18:56:45,034 - WARNING - Export appears incomplete!
-2024-11-27 18:56:45,035 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:56:45,036 - INFO - Created fixed file: master_dashboard_20241127_185645_fixed.md
-2024-11-27 18:56:45,036 - INFO - Created fixed version of truncated export
-2024-11-27 18:56:45,036 - INFO - Synchronization successfully completed!
-2024-11-27 18:56:45,524 - INFO - Using Ollama model: qwen2.5-coder-extra-ctx:7b
-2024-11-27 18:56:45,525 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 18:56:57,397 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 18:56:57,398 - INFO - Attempting to update section 'Master Dashboard' with content:
-2024-11-27 18:56:57,999 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:56:58,000 - ERROR - Section Master Dashboard not found
-2024-11-27 18:56:58,000 - ERROR - Failed to update section: Master Dashboard
-2024-11-27 18:56:58,000 - INFO - Optimiere Abschnitt: Übersicht & Status
-2024-11-27 18:57:12,759 - INFO - Successfully optimized section: Übersicht & Status
-2024-11-27 18:57:12,759 - INFO - Attempting to update section 'Übersicht & Status' with content:
-2024-11-27 18:57:13,216 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:57:13,217 - ERROR - Section Übersicht & Status not found
-2024-11-27 18:57:13,217 - ERROR - Failed to update section: Übersicht & Status
-2024-11-27 18:57:13,217 - INFO - Optimiere Abschnitt: Aktuelle Situation
-2024-11-27 18:57:27,985 - INFO - Successfully optimized section: Aktuelle Situation
-2024-11-27 18:57:27,986 - INFO - Attempting to update section 'Aktuelle Situation' with content:
-2024-11-27 18:57:29,055 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 18:57:29,055 - ERROR - Section Aktuelle Situation not found
-2024-11-27 18:57:29,056 - ERROR - Failed to update section: Aktuelle Situation
-2024-11-27 18:57:29,056 - INFO - Optimiere Abschnitt: Nächste Schritte
-2024-11-27 18:58:14,150 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:58:14,387 - INFO - Starting synchronization...
-2024-11-27 18:58:15,425 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:58:16,814 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:58:17,121 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:58:17,123 - INFO - Saved: notion_export\master_dashboard_20241127_185817.md
-2024-11-27 18:58:17,124 - WARNING - File master_dashboard_20241127_185817.md seems unusually short (151 words)
-2024-11-27 18:58:17,124 - WARNING - Export appears incomplete!
-2024-11-27 18:58:17,125 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:58:17,126 - INFO - Created fixed file: master_dashboard_20241127_185817_fixed.md
-2024-11-27 18:58:17,126 - INFO - Created fixed version of truncated export
-2024-11-27 18:58:17,126 - INFO - Synchronization successfully completed!
-2024-11-27 18:59:57,056 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 18:59:57,289 - INFO - Starting synchronization...
-2024-11-27 18:59:57,844 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 18:59:58,182 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:59:58,997 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 18:59:58,999 - INFO - Saved: notion_export\master_dashboard_20241127_185958.md
-2024-11-27 18:59:59,001 - WARNING - File master_dashboard_20241127_185958.md seems unusually short (151 words)
-2024-11-27 18:59:59,001 - WARNING - Export appears incomplete!
-2024-11-27 18:59:59,001 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 18:59:59,003 - INFO - Created fixed file: master_dashboard_20241127_185958_fixed.md
-2024-11-27 18:59:59,003 - INFO - Created fixed version of truncated export
-2024-11-27 18:59:59,004 - INFO - Synchronization successfully completed!
-2024-11-27 19:00:56,435 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:00:56,676 - INFO - Starting synchronization...
-2024-11-27 19:00:57,178 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:00:57,588 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:00:58,338 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:00:58,339 - INFO - Saved: notion_export\master_dashboard_20241127_190058.md
-2024-11-27 19:00:58,341 - WARNING - File master_dashboard_20241127_190058.md seems unusually short (151 words)
-2024-11-27 19:00:58,341 - WARNING - Export appears incomplete!
-2024-11-27 19:00:58,341 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 19:00:58,343 - INFO - Created fixed file: master_dashboard_20241127_190058_fixed.md
-2024-11-27 19:00:58,343 - INFO - Created fixed version of truncated export
-2024-11-27 19:00:58,344 - INFO - Synchronization successfully completed!
-2024-11-27 19:07:12,937 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:07:13,173 - INFO - Starting synchronization...
-2024-11-27 19:07:13,759 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:07:14,175 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:07:17,765 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:07:17,767 - INFO - Saved: notion_export\master_dashboard_20241127_190717.md
-2024-11-27 19:07:17,768 - WARNING - File master_dashboard_20241127_190717.md seems unusually short (151 words)
-2024-11-27 19:07:17,768 - WARNING - Export appears incomplete!
-2024-11-27 19:07:17,768 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 19:07:17,769 - INFO - Synchronization successfully completed!
-2024-11-27 19:09:25,898 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:09:26,130 - INFO - Starting synchronization...
-2024-11-27 19:09:26,523 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:09:26,894 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:09:27,288 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:09:27,289 - ERROR - Main sections missing - retrying full page fetch...
-2024-11-27 19:09:29,976 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:09:30,528 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:09:31,433 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:09:31,434 - ERROR - Main sections missing - retrying full page fetch...
-2024-11-27 19:09:33,747 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:09:34,160 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:09:34,556 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:09:34,557 - ERROR - Main sections missing - retrying full page fetch...
-2024-11-27 19:09:37,428 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:09:37,855 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:09:38,156 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:09:38,157 - ERROR - Main sections missing - retrying full page fetch...
-2024-11-27 19:09:40,706 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:09:41,476 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:09:41,949 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:09:41,950 - ERROR - Main sections missing - retrying full page fetch...
-2024-11-27 19:09:45,367 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:09:45,743 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:09:46,662 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b7-a054-f7e329f95742/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 19:09:46,663 - ERROR - Main sections missing - retrying full page fetch...
-2024-11-27 19:10:26,999 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:10:27,234 - INFO - Starting synchronization...
-2024-11-27 19:10:27,693 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:10:27,978 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:10:27,979 - ERROR - Main sections missing (attempt 1/3) - retrying...
-2024-11-27 19:10:30,265 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:10:30,678 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:10:30,678 - ERROR - Main sections missing (attempt 2/3) - retrying...
-2024-11-27 19:10:32,986 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:10:33,351 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:10:33,352 - ERROR - Main sections missing (attempt 3/3) - retrying...
-2024-11-27 19:10:35,352 - ERROR - Failed to get complete content after 3 attempts
-2024-11-27 19:10:35,352 - ERROR - Error getting page 14be4a7d76a480009895dd4b3b843b5a: Failed to get complete page content
-2024-11-27 19:10:35,352 - INFO - Retrying page fetch (attempt 3/3)...
-2024-11-27 19:10:37,353 - ERROR - Failed to get complete content after 3 attempts
-2024-11-27 19:10:37,353 - ERROR - Error getting page 14be4a7d76a480009895dd4b3b843b5a: Failed to get complete page content
-2024-11-27 19:10:37,353 - INFO - Retrying page fetch (attempt 2/3)...
-2024-11-27 19:10:39,838 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:10:40,170 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:10:40,170 - ERROR - Main sections missing (attempt 3/3) - retrying...
-2024-11-27 19:10:42,171 - ERROR - Failed to get complete content after 3 attempts
-2024-11-27 19:10:42,171 - ERROR - Error getting page 14be4a7d76a480009895dd4b3b843b5a: Failed to get complete page content
-2024-11-27 19:10:42,171 - INFO - Retrying page fetch (attempt 3/3)...
-2024-11-27 19:10:44,172 - ERROR - Failed to get complete content after 3 attempts
-2024-11-27 19:10:44,172 - ERROR - Error getting page 14be4a7d76a480009895dd4b3b843b5a: Failed to get complete page content
-2024-11-27 19:10:44,172 - INFO - Retrying page fetch (attempt 1/3)...
-2024-11-27 19:12:12,186 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:12:12,423 - INFO - Starting synchronization...
-2024-11-27 19:12:12,877 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:12:13,805 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:12:13,806 - ERROR - Main sections missing (attempt 1/3) - retrying...
-2024-11-27 19:14:00,510 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:14:00,931 - INFO - Starting synchronization...
-2024-11-27 19:14:01,417 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:14:02,035 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:14:04,127 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:14:04,129 - INFO - Saved: notion_export\master_dashboard_20241127_191404.md
-2024-11-27 19:14:04,135 - WARNING - File master_dashboard_20241127_191404.md seems unusually short (342 words)
-2024-11-27 19:14:04,135 - INFO - Synchronization successfully completed!
-2024-11-27 19:16:02,964 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:16:03,197 - INFO - Starting synchronization...
-2024-11-27 19:16:03,614 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:16:04,196 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:16:05,615 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:16:05,617 - INFO - Saved: notion_export\master_dashboard_20241127_191605.md
-2024-11-27 19:16:05,618 - INFO - Synchronization successfully completed!
-2024-11-27 19:18:49,950 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:18:50,182 - INFO - Starting synchronization...
-2024-11-27 19:18:52,144 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:18:52,864 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:18:56,135 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:18:56,138 - INFO - Saved: notion_export\master_dashboard_20241127_191856.md
-2024-11-27 19:18:56,139 - INFO - Synchronization successfully completed!
-2024-11-27 19:18:58,654 - INFO - Successfully connected to Ollama server
-2024-11-27 19:18:58,654 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 19:19:25,443 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 19:19:25,443 - INFO - Attempting to update section 'Master Dashboard' with content:
-2024-11-27 19:19:26,284 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 19:19:26,286 - ERROR - Section Master Dashboard not found
-2024-11-27 19:19:26,286 - ERROR - Failed to update section: Master Dashboard
-2024-11-27 19:19:26,286 - ERROR - Failed to update any sections
-2024-11-27 19:22:32,806 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 19:22:33,047 - INFO - Starting synchronization...
-2024-11-27 19:22:33,448 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 19:22:34,046 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:22:35,512 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 19:22:35,516 - INFO - Saved: notion_export\master_dashboard_20241127_192235.md
-2024-11-27 19:22:35,517 - INFO - Synchronization successfully completed!
-2024-11-27 19:22:38,094 - INFO - Successfully connected to Ollama server
-2024-11-27 19:22:38,095 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 19:23:05,381 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 19:23:05,381 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-27 19:23:06,365 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 19:23:07,372 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 19:23:07,373 - INFO - Created new section: Master Dashboard
-2024-11-27 19:23:09,341 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 19:23:09,342 - INFO - Added 54 new blocks
-2024-11-27 19:23:09,343 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 23:32:09,193 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 23:32:09,432 - INFO - Starting synchronization...
-2024-11-27 23:32:10,067 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:32:10,633 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:32:12,202 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:32:13,736 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8108-8471-ee312ae66b49&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:32:14,406 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-9fb4-d26f50055f93/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:32:14,786 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-b9bf-c936f2fbb427/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:32:15,227 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8174-93d3-e1ab501edbf6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:32:15,228 - INFO - Saved: notion_export\master_dashboard_20241127_233215.md
-2024-11-27 23:32:15,236 - INFO - Synchronization successfully completed!
-2024-11-27 23:32:17,769 - INFO - Successfully connected to Ollama server
-2024-11-27 23:32:17,769 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 23:32:29,432 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 23:32:29,432 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-27 23:32:34,024 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:32:35,062 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:32:35,063 - INFO - Added 17 new blocks
-2024-11-27 23:32:35,063 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 23:32:35,063 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-27 23:32:44,117 - INFO - Successfully optimized section: Gesundheit
-2024-11-27 23:32:44,117 - INFO - Attempting to update section 'Gesundheit'
-2024-11-27 23:32:45,090 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:32:46,019 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:32:46,020 - INFO - Added 15 new blocks
-2024-11-27 23:32:46,020 - INFO - Successfully updated section: Gesundheit
-2024-11-27 23:32:46,020 - INFO - Optimiere Abschnitt: Business
-2024-11-27 23:32:54,063 - INFO - Successfully optimized section: Business
-2024-11-27 23:32:54,063 - INFO - Attempting to update section 'Business'
-2024-11-27 23:32:56,131 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:32:59,076 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:32:59,166 - INFO - Added 15 new blocks
-2024-11-27 23:32:59,166 - INFO - Successfully updated section: Business
-2024-11-27 23:32:59,166 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-27 23:33:07,113 - INFO - Successfully optimized section: Beziehung
-2024-11-27 23:33:07,113 - INFO - Attempting to update section 'Beziehung'
-2024-11-27 23:33:07,964 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:33:09,167 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:33:09,168 - INFO - Added 15 new blocks
-2024-11-27 23:33:09,168 - INFO - Successfully updated section: Beziehung
-2024-11-27 23:33:09,168 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-27 23:33:15,387 - INFO - Successfully optimized section: ARCHIV
-2024-11-27 23:33:15,388 - INFO - Attempting to update section 'ARCHIV'
-2024-11-27 23:33:17,166 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:33:17,644 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:33:17,645 - INFO - Created new section: ARCHIV
-2024-11-27 23:33:18,387 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:33:18,388 - INFO - Added 15 new blocks
-2024-11-27 23:33:18,388 - INFO - Successfully updated section: ARCHIV
-2024-11-27 23:34:37,584 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 23:34:37,825 - INFO - Starting synchronization...
-2024-11-27 23:34:38,768 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:34:39,861 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:34:43,666 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:34:45,835 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8108-8471-ee312ae66b49&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:34:47,930 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8126-8317-e409e6ece8e2&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:34:49,252 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81aa-ada5-d70026faefef&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:34:49,679 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-9fb4-d26f50055f93/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:50,006 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-b9bf-c936f2fbb427/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:50,360 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8174-93d3-e1ab501edbf6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:50,844 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816b-937a-c48effe3d4bf/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:51,352 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81cb-bbe3-fe4f197553f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:51,657 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819d-948f-ca93fc57b3be/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:52,082 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8116-9936-c89ef8649c88/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:52,611 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f8-a0c3-e616ae2707ad/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:34:52,618 - INFO - Saved: notion_export\master_dashboard_20241127_233452.md
-2024-11-27 23:34:52,626 - INFO - Synchronization successfully completed!
-2024-11-27 23:34:55,179 - INFO - Successfully connected to Ollama server
-2024-11-27 23:34:55,179 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 23:35:05,352 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 23:35:05,352 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-27 23:35:06,172 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:35:07,263 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:35:07,264 - INFO - Added 20 new blocks
-2024-11-27 23:35:07,264 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 23:35:07,265 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-27 23:35:15,987 - INFO - Successfully optimized section: Gesundheit
-2024-11-27 23:35:15,987 - INFO - Attempting to update section 'Gesundheit'
-2024-11-27 23:35:17,016 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:35:17,772 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:35:17,773 - INFO - Added 15 new blocks
-2024-11-27 23:35:17,773 - INFO - Successfully updated section: Gesundheit
-2024-11-27 23:35:17,773 - INFO - Optimiere Abschnitt: Business
-2024-11-27 23:35:25,507 - INFO - Successfully optimized section: Business
-2024-11-27 23:35:25,507 - INFO - Attempting to update section 'Business'
-2024-11-27 23:35:26,494 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:35:27,906 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:35:27,907 - INFO - Added 15 new blocks
-2024-11-27 23:35:27,907 - INFO - Successfully updated section: Business
-2024-11-27 23:35:27,907 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-27 23:35:35,626 - INFO - Successfully optimized section: Beziehung
-2024-11-27 23:35:35,627 - INFO - Attempting to update section 'Beziehung'
-2024-11-27 23:35:36,570 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:35:37,433 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:35:37,434 - INFO - Added 15 new blocks
-2024-11-27 23:35:37,435 - INFO - Successfully updated section: Beziehung
-2024-11-27 23:35:37,435 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-27 23:35:43,778 - INFO - Successfully optimized section: ARCHIV
-2024-11-27 23:35:43,779 - INFO - Attempting to update section 'ARCHIV'
-2024-11-27 23:35:44,674 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:35:45,237 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:35:45,238 - INFO - Created new section: ARCHIV
-2024-11-27 23:35:46,087 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:35:46,088 - INFO - Added 15 new blocks
-2024-11-27 23:35:46,088 - INFO - Successfully updated section: ARCHIV
-2024-11-27 23:37:33,106 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 23:37:33,356 - INFO - Starting synchronization...
-2024-11-27 23:37:34,580 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:37:35,711 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:37,432 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:39,046 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8108-8471-ee312ae66b49&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:41,169 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8126-8317-e409e6ece8e2&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:42,597 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81aa-ada5-d70026faefef&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:44,164 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81a1-8a6b-c0c968e04071&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:44,959 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-9fb4-d26f50055f93/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:47,210 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-b9bf-c936f2fbb427/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:47,563 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8174-93d3-e1ab501edbf6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:47,887 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816b-937a-c48effe3d4bf/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:48,219 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81cb-bbe3-fe4f197553f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:48,596 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819d-948f-ca93fc57b3be/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:48,866 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8116-9936-c89ef8649c88/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:49,683 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f8-a0c3-e616ae2707ad/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:49,967 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81aa-abc9-fa74b17caf63/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:50,297 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e7-acb5-fec72403d556/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:50,701 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814e-b3a8-f734de8f75e7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:50,959 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-a17a-f99d507cb064/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:51,574 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8144-9b97-ff243a21a3a7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:37:51,604 - INFO - Retrying page fetch (attempt 1/3)...
-2024-11-27 23:37:54,912 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:37:55,397 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:56,918 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:37:58,464 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8108-8471-ee312ae66b49&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:00,019 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8126-8317-e409e6ece8e2&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:01,877 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81aa-ada5-d70026faefef&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:05,930 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81a1-8a6b-c0c968e04071&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:06,226 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-9fb4-d26f50055f93/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:06,551 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-b9bf-c936f2fbb427/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:06,941 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8174-93d3-e1ab501edbf6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:07,264 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816b-937a-c48effe3d4bf/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:10,858 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81cb-bbe3-fe4f197553f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:11,157 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819d-948f-ca93fc57b3be/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:11,681 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8116-9936-c89ef8649c88/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:11,996 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f8-a0c3-e616ae2707ad/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:12,265 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81aa-abc9-fa74b17caf63/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:12,582 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e7-acb5-fec72403d556/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:12,938 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814e-b3a8-f734de8f75e7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:13,307 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-a17a-f99d507cb064/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:13,660 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8144-9b97-ff243a21a3a7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:13,660 - INFO - Retrying page fetch (attempt 2/3)...
-2024-11-27 23:38:16,938 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:38:17,737 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:19,217 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:20,754 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8108-8471-ee312ae66b49&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:22,288 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8126-8317-e409e6ece8e2&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:23,716 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81aa-ada5-d70026faefef&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:26,336 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81a1-8a6b-c0c968e04071&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:38:26,650 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-9fb4-d26f50055f93/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:27,024 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-b9bf-c936f2fbb427/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:27,376 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8174-93d3-e1ab501edbf6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:27,676 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816b-937a-c48effe3d4bf/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:28,500 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81cb-bbe3-fe4f197553f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:28,929 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819d-948f-ca93fc57b3be/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:29,653 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8116-9936-c89ef8649c88/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:29,952 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f8-a0c3-e616ae2707ad/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:30,251 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81aa-abc9-fa74b17caf63/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:30,528 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e7-acb5-fec72403d556/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:30,885 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814e-b3a8-f734de8f75e7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:31,164 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-a17a-f99d507cb064/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:31,470 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8144-9b97-ff243a21a3a7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:38:31,471 - INFO - Retrying page fetch (attempt 3/3)...
-2024-11-27 23:38:34,471 - ERROR - Failed to get complete content after 3 attempts
-2024-11-27 23:38:34,473 - INFO - Saved: notion_export\master_dashboard_20241127_233834.md
-2024-11-27 23:38:34,480 - WARNING - File master_dashboard_20241127_233834.md seems unusually short (8 words)
-2024-11-27 23:38:34,480 - WARNING - Export appears incomplete!
-2024-11-27 23:38:34,480 - WARNING - Missing sections: Gesundheit, Business, Beziehung, ARCHIV
-2024-11-27 23:38:34,481 - INFO - Created fixed file: master_dashboard_20241127_233834_fixed.md
-2024-11-27 23:38:34,482 - INFO - Created fixed version of truncated export
-2024-11-27 23:38:34,482 - INFO - Synchronization successfully completed!
-2024-11-27 23:38:37,057 - INFO - Successfully connected to Ollama server
-2024-11-27 23:38:37,057 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 23:38:40,964 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 23:38:40,964 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-27 23:38:43,693 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:38:44,465 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:38:44,466 - INFO - Added 10 new blocks
-2024-11-27 23:38:44,466 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 23:40:40,307 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 23:40:40,551 - INFO - Starting synchronization...
-2024-11-27 23:40:41,587 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:40:42,621 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:40:44,383 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8007-9f79-c7969b00d2d0&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:40:46,444 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8108-8471-ee312ae66b49&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:40:48,266 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8126-8317-e409e6ece8e2&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:40:49,922 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81aa-ada5-d70026faefef&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:40:51,452 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81a1-8a6b-c0c968e04071&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:40:52,423 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-9fb4-d26f50055f93/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:53,457 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814b-b9bf-c936f2fbb427/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:53,755 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8174-93d3-e1ab501edbf6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:54,161 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816b-937a-c48effe3d4bf/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:54,490 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81cb-bbe3-fe4f197553f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:54,813 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819d-948f-ca93fc57b3be/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:55,234 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8116-9936-c89ef8649c88/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:55,524 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f8-a0c3-e616ae2707ad/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:55,816 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81aa-abc9-fa74b17caf63/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:56,157 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e7-acb5-fec72403d556/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:56,433 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-814e-b3a8-f734de8f75e7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:56,758 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-a17a-f99d507cb064/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:57,147 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8144-9b97-ff243a21a3a7/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:57,444 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8162-9227-e572bb5c1b7c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:40:57,446 - INFO - Archived old file: master_dashboard_20241127_191605.md
-2024-11-27 23:40:57,446 - INFO - Archived old file: master_dashboard_20241127_191856.md
-2024-11-27 23:40:57,447 - INFO - Saved: notion_export\master_dashboard_20241127_234057.md
-2024-11-27 23:40:57,455 - INFO - Synchronization successfully completed!
-2024-11-27 23:40:59,993 - INFO - Successfully connected to Ollama server
-2024-11-27 23:40:59,993 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 23:41:03,928 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 23:41:03,928 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-27 23:41:04,848 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:41:05,571 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:41:05,571 - INFO - Added 10 new blocks
-2024-11-27 23:41:05,572 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 23:41:05,572 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-27 23:41:14,293 - INFO - Successfully optimized section: Gesundheit
-2024-11-27 23:41:14,293 - INFO - Attempting to update section 'Gesundheit'
-2024-11-27 23:41:16,034 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:41:17,603 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:41:17,603 - INFO - Added 15 new blocks
-2024-11-27 23:41:17,604 - INFO - Successfully updated section: Gesundheit
-2024-11-27 23:41:17,604 - INFO - Optimiere Abschnitt: Business
-2024-11-27 23:41:25,329 - INFO - Successfully optimized section: Business
-2024-11-27 23:41:25,330 - INFO - Attempting to update section 'Business'
-2024-11-27 23:41:26,133 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:41:26,966 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:41:26,983 - INFO - Added 15 new blocks
-2024-11-27 23:41:26,984 - INFO - Successfully updated section: Business
-2024-11-27 23:41:26,984 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-27 23:41:34,595 - INFO - Successfully optimized section: Beziehung
-2024-11-27 23:41:34,595 - INFO - Attempting to update section 'Beziehung'
-2024-11-27 23:41:35,380 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:41:36,191 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:41:36,192 - INFO - Added 15 new blocks
-2024-11-27 23:41:36,192 - INFO - Successfully updated section: Beziehung
-2024-11-27 23:41:36,192 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-27 23:41:42,397 - INFO - Successfully optimized section: ARCHIV
-2024-11-27 23:41:42,397 - INFO - Attempting to update section 'ARCHIV'
-2024-11-27 23:41:43,281 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:41:43,772 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:41:43,772 - INFO - Created new section: ARCHIV
-2024-11-27 23:41:44,776 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:41:44,776 - INFO - Added 15 new blocks
-2024-11-27 23:41:44,777 - INFO - Successfully updated section: ARCHIV
-2024-11-27 23:47:33,911 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 23:47:34,149 - INFO - Starting synchronization...
-2024-11-27 23:47:35,228 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:47:36,134 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:47:38,151 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:47:39,517 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:47:40,073 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:47:40,583 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:47:40,912 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:47:41,934 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:47:42,261 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:47:42,263 - INFO - Archived old file: master_dashboard_20241127_192235.md
-2024-11-27 23:47:42,263 - INFO - Saved: notion_export\master_dashboard_20241127_234742.md
-2024-11-27 23:47:42,270 - INFO - Synchronization successfully completed!
-2024-11-27 23:47:44,792 - INFO - Successfully connected to Ollama server
-2024-11-27 23:47:44,793 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-27 23:48:00,107 - INFO - Successfully optimized section: Master Dashboard
-2024-11-27 23:48:00,107 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-27 23:48:01,536 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:48:02,635 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:48:02,635 - INFO - Created new section: Master Dashboard
-2024-11-27 23:48:04,154 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:48:04,156 - INFO - Added 16 new blocks
-2024-11-27 23:48:04,156 - INFO - Successfully updated section: Master Dashboard
-2024-11-27 23:48:04,157 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-27 23:48:39,169 - WARNING - Attempt 1 failed, retrying...
-2024-11-27 23:48:40,170 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-27 23:49:13,228 - INFO - Successfully optimized section: Gesundheit
-2024-11-27 23:49:13,228 - INFO - Attempting to update section 'Gesundheit'
-2024-11-27 23:49:15,118 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:49:18,381 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:49:18,384 - INFO - Added 41 new blocks
-2024-11-27 23:49:18,385 - INFO - Successfully updated section: Gesundheit
-2024-11-27 23:49:18,385 - INFO - Optimiere Abschnitt: Business
-2024-11-27 23:49:27,752 - INFO - Successfully optimized section: Business
-2024-11-27 23:49:27,752 - INFO - Attempting to update section 'Business'
-2024-11-27 23:49:28,444 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:49:29,877 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:49:29,879 - INFO - Added 17 new blocks
-2024-11-27 23:49:29,879 - INFO - Successfully updated section: Business
-2024-11-27 23:49:29,879 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-27 23:49:35,293 - INFO - Successfully optimized section: Beziehung
-2024-11-27 23:49:35,293 - INFO - Attempting to update section 'Beziehung'
-2024-11-27 23:49:36,314 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:49:37,789 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:49:37,790 - INFO - Added 14 new blocks
-2024-11-27 23:49:37,790 - INFO - Successfully updated section: Beziehung
-2024-11-27 23:49:37,791 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-27 23:50:12,798 - WARNING - Attempt 1 failed, retrying...
-2024-11-27 23:50:13,798 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-27 23:50:50,877 - WARNING - Attempt 2 failed, retrying...
-2024-11-27 23:50:52,878 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-27 23:51:29,933 - ERROR - Failed to optimize section after 3 attempts: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=35)
-2024-11-27 23:51:29,933 - INFO - Attempting to update section 'ARCHIV'
-2024-11-27 23:51:31,305 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-27 23:51:32,096 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:51:32,097 - INFO - Created new section: ARCHIV
-2024-11-27 23:51:33,133 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-27 23:51:33,135 - INFO - Added 15 new blocks
-2024-11-27 23:51:33,135 - INFO - Successfully updated section: ARCHIV
-2024-11-27 23:52:37,577 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-27 23:52:37,820 - INFO - Starting synchronization...
-2024-11-27 23:52:38,400 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-27 23:52:40,355 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:52:41,784 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:52:43,569 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:52:45,626 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-81fe-b1f3-f8f6699262db&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:52:47,120 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-8110-9c57-dc461f797f4e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-27 23:52:47,517 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:48,440 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:49,089 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:49,546 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:49,933 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:51,727 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8148-a3e0-f6c066810d7d/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:53,001 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81d5-820c-f00929dd209c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:53,450 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81ab-a3a2-f98a896a07cb/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:53,773 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81a4-80fa-eb2267bf8d9b/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:55,028 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81ae-9b7b-e07cc5440638/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-27 23:52:55,045 - INFO - Archived old file: master_dashboard_20241127_233215.md
-2024-11-27 23:52:55,046 - INFO - Saved: notion_export\master_dashboard_20241127_235255.md
-2024-11-27 23:52:55,053 - INFO - Synchronization successfully completed!
-2024-11-28 00:00:08,586 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-28 00:00:08,819 - INFO - Starting synchronization...
-2024-11-28 00:00:09,556 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-28 00:00:10,264 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:00:12,382 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:00:14,302 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:00:14,626 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:15,566 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:15,901 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:16,240 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:17,011 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:17,029 - INFO - Archived old file: master_dashboard_20241127_233452.md
-2024-11-28 00:00:17,030 - INFO - Saved: notion_export\master_dashboard_20241128_000017.md
-2024-11-28 00:00:17,036 - INFO - Synchronization successfully completed!
-2024-11-28 00:00:29,759 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-28 00:00:29,991 - INFO - Starting synchronization...
-2024-11-28 00:00:30,542 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-28 00:00:31,033 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:00:32,458 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:00:35,953 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:00:36,409 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:36,953 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:37,482 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:37,856 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:39,726 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:00:39,728 - INFO - Archived old file: master_dashboard_20241127_233834.md
-2024-11-28 00:00:39,729 - INFO - Saved: notion_export\master_dashboard_20241128_000039.md
-2024-11-28 00:00:39,735 - INFO - Synchronization successfully completed!
-2024-11-28 00:00:42,262 - INFO - Successfully connected to Ollama server
-2024-11-28 00:00:42,262 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-28 00:00:52,597 - INFO - Successfully optimized section: Master Dashboard
-2024-11-28 00:00:52,597 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-28 00:00:53,654 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:00:54,170 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:00:54,171 - INFO - Created new section: Master Dashboard
-2024-11-28 00:01:00,096 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:01:00,099 - INFO - Added 15 new blocks
-2024-11-28 00:01:00,100 - INFO - Successfully updated section: Master Dashboard
-2024-11-28 00:01:00,100 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-28 00:01:10,705 - INFO - Successfully optimized section: Gesundheit
-2024-11-28 00:01:10,706 - INFO - Attempting to update section 'Gesundheit'
-2024-11-28 00:01:12,465 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:01:14,029 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:01:14,030 - INFO - Added 15 new blocks
-2024-11-28 00:01:14,030 - INFO - Successfully updated section: Gesundheit
-2024-11-28 00:01:14,030 - INFO - Optimiere Abschnitt: Business
-2024-11-28 00:01:25,567 - INFO - Successfully optimized section: Business
-2024-11-28 00:01:25,568 - INFO - Attempting to update section 'Business'
-2024-11-28 00:01:26,534 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:01:27,548 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:01:27,552 - INFO - Added 15 new blocks
-2024-11-28 00:01:27,552 - INFO - Successfully updated section: Business
-2024-11-28 00:01:27,552 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-28 00:01:41,086 - INFO - Successfully optimized section: Beziehung
-2024-11-28 00:01:41,086 - INFO - Attempting to update section 'Beziehung'
-2024-11-28 00:01:42,098 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:01:42,925 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:01:42,926 - INFO - Added 16 new blocks
-2024-11-28 00:01:42,926 - INFO - Successfully updated section: Beziehung
-2024-11-28 00:01:42,926 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-28 00:01:58,101 - INFO - Successfully optimized section: ARCHIV
-2024-11-28 00:01:58,101 - INFO - Attempting to update section 'ARCHIV'
-2024-11-28 00:01:59,069 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:01:59,579 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:01:59,580 - INFO - Created new section: ARCHIV
-2024-11-28 00:02:01,454 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:02:01,464 - INFO - Added 16 new blocks
-2024-11-28 00:02:01,466 - INFO - Successfully updated section: ARCHIV
-2024-11-28 00:02:55,934 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-28 00:02:56,174 - INFO - Starting synchronization...
-2024-11-28 00:02:57,122 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-28 00:02:57,747 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:03:00,152 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:03:01,811 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:03:03,428 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-811e-868f-e9562814e783&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:03:05,345 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-816a-b499-debafad49b67&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:03:06,521 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:06,936 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:07,247 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:08,304 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:11,177 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:11,629 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817a-b53f-c05ed2266812/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:12,349 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817c-942b-c33e97f37d9c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:12,814 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-8897-e36ac4542318/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:13,169 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81c4-b28b-f1ba5fc51a3d/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:13,537 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-8f62-f84e2ba5f2d1/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:03:13,539 - INFO - Archived old file: master_dashboard_20241127_233834_fixed.md
-2024-11-28 00:03:13,540 - INFO - Saved: notion_export\master_dashboard_20241128_000313.md
-2024-11-28 00:03:13,548 - INFO - Synchronization successfully completed!
-2024-11-28 00:05:27,063 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-28 00:05:27,298 - INFO - Starting synchronization...
-2024-11-28 00:05:28,282 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-28 00:05:29,300 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:05:30,767 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:05:32,283 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:05:35,392 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-811e-868f-e9562814e783&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:05:36,774 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-816a-b499-debafad49b67&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:05:37,612 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:38,054 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:38,337 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:38,767 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:39,094 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:39,390 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817a-b53f-c05ed2266812/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:40,046 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817c-942b-c33e97f37d9c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:40,391 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-8897-e36ac4542318/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:40,692 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81c4-b28b-f1ba5fc51a3d/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:41,009 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-8f62-f84e2ba5f2d1/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:05:41,011 - INFO - Archived old file: master_dashboard_20241127_234057.md
-2024-11-28 00:05:41,012 - INFO - Saved: notion_export\master_dashboard_20241128_000541.md
-2024-11-28 00:05:41,018 - INFO - Synchronization successfully completed!
-2024-11-28 00:05:43,561 - INFO - Successfully connected to Ollama server
-2024-11-28 00:05:43,561 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-28 00:05:51,996 - INFO - Successfully optimized section: Master Dashboard
-2024-11-28 00:05:51,996 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-28 00:05:52,804 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:05:53,438 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:05:53,438 - INFO - Created new section: Master Dashboard
-2024-11-28 00:05:54,197 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:05:54,198 - INFO - Added 15 new blocks
-2024-11-28 00:05:54,198 - INFO - Successfully updated section: Master Dashboard
-2024-11-28 00:05:54,199 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-28 00:06:02,536 - INFO - Successfully optimized section: Gesundheit
-2024-11-28 00:06:02,536 - INFO - Attempting to update section 'Gesundheit'
-2024-11-28 00:06:03,461 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:06:04,379 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:06:04,380 - INFO - Added 15 new blocks
-2024-11-28 00:06:04,380 - INFO - Successfully updated section: Gesundheit
-2024-11-28 00:06:04,380 - INFO - Optimiere Abschnitt: Business
-2024-11-28 00:06:14,720 - INFO - Successfully optimized section: Business
-2024-11-28 00:06:14,720 - INFO - Attempting to update section 'Business'
-2024-11-28 00:06:15,664 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:06:16,701 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:06:16,705 - INFO - Added 15 new blocks
-2024-11-28 00:06:16,705 - INFO - Successfully updated section: Business
-2024-11-28 00:06:16,705 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-28 00:06:29,441 - INFO - Successfully optimized section: Beziehung
-2024-11-28 00:06:29,442 - INFO - Attempting to update section 'Beziehung'
-2024-11-28 00:06:30,570 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:06:31,658 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:06:31,658 - INFO - Added 16 new blocks
-2024-11-28 00:06:31,659 - INFO - Successfully updated section: Beziehung
-2024-11-28 00:06:31,659 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-28 00:06:43,741 - INFO - Successfully optimized section: ARCHIV
-2024-11-28 00:06:43,742 - INFO - Attempting to update section 'ARCHIV'
-2024-11-28 00:06:44,480 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:06:45,374 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:06:45,374 - INFO - Created new section: ARCHIV
-2024-11-28 00:06:46,420 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:06:46,421 - INFO - Added 16 new blocks
-2024-11-28 00:06:46,421 - INFO - Successfully updated section: ARCHIV
-2024-11-28 00:07:02,723 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-28 00:07:02,961 - INFO - Starting synchronization...
-2024-11-28 00:07:03,350 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
-2024-11-28 00:07:03,875 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:07:09,333 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-803f-8a52-d7e03c7ffd1e&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:07:12,754 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:07:14,390 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-811e-868f-e9562814e783&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:07:16,013 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-816a-b499-debafad49b67&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:07:17,589 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-815a-a49b-c7c87bfff663&page_size=50 "HTTP/1.1 200 OK"
-2024-11-28 00:07:17,884 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:18,313 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:18,753 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:19,235 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:19,586 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:19,951 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817a-b53f-c05ed2266812/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:20,365 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817c-942b-c33e97f37d9c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:20,667 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-8897-e36ac4542318/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:20,953 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81c4-b28b-f1ba5fc51a3d/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:21,366 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-8f62-f84e2ba5f2d1/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:21,659 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81d0-ad51-c7a6b8a5f930/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:21,954 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8106-937b-c428e9a4f524/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:22,276 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8164-a4ad-d6e29f4ac2f6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:22,722 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f6-9f04-f14b06d980dd/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:23,062 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8135-aeea-c29b98c5d9a5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:07:23,064 - INFO - Archived old file: master_dashboard_20241127_234742.md
-2024-11-28 00:07:23,065 - INFO - Saved: notion_export\master_dashboard_20241128_000723.md
-2024-11-28 00:07:23,071 - INFO - Synchronization successfully completed!
-2024-11-28 00:09:21,415 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-28 00:09:21,653 - INFO - Starting synchronization...
-2024-11-28 00:09:23,154 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:09:24,996 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:09:26,171 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-816a-b499-debafad49b67&page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:09:27,196 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:28,198 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:28,535 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:28,938 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:30,279 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:30,638 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817a-b53f-c05ed2266812/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:35,487 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817c-942b-c33e97f37d9c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:35,902 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-8897-e36ac4542318/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:36,312 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81c4-b28b-f1ba5fc51a3d/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:36,626 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-8f62-f84e2ba5f2d1/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:36,934 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81d0-ad51-c7a6b8a5f930/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:37,344 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8106-937b-c428e9a4f524/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:37,816 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8164-a4ad-d6e29f4ac2f6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:38,174 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f6-9f04-f14b06d980dd/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:38,533 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8135-aeea-c29b98c5d9a5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:09:38,535 - INFO - Archived old file: master_dashboard_20241127_235255.md
-2024-11-28 00:09:38,536 - INFO - Saved: notion_export\master_dashboard_20241128_000938.md
-2024-11-28 00:09:38,542 - INFO - Synchronization successfully completed!
-2024-11-28 00:09:41,099 - INFO - Successfully connected to Ollama server
-2024-11-28 00:09:41,100 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-28 00:09:49,729 - INFO - Successfully optimized section: Master Dashboard
-2024-11-28 00:09:49,729 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-28 00:09:51,144 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:09:51,828 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:09:51,829 - INFO - Created new section: Master Dashboard
-2024-11-28 00:09:53,229 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:09:53,230 - INFO - Added 15 new blocks
-2024-11-28 00:09:53,230 - INFO - Successfully updated section: Master Dashboard
-2024-11-28 00:09:53,230 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-28 00:10:01,396 - INFO - Successfully optimized section: Gesundheit
-2024-11-28 00:10:01,396 - INFO - Attempting to update section 'Gesundheit'
-2024-11-28 00:10:02,266 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:10:04,228 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:10:04,233 - INFO - Added 15 new blocks
-2024-11-28 00:10:04,233 - INFO - Successfully updated section: Gesundheit
-2024-11-28 00:10:04,233 - INFO - Optimiere Abschnitt: Business
-2024-11-28 00:10:13,874 - INFO - Successfully optimized section: Business
-2024-11-28 00:10:13,874 - INFO - Attempting to update section 'Business'
-2024-11-28 00:10:14,950 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:10:15,929 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:10:15,930 - INFO - Added 15 new blocks
-2024-11-28 00:10:15,930 - INFO - Successfully updated section: Business
-2024-11-28 00:10:15,930 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-28 00:10:27,848 - INFO - Successfully optimized section: Beziehung
-2024-11-28 00:10:27,848 - INFO - Attempting to update section 'Beziehung'
-2024-11-28 00:10:28,861 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:10:34,789 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:10:34,799 - INFO - Added 16 new blocks
-2024-11-28 00:10:34,799 - INFO - Successfully updated section: Beziehung
-2024-11-28 00:10:34,800 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-28 00:10:46,187 - INFO - Successfully optimized section: ARCHIV
-2024-11-28 00:10:46,187 - INFO - Attempting to update section 'ARCHIV'
-2024-11-28 00:10:47,015 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:10:48,775 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:10:48,776 - INFO - Created new section: ARCHIV
-2024-11-28 00:10:49,621 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:10:49,622 - INFO - Added 16 new blocks
-2024-11-28 00:10:49,622 - INFO - Successfully updated section: ARCHIV
-2024-11-28 00:11:45,338 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
-2024-11-28 00:11:45,578 - INFO - Starting synchronization...
-2024-11-28 00:11:46,311 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:11:47,561 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:11:49,611 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-816a-b499-debafad49b67&page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:11:51,374 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-814e-8ac0-f50ecdf2f592&page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:11:51,744 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:52,302 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:52,659 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:53,007 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:53,295 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:53,860 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817a-b53f-c05ed2266812/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:54,234 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-817c-942b-c33e97f37d9c/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:54,578 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-8897-e36ac4542318/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:54,918 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81c4-b28b-f1ba5fc51a3d/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:55,207 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8114-8f62-f84e2ba5f2d1/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:55,596 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81d0-ad51-c7a6b8a5f930/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:55,945 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8106-937b-c428e9a4f524/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:56,275 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8164-a4ad-d6e29f4ac2f6/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:56,665 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f6-9f04-f14b06d980dd/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:56,960 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8135-aeea-c29b98c5d9a5/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:57,254 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819a-9656-ff1b5e37f2ce/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:57,579 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8166-b3f5-d44deb69d38f/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:57,887 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8192-9599-cc930183f770/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:58,399 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81bc-9ce0-f97c75a188e1/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:58,871 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81ab-beae-ef8a4599d928/children?page_size=250 "HTTP/1.1 200 OK"
-2024-11-28 00:11:58,873 - INFO - Archived old file: master_dashboard_20241128_000017.md
-2024-11-28 00:11:58,874 - INFO - Saved: notion_export\master_dashboard_20241128_001158.md
-2024-11-28 00:11:58,876 - INFO - Synchronization successfully completed!
-2024-11-28 00:12:01,405 - INFO - Successfully connected to Ollama server
-2024-11-28 00:12:01,405 - INFO - Optimiere Abschnitt: Master Dashboard
-2024-11-28 00:12:09,893 - INFO - Successfully optimized section: Master Dashboard
-2024-11-28 00:12:09,893 - INFO - Attempting to update section 'Master Dashboard'
-2024-11-28 00:12:10,969 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:12:11,717 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:12:11,717 - INFO - Created new section: Master Dashboard
-2024-11-28 00:12:12,685 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:12:12,685 - INFO - Added 15 new blocks
-2024-11-28 00:12:12,686 - INFO - Successfully updated section: Master Dashboard
-2024-11-28 00:12:12,686 - INFO - Optimiere Abschnitt: Gesundheit
-2024-11-28 00:12:20,718 - INFO - Successfully optimized section: Gesundheit
-2024-11-28 00:12:20,718 - INFO - Attempting to update section 'Gesundheit'
-2024-11-28 00:12:21,611 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:12:22,506 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:12:22,506 - INFO - Added 15 new blocks
-2024-11-28 00:12:22,507 - INFO - Successfully updated section: Gesundheit
-2024-11-28 00:12:22,507 - INFO - Optimiere Abschnitt: Business
-2024-11-28 00:12:32,359 - INFO - Successfully optimized section: Business
-2024-11-28 00:12:32,359 - INFO - Attempting to update section 'Business'
-2024-11-28 00:12:33,199 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:12:34,163 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:12:34,165 - INFO - Added 15 new blocks
-2024-11-28 00:12:34,165 - INFO - Successfully updated section: Business
-2024-11-28 00:12:34,165 - INFO - Optimiere Abschnitt: Beziehung
-2024-11-28 00:12:46,430 - INFO - Successfully optimized section: Beziehung
-2024-11-28 00:12:46,430 - INFO - Attempting to update section 'Beziehung'
-2024-11-28 00:12:47,395 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:12:48,249 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:12:48,249 - INFO - Added 16 new blocks
-2024-11-28 00:12:48,250 - INFO - Successfully updated section: Beziehung
-2024-11-28 00:12:48,250 - INFO - Optimiere Abschnitt: ARCHIV
-2024-11-28 00:12:59,613 - INFO - Successfully optimized section: ARCHIV
-2024-11-28 00:12:59,614 - INFO - Attempting to update section 'ARCHIV'
-2024-11-28 00:13:00,625 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
-2024-11-28 00:13:01,147 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:13:01,147 - INFO - Created new section: ARCHIV
-2024-11-28 00:13:02,917 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
-2024-11-28 00:13:02,918 - INFO - Added 16 new blocks
-2024-11-28 00:13:02,918 - INFO - Successfully updated section: ARCHIV
+2024-11-27 12:12:50,940 - ERROR - Kein Notion API Token gefunden!
+2024-11-27 12:13:36,056 - ERROR - Kein Notion API Token gefunden!
+2024-11-27 12:16:49,381 - INFO - Starte Synchronisation...
+2024-11-27 12:16:49,760 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480d0a0c8f923f8e66979 "HTTP/1.1 200 OK"
+2024-11-27 12:16:50,060 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480d0a0c8f923f8e66979/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:50,305 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-80e2-9b06-ef95c337856f "HTTP/1.1 200 OK"
+2024-11-27 12:16:50,790 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80e2-9b06-ef95c337856f/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:51,108 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819f-902b-c2d3459295b0/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:51,996 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-8064-9512-f184d8704397 "HTTP/1.1 200 OK"
+2024-11-27 12:16:52,541 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8064-9512-f184d8704397/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:52,810 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-8063-9834-c49127f1ade8 "HTTP/1.1 200 OK"
+2024-11-27 12:16:53,356 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8063-9834-c49127f1ade8/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:53,660 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f2-ba63-cc0b7bb7aa31/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:54,004 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-8098-8151-f8be56aad619 "HTTP/1.1 200 OK"
+2024-11-27 12:16:54,989 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8098-8151-f8be56aad619/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:55,326 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-80cc-b2ac-c1f3d9301ca9 "HTTP/1.1 200 OK"
+2024-11-27 12:16:55,646 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80cc-b2ac-c1f3d9301ca9/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:55,900 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-805b-aaac-e7b0ec834b3f "HTTP/1.1 200 OK"
+2024-11-27 12:16:56,286 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805b-aaac-e7b0ec834b3f/children "HTTP/1.1 200 OK"
+2024-11-27 12:16:56,288 - INFO - Gespeichert: notion_export\master_dashboard_20241127_121656.md
+2024-11-27 12:16:56,288 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 12:21:46,302 - INFO - Starte Synchronisation...
+2024-11-27 12:21:48,077 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480d0a0c8f923f8e66979 "HTTP/1.1 200 OK"
+2024-11-27 12:21:48,481 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480d0a0c8f923f8e66979/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:48,769 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-80e2-9b06-ef95c337856f "HTTP/1.1 200 OK"
+2024-11-27 12:21:49,444 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80e2-9b06-ef95c337856f/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:50,214 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819f-902b-c2d3459295b0/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:50,477 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-8064-9512-f184d8704397 "HTTP/1.1 200 OK"
+2024-11-27 12:21:53,097 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8064-9512-f184d8704397/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:53,422 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-8063-9834-c49127f1ade8 "HTTP/1.1 200 OK"
+2024-11-27 12:21:53,847 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8063-9834-c49127f1ade8/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:54,204 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81f2-ba63-cc0b7bb7aa31/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:54,488 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-8098-8151-f8be56aad619 "HTTP/1.1 200 OK"
+2024-11-27 12:21:55,489 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8098-8151-f8be56aad619/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:55,792 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-80cc-b2ac-c1f3d9301ca9 "HTTP/1.1 200 OK"
+2024-11-27 12:21:56,831 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80cc-b2ac-c1f3d9301ca9/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:57,834 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d-76a4-805b-aaac-e7b0ec834b3f "HTTP/1.1 200 OK"
+2024-11-27 12:21:58,189 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805b-aaac-e7b0ec834b3f/children "HTTP/1.1 200 OK"
+2024-11-27 12:21:58,191 - INFO - Gespeichert: notion_export\master_dashboard_20241127_122158.md
+2024-11-27 12:21:58,191 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 12:45:08,937 - INFO - Starte Synchronisation...
+2024-11-27 12:45:09,485 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a48006bdf6d0b3a7a8843a "HTTP/1.1 200 OK"
+2024-11-27 12:45:10,345 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a48006bdf6d0b3a7a8843a/children "HTTP/1.1 200 OK"
+2024-11-27 12:45:10,817 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81c1-8c74-ee666fddf1c9/children "HTTP/1.1 200 OK"
+2024-11-27 12:45:11,934 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8157-8f51-cb7dc3d25985/children "HTTP/1.1 200 OK"
+2024-11-27 12:45:12,378 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81ac-94d9-de7dfe235ca6/children "HTTP/1.1 200 OK"
+2024-11-27 12:45:12,779 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-811f-9dd5-d16320123013/children "HTTP/1.1 200 OK"
+2024-11-27 12:45:13,317 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81b9-a8f2-e291339003f9/children "HTTP/1.1 200 OK"
+2024-11-27 12:45:13,319 - INFO - Archivierte alte Datei: master_dashboard_20241127_120151.md
+2024-11-27 12:45:13,319 - INFO - Gespeichert: notion_export\master_dashboard_20241127_124513.md
+2024-11-27 12:45:13,319 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 12:53:13,356 - INFO - Starte Synchronisation...
+2024-11-27 12:53:13,890 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a?pvs=12 "HTTP/1.1 400 Bad Request"
+2024-11-27 12:53:13,891 - ERROR - Fehler beim Holen der Seite 14be4a7d76a480009895dd4b3b843b5a?pvs=12: query failed validation: query.pvs should be not present, instead was `12`.
+2024-11-27 12:53:13,892 - INFO - Archivierte alte Datei: master_dashboard_20241127_120322.md
+2024-11-27 12:53:13,892 - INFO - Archivierte alte Datei: master_dashboard_20241127_120532.md
+2024-11-27 12:53:13,893 - INFO - Gespeichert: notion_export\master_dashboard_20241127_125313.md
+2024-11-27 12:53:13,893 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:00:02,187 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:00:02,420 - INFO - Starte Synchronisation...
+2024-11-27 13:00:02,844 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:00:03,583 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:00:03,957 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819a-8f29-c0439176559b/children "HTTP/1.1 200 OK"
+2024-11-27 13:00:04,338 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e5-a64a-d5bbfcec8444/children "HTTP/1.1 200 OK"
+2024-11-27 13:00:04,634 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8184-b414-c8a598738adb/children "HTTP/1.1 200 OK"
+2024-11-27 13:00:05,080 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816f-ae98-dec54801b1fb/children "HTTP/1.1 200 OK"
+2024-11-27 13:00:05,582 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-aad1-ffb463ff0f79/children "HTTP/1.1 200 OK"
+2024-11-27 13:00:05,583 - INFO - Archivierte alte Datei: master_dashboard_20241127_121641.md
+2024-11-27 13:00:05,584 - INFO - Archivierte alte Datei: master_dashboard_20241127_121656.md
+2024-11-27 13:00:05,584 - INFO - Archivierte alte Datei: master_dashboard_20241127_122158.md
+2024-11-27 13:00:05,584 - INFO - Archivierte alte Datei: master_dashboard_20241127_124513.md
+2024-11-27 13:00:05,585 - INFO - Archivierte alte Datei: master_dashboard_20241127_125214.md
+2024-11-27 13:00:05,585 - INFO - Archivierte alte Datei: master_dashboard_20241127_125313.md
+2024-11-27 13:00:05,585 - INFO - Archivierte alte Datei: master_dashboard_20241127_125322.md
+2024-11-27 13:00:05,585 - INFO - Archivierte alte Datei: master_dashboard_20241127_125403.md
+2024-11-27 13:00:05,586 - INFO - Gespeichert: notion_export\master_dashboard_20241127_130005.md
+2024-11-27 13:00:05,586 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:01:09,225 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:01:09,458 - INFO - Starte Synchronisation...
+2024-11-27 13:01:09,831 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:01:10,519 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:01:10,901 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819a-8f29-c0439176559b/children "HTTP/1.1 200 OK"
+2024-11-27 13:01:11,540 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e5-a64a-d5bbfcec8444/children "HTTP/1.1 200 OK"
+2024-11-27 13:01:12,140 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8184-b414-c8a598738adb/children "HTTP/1.1 200 OK"
+2024-11-27 13:01:12,545 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816f-ae98-dec54801b1fb/children "HTTP/1.1 200 OK"
+2024-11-27 13:01:12,922 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-aad1-ffb463ff0f79/children "HTTP/1.1 200 OK"
+2024-11-27 13:01:12,923 - INFO - Archivierte alte Datei: master_dashboard_20241127_125432.md
+2024-11-27 13:01:12,924 - INFO - Gespeichert: notion_export\master_dashboard_20241127_130112.md
+2024-11-27 13:01:12,924 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:21:00,385 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:21:00,617 - INFO - Starte Synchronisation...
+2024-11-27 13:21:01,130 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:21:01,733 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:21:02,038 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819a-8f29-c0439176559b/children "HTTP/1.1 200 OK"
+2024-11-27 13:21:02,564 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e5-a64a-d5bbfcec8444/children "HTTP/1.1 200 OK"
+2024-11-27 13:21:02,839 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8184-b414-c8a598738adb/children "HTTP/1.1 200 OK"
+2024-11-27 13:21:03,147 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816f-ae98-dec54801b1fb/children "HTTP/1.1 200 OK"
+2024-11-27 13:21:04,127 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-aad1-ffb463ff0f79/children "HTTP/1.1 200 OK"
+2024-11-27 13:21:04,129 - INFO - Archivierte alte Datei: master_dashboard_20241127_125529.md
+2024-11-27 13:21:04,129 - INFO - Gespeichert: notion_export\master_dashboard_20241127_132104.md
+2024-11-27 13:21:04,130 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:23:11,683 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:23:11,915 - INFO - Starte Synchronisation...
+2024-11-27 13:23:13,067 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:23:13,626 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:23:13,990 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-819a-8f29-c0439176559b/children "HTTP/1.1 200 OK"
+2024-11-27 13:23:15,735 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-81e5-a64a-d5bbfcec8444/children "HTTP/1.1 200 OK"
+2024-11-27 13:23:16,167 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8184-b414-c8a598738adb/children "HTTP/1.1 200 OK"
+2024-11-27 13:23:16,519 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-816f-ae98-dec54801b1fb/children "HTTP/1.1 200 OK"
+2024-11-27 13:23:16,828 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-815c-aad1-ffb463ff0f79/children "HTTP/1.1 200 OK"
+2024-11-27 13:23:16,830 - INFO - Archivierte alte Datei: master_dashboard_20241127_125604.md
+2024-11-27 13:23:16,830 - INFO - Gespeichert: notion_export\master_dashboard_20241127_132316.md
+2024-11-27 13:23:16,831 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:35:55,371 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:35:55,602 - INFO - Starte Synchronisation...
+2024-11-27 13:35:56,027 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:35:56,992 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:35:57,923 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:35:58,940 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:35:59,328 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:35:59,702 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:36:00,033 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:36:00,034 - INFO - Archivierte alte Datei: master_dashboard_20241127_125721.md
+2024-11-27 13:36:00,035 - INFO - Gespeichert: notion_export\master_dashboard_20241127_133600.md
+2024-11-27 13:36:00,035 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:37:11,640 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:37:11,872 - INFO - Starte Synchronisation...
+2024-11-27 13:37:12,405 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:37:13,342 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:37:13,638 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:37:14,052 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:37:14,411 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:37:14,862 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:37:15,204 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:37:15,205 - INFO - Archivierte alte Datei: master_dashboard_20241127_125959.md
+2024-11-27 13:37:15,206 - INFO - Gespeichert: notion_export\master_dashboard_20241127_133715.md
+2024-11-27 13:37:15,206 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:39:23,541 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:39:23,778 - INFO - Starte Synchronisation...
+2024-11-27 13:39:24,165 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:39:25,016 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:39:25,359 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:39:25,797 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:39:26,147 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:39:26,686 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:39:27,548 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:39:27,550 - INFO - Archivierte alte Datei: master_dashboard_20241127_130005.md
+2024-11-27 13:39:27,550 - INFO - Gespeichert: notion_export\master_dashboard_20241127_133927.md
+2024-11-27 13:39:27,551 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:40:00,147 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:40:00,381 - INFO - Starte Synchronisation...
+2024-11-27 13:40:00,809 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:40:01,741 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:02,326 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:02,854 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:03,313 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:03,867 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:04,234 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:04,235 - INFO - Archivierte alte Datei: master_dashboard_20241127_130112.md
+2024-11-27 13:40:04,236 - INFO - Gespeichert: notion_export\master_dashboard_20241127_134004.md
+2024-11-27 13:40:04,236 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:40:50,255 - INFO - Starte Sync für Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:40:50,487 - INFO - Starte Synchronisation...
+2024-11-27 13:40:50,920 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:40:51,931 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:52,407 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:53,611 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:53,970 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:54,616 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:54,976 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:40:54,977 - INFO - Archivierte alte Datei: master_dashboard_20241127_132104.md
+2024-11-27 13:40:54,978 - INFO - Gespeichert: notion_export\master_dashboard_20241127_134054.md
+2024-11-27 13:40:54,978 - INFO - Synchronisation erfolgreich abgeschlossen!
+2024-11-27 13:48:23,884 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:48:24,119 - INFO - Starting synchronization...
+2024-11-27 13:48:24,699 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:48:26,173 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:48:26,812 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:48:27,385 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:48:27,852 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:48:28,409 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:48:28,767 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:48:28,768 - INFO - Archived old file: master_dashboard_20241127_132316.md
+2024-11-27 13:48:28,769 - INFO - Saved: notion_export\master_dashboard_20241127_134828.md
+2024-11-27 13:48:28,775 - WARNING - File master_dashboard_20241127_134828.md seems unusually short (731 words)
+2024-11-27 13:48:28,775 - WARNING - Export appears incomplete!
+2024-11-27 13:48:28,776 - WARNING - Missing sections: ARCHIV
+2024-11-27 13:48:28,777 - INFO - Created fixed file: master_dashboard_20241127_134828_fixed.md
+2024-11-27 13:48:28,777 - INFO - Created fixed version of truncated export
+2024-11-27 13:48:28,778 - INFO - Synchronization successfully completed!
+2024-11-27 13:51:33,203 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:51:33,440 - INFO - Starting synchronization...
+2024-11-27 13:51:33,874 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:51:34,816 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:51:35,196 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:51:35,533 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:51:35,826 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:51:36,214 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:51:37,877 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:51:37,877 - ERROR - Error during synchronization: 'NotionSync' object has no attribute 'archive_old_files'
+2024-11-27 13:51:37,878 - ERROR - Synchronization failed!
+2024-11-27 13:52:29,516 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:52:29,752 - INFO - Starting synchronization...
+2024-11-27 13:52:30,073 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:52:30,969 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-27 13:52:31,349 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:52:31,635 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:52:32,690 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:52:33,049 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:52:33,329 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:52:33,330 - ERROR - Error during synchronization: 'NotionSync' object has no attribute 'archive_old_files'
+2024-11-27 13:52:33,330 - ERROR - Synchronization failed!
+2024-11-27 13:58:53,354 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 13:58:53,610 - INFO - Starting synchronization...
+2024-11-27 13:58:54,015 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 13:58:54,755 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
+2024-11-27 13:58:55,056 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:58:55,990 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 13:58:56,908 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 13:58:57,448 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 13:58:57,871 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 13:58:58,477 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=100 "HTTP/1.1 200 OK"
+2024-11-27 13:58:58,480 - INFO - Archived old file: master_dashboard_20241127_133600.md
+2024-11-27 13:58:58,480 - INFO - Archived old file: master_dashboard_20241127_133715.md
+2024-11-27 13:58:58,481 - INFO - Saved: notion_export\master_dashboard_20241127_135858.md
+2024-11-27 13:58:58,490 - INFO - Synchronization successfully completed!
+2024-11-27 14:00:02,229 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 14:00:02,467 - INFO - Starting synchronization...
+2024-11-27 14:00:03,025 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 14:00:04,023 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
+2024-11-27 14:00:04,410 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children "HTTP/1.1 200 OK"
+2024-11-27 14:00:04,924 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children "HTTP/1.1 200 OK"
+2024-11-27 14:00:05,266 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children "HTTP/1.1 200 OK"
+2024-11-27 14:00:05,708 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children "HTTP/1.1 200 OK"
+2024-11-27 14:00:06,137 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children "HTTP/1.1 200 OK"
+2024-11-27 14:00:06,729 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=100 "HTTP/1.1 200 OK"
+2024-11-27 14:00:06,733 - INFO - Archived old file: master_dashboard_20241127_133927.md
+2024-11-27 14:00:06,734 - INFO - Saved: notion_export\master_dashboard_20241127_140006.md
+2024-11-27 14:00:06,740 - INFO - Synchronization successfully completed!
+2024-11-27 14:15:14,298 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 14:15:14,537 - INFO - Starting synchronization...
+2024-11-27 14:15:14,919 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 14:15:16,963 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:15:17,668 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:15:17,669 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 14:15:17,669 - INFO - Processing table with 5 total rows
+2024-11-27 14:15:17,669 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 14:15:17,976 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:15:17,978 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 14:15:17,978 - INFO - Processing table with 8 total rows
+2024-11-27 14:15:17,978 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 14:15:18,270 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:15:18,271 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 14:15:18,271 - INFO - Processing table with 4 total rows
+2024-11-27 14:15:18,271 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 14:15:18,736 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:15:18,737 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 14:15:18,737 - INFO - Processing table with 16 total rows
+2024-11-27 14:15:18,737 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 14:15:19,202 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:15:19,203 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 14:15:19,203 - INFO - Processing table with 5 total rows
+2024-11-27 14:15:19,203 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 14:15:19,843 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:15:19,856 - INFO - Archived old file: master_dashboard_20241127_134004.md
+2024-11-27 14:15:19,857 - INFO - Saved: notion_export\master_dashboard_20241127_141519.md
+2024-11-27 14:15:19,864 - INFO - Synchronization successfully completed!
+2024-11-27 14:45:28,839 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 14:45:29,071 - INFO - Starting synchronization...
+2024-11-27 14:45:29,605 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 14:45:31,183 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:45:31,607 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:45:31,608 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 14:45:31,608 - INFO - Processing table with 5 total rows
+2024-11-27 14:45:31,608 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 14:45:31,934 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:45:31,935 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 14:45:31,935 - INFO - Processing table with 8 total rows
+2024-11-27 14:45:31,935 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 14:45:32,838 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:45:32,839 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 14:45:32,839 - INFO - Processing table with 4 total rows
+2024-11-27 14:45:32,839 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 14:45:33,811 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:45:33,812 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 14:45:33,812 - INFO - Processing table with 16 total rows
+2024-11-27 14:45:33,813 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 14:45:34,859 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:45:34,860 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 14:45:34,860 - INFO - Processing table with 5 total rows
+2024-11-27 14:45:34,860 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 14:45:35,368 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 14:45:35,374 - INFO - Archived old file: master_dashboard_20241127_134054.md
+2024-11-27 14:45:35,375 - INFO - Saved: notion_export\master_dashboard_20241127_144535.md
+2024-11-27 14:45:35,382 - INFO - Synchronization successfully completed!
+2024-11-27 15:00:02,335 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 15:00:02,576 - INFO - Starting synchronization...
+2024-11-27 15:00:03,240 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 15:00:04,211 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:00:04,991 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:00:05,044 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:00:05,045 - INFO - Processing table with 5 total rows
+2024-11-27 15:00:05,045 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:00:07,390 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:00:07,391 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 15:00:07,391 - INFO - Processing table with 8 total rows
+2024-11-27 15:00:07,391 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 15:00:07,974 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:00:07,976 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 15:00:07,976 - INFO - Processing table with 4 total rows
+2024-11-27 15:00:07,976 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 15:00:08,429 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:00:08,430 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 15:00:08,430 - INFO - Processing table with 16 total rows
+2024-11-27 15:00:08,431 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 15:00:08,916 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:00:08,922 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:00:08,922 - INFO - Processing table with 5 total rows
+2024-11-27 15:00:08,923 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:00:09,531 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:00:09,533 - INFO - Archived old file: master_dashboard_20241127_134828.md
+2024-11-27 15:00:09,533 - INFO - Saved: notion_export\master_dashboard_20241127_150009.md
+2024-11-27 15:00:09,540 - INFO - Synchronization successfully completed!
+2024-11-27 15:01:54,096 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 15:01:54,332 - INFO - Starting synchronization...
+2024-11-27 15:01:54,762 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 15:01:55,736 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:01:56,325 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807e-8de9-df273b67be2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:01:56,329 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:01:56,329 - INFO - Processing table with 5 total rows
+2024-11-27 15:01:56,329 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:01:56,685 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-801c-b250-daff41fe107c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:01:56,686 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 15:01:56,686 - INFO - Processing table with 8 total rows
+2024-11-27 15:01:56,686 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 15:01:57,152 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-8021-aa72-d391e0098574/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:01:57,152 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 15:01:57,152 - INFO - Processing table with 4 total rows
+2024-11-27 15:01:57,153 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 15:01:57,583 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ce-91ab-f1f537b73a2c/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:01:57,584 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 15:01:57,584 - INFO - Processing table with 16 total rows
+2024-11-27 15:01:57,584 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 15:01:59,109 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80ee-90b7-f9dead4657f5/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:01:59,294 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:01:59,294 - INFO - Processing table with 5 total rows
+2024-11-27 15:01:59,294 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:01:59,714 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-809c-a639-e226fa053f3a&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:01:59,716 - INFO - Archived old file: master_dashboard_20241127_134828_fixed.md
+2024-11-27 15:01:59,717 - INFO - Saved: notion_export\master_dashboard_20241127_150159.md
+2024-11-27 15:01:59,724 - INFO - Synchronization successfully completed!
+2024-11-27 15:12:46,665 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 15:12:46,904 - INFO - Starting synchronization...
+2024-11-27 15:12:47,440 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 15:12:48,988 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:12:49,930 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:12:49,931 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:12:49,931 - INFO - Processing table with 5 total rows
+2024-11-27 15:12:49,931 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:12:50,430 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:12:50,431 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 15:12:50,431 - INFO - Processing table with 8 total rows
+2024-11-27 15:12:50,431 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 15:12:50,863 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:12:50,865 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 15:12:50,865 - INFO - Processing table with 4 total rows
+2024-11-27 15:12:50,865 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 15:12:51,260 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:12:51,261 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 15:12:51,261 - INFO - Processing table with 16 total rows
+2024-11-27 15:12:51,261 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 15:12:52,249 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807b-9939-ea31ffe03399/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:12:52,250 - INFO - Table processing: Got 6 rows, has_more: False
+2024-11-27 15:12:52,250 - INFO - Processing table with 6 total rows
+2024-11-27 15:12:52,250 - INFO - Table processing complete: 5 data rows processed
+2024-11-27 15:12:53,758 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-80ec-906f-ed0757281299&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:12:53,761 - INFO - Archived old file: master_dashboard_20241127_135858.md
+2024-11-27 15:12:53,762 - INFO - Saved: notion_export\master_dashboard_20241127_151253.md
+2024-11-27 15:12:53,768 - INFO - Synchronization successfully completed!
+2024-11-27 15:26:10,189 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 15:26:10,425 - INFO - Starting synchronization...
+2024-11-27 15:26:11,394 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,189 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,496 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,499 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:26:13,500 - INFO - Processing table with 5 total rows
+2024-11-27 15:26:13,500 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:26:13,832 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:13,833 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 15:26:13,833 - INFO - Processing table with 8 total rows
+2024-11-27 15:26:13,833 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 15:26:14,413 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:14,417 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 15:26:14,418 - INFO - Processing table with 4 total rows
+2024-11-27 15:26:14,418 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 15:26:15,072 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:15,073 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 15:26:15,073 - INFO - Processing table with 16 total rows
+2024-11-27 15:26:15,074 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 15:26:15,876 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807b-9939-ea31ffe03399/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:15,877 - INFO - Table processing: Got 6 rows, has_more: False
+2024-11-27 15:26:15,877 - INFO - Processing table with 6 total rows
+2024-11-27 15:26:15,877 - INFO - Table processing complete: 5 data rows processed
+2024-11-27 15:26:16,471 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-80ec-906f-ed0757281299&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:26:16,474 - INFO - Archived old file: master_dashboard_20241127_140006.md
+2024-11-27 15:26:16,475 - INFO - Saved: notion_export\master_dashboard_20241127_152616.md
+2024-11-27 15:26:16,482 - INFO - Synchronization successfully completed!
+2024-11-27 15:36:22,052 - INFO - Starting sync for Dashboard: 14be4a7d76a480009895dd4b3b843b5a
+2024-11-27 15:36:22,289 - INFO - Starting synchronization...
+2024-11-27 15:36:22,779 - INFO - HTTP Request: GET https://api.notion.com/v1/pages/14be4a7d76a480009895dd4b3b843b5a "HTTP/1.1 200 OK"
+2024-11-27 15:36:25,871 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:26,887 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80d7-9c8c-d80e63f435a0/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:26,888 - INFO - Table processing: Got 5 rows, has_more: False
+2024-11-27 15:36:26,888 - INFO - Processing table with 5 total rows
+2024-11-27 15:36:26,888 - INFO - Table processing complete: 4 data rows processed
+2024-11-27 15:36:27,423 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-805e-972d-ece7e2eec7f2/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:27,425 - INFO - Table processing: Got 8 rows, has_more: False
+2024-11-27 15:36:27,426 - INFO - Processing table with 8 total rows
+2024-11-27 15:36:27,426 - INFO - Table processing complete: 7 data rows processed
+2024-11-27 15:36:27,808 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80fb-b595-cb9b1accabac/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:27,808 - INFO - Table processing: Got 4 rows, has_more: False
+2024-11-27 15:36:27,809 - INFO - Processing table with 4 total rows
+2024-11-27 15:36:27,809 - INFO - Table processing complete: 3 data rows processed
+2024-11-27 15:36:28,849 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-80b1-8267-fb09e994098d/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:28,850 - INFO - Table processing: Got 16 rows, has_more: False
+2024-11-27 15:36:28,850 - INFO - Processing table with 16 total rows
+2024-11-27 15:36:28,851 - INFO - Table processing complete: 15 data rows processed
+2024-11-27 15:36:30,521 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d-76a4-807b-9939-ea31ffe03399/children?page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:30,532 - INFO - Table processing: Got 6 rows, has_more: False
+2024-11-27 15:36:30,532 - INFO - Processing table with 6 total rows
+2024-11-27 15:36:30,532 - INFO - Table processing complete: 5 data rows processed
+2024-11-27 15:36:31,553 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?start_cursor=14be4a7d-76a4-80ec-906f-ed0757281299&page_size=250 "HTTP/1.1 200 OK"
+2024-11-27 15:36:31,557 - INFO - Archived old file: master_dashboard_20241127_141519.md
+2024-11-27 15:36:31,558 - INFO - Saved: notion_export\master_dashboard_20241127_153631.md
+2024-11-27 15:36:31,566 - INFO - Synchronization successfully completed!
