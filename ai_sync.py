@@ -6,6 +6,7 @@ from notion_client import Client
 import pandas as pd
 import json
 from ai_handler import AIHandler
+import asyncio
 
 # Configure logging
 logging.basicConfig(
@@ -23,42 +24,64 @@ class NotionAISync:
         self.business_database_id = os.getenv('BUSINESS_DATABASE_ID')
         self.ai_handler = AIHandler()
         
-    def sync(self):
+    async def sync(self):
+        """Main sync function that handles all database synchronization"""
         try:
             logger.info("Starting Notion AI sync process")
             
-            # Sync main database
-            self.sync_database(self.database_id, "main")
+            sync_tasks = []
             
-            # Sync health database
+            # Add main database sync task
+            sync_tasks.append(self.sync_database(self.database_id, "main"))
+            
+            # Add health database sync task if configured
             if self.health_database_id:
                 try:
-                    self.notion.databases.retrieve(database_id=self.health_database_id)
-                    self.sync_database(self.health_database_id, "health")
+                    await self.validate_database(self.health_database_id)
+                    sync_tasks.append(self.sync_database(self.health_database_id, "health"))
                 except Exception as e:
-                    logger.error(f"Health database not accessible: {str(e)}")
+                    logger.error(f"Health database validation failed: {str(e)}")
             
-            # Sync business database
+            # Add business database sync task if configured
             if self.business_database_id:
                 try:
-                    self.notion.databases.retrieve(database_id=self.business_database_id)
-                    self.sync_database(self.business_database_id, "business")
+                    await self.validate_database(self.business_database_id)
+                    sync_tasks.append(self.sync_database(self.business_database_id, "business"))
                 except Exception as e:
-                    logger.error(f"Business database not accessible: {str(e)}")
-                
-            logger.info("All syncs completed successfully")
+                    logger.error(f"Business database validation failed: {str(e)}")
+            
+            # Run all sync tasks concurrently
+            results = await asyncio.gather(*sync_tasks, return_exceptions=True)
+            
+            # Process results
+            for i, result in enumerate(results):
+                if isinstance(result, Exception):
+                    logger.error(f"Sync task {i} failed: {str(result)}")
+                else:
+                    logger.info(f"Sync task {i} completed successfully")
+            
+            logger.info("All syncs completed")
             
         except Exception as e:
-            logger.error(f"Error during sync: {str(e)}")
+            logger.error(f"Sync process failed: {str(e)}")
             raise
     
-    def sync_database(self, database_id, db_type):
+    async def validate_database(self, database_id: str) -> bool:
+        """Validate that a database exists and is accessible"""
+        try:
+            await self.notion.databases.retrieve(database_id=database_id)
+            return True
+        except Exception as e:
+            logger.error(f"Database validation failed for {database_id}: {str(e)}")
+            raise
+    
+    async def sync_database(self, database_id, db_type):
         try:
             logger.info(f"Starting sync for {db_type} database")
             
             # Verify database access and schema
             try:
-                if not self.verify_database_schema(database_id, db_type):
+                if not await self.verify_database_schema(database_id, db_type):
                     logger.error(f"Failed to verify/update schema for {db_type} database")
                     return
             except Exception as e:
@@ -66,45 +89,45 @@ class NotionAISync:
                 return
             
             # Query database
-            response = self.notion.databases.query(database_id=database_id)
+            response = await self.notion.databases.query(database_id=database_id)
             
             for page in response['results']:
-                self.process_page(page, db_type)
+                await self.process_page(page, db_type)
                 
             logger.info(f"Completed sync for {db_type} database")
             
         except Exception as e:
             logger.error(f"Error syncing {db_type} database: {str(e)}")
     
-    def process_page(self, page, db_type):
+    async def process_page(self, page, db_type):
         try:
             page_id = page['id']
             logger.info(f"Processing {db_type} page: {page_id}")
             
             # Get page properties
-            content = self.notion.pages.retrieve(page_id=page_id)
+            content = await self.notion.pages.retrieve(page_id=page_id)
             
             # Get page content
-            page_content = self.get_block_content(page_id)
+            page_content = await self.get_block_content(page_id)
             
             # Save content for analysis
-            self.save_content_snapshot(page_id, page_content)
+            await self.save_content_snapshot(page_id, page_content)
             
             # Process based on database type
             if db_type == "health":
-                self.process_health_page(page_id, content, page_content)
+                await self.process_health_page(page_id, content, page_content)
             elif db_type == "business":
-                self.process_business_page(page_id, content, page_content)
+                await self.process_business_page(page_id, content, page_content)
             else:
-                self.update_page(page_id, content)
+                await self.update_page(page_id, content)
             
         except Exception as e:
             logger.error(f"Error processing page {page_id}: {str(e)}")
     
-    def get_block_content(self, block_id):
+    async def get_block_content(self, block_id):
         """Recursively get content from blocks"""
         try:
-            blocks = self.notion.blocks.children.list(block_id=block_id)
+            blocks = await self.notion.blocks.children.list(block_id=block_id)
             content = []
             
             for block in blocks.get('results', []):
@@ -124,7 +147,7 @@ class NotionAISync:
                 
                 # Recursively get content from child blocks
                 if block.get('has_children', False):
-                    child_content = self.get_block_content(block['id'])
+                    child_content = await self.get_block_content(block['id'])
                     content.extend(child_content)
             
             return content
@@ -133,7 +156,7 @@ class NotionAISync:
             logger.error(f"Error getting block content: {str(e)}")
             return []
     
-    def save_content_snapshot(self, page_id, content):
+    async def save_content_snapshot(self, page_id, content):
         """Save page content for analysis"""
         try:
             data_dir = os.getenv('DATA_DIR', 'data')
@@ -152,16 +175,16 @@ class NotionAISync:
         except Exception as e:
             logger.error(f"Error saving content snapshot: {str(e)}")
     
-    def process_health_page(self, page_id, properties, content):
+    async def process_health_page(self, page_id, properties, content):
         try:
             # Extract metrics from properties
-            metrics = self.extract_health_metrics(properties)
+            metrics = await self.extract_health_metrics(properties)
             
             # Analyze content for health insights
-            insights = self.ai_handler.analyze_health_content(content)
+            insights = await self.ai_handler.analyze_health_content(content)
             
             # Combine metrics and insights
-            status = self.get_health_status(metrics, insights)
+            status = await self.get_health_status(metrics, insights)
             
             # Get existing properties
             existing_props = properties.get('properties', {})
@@ -200,7 +223,7 @@ class NotionAISync:
             }
             
             # Update page with enhanced content
-            self.notion.pages.update(
+            await self.notion.pages.update(
                 page_id=page_id,
                 **update_props
             )
@@ -209,17 +232,17 @@ class NotionAISync:
         except Exception as e:
             logger.error(f"Error processing health page {page_id}: {str(e)}")
     
-    def process_business_page(self, page_id, content):
+    async def process_business_page(self, page_id, content):
         try:
             # Extract business metrics
-            metrics = self.extract_business_metrics(content)
+            metrics = await self.extract_business_metrics(content)
             
             # Update with enhanced content
-            self.notion.pages.update(
+            await self.notion.pages.update(
                 page_id=page_id,
                 properties={
                     "Last Updated": {"date": {"start": datetime.now().isoformat()}},
-                    "Status": {"select": {"name": self.get_business_status(metrics)}}
+                    "Status": {"select": {"name": await self.get_business_status(metrics)}}
                 }
             )
             logger.info(f"Updated business page: {page_id}")
@@ -227,7 +250,7 @@ class NotionAISync:
         except Exception as e:
             logger.error(f"Error processing business page {page_id}: {str(e)}")
     
-    def extract_health_metrics(self, content):
+    async def extract_health_metrics(self, content):
         try:
             metrics = {
                 'energy_level': None,
@@ -262,7 +285,7 @@ class NotionAISync:
             logger.error(f"Error extracting health metrics: {str(e)}")
             return {}
     
-    def extract_business_metrics(self, content):
+    async def extract_business_metrics(self, content):
         try:
             metrics = {
                 'revenue': 0.0,
@@ -296,7 +319,7 @@ class NotionAISync:
             logger.error(f"Error extracting business metrics: {str(e)}")
             return {}
     
-    def get_health_status(self, metrics, insights):
+    async def get_health_status(self, metrics, insights):
         try:
             # Calculate health status based on metrics and insights
             status = "Active"
@@ -321,7 +344,7 @@ class NotionAISync:
             logger.error(f"Error calculating health status: {str(e)}")
             return "Unknown"
     
-    def get_business_status(self, metrics):
+    async def get_business_status(self, metrics):
         try:
             # Calculate business status based on metrics
             status = "In Progress"
@@ -340,7 +363,7 @@ class NotionAISync:
             logger.error(f"Error calculating business status: {str(e)}")
             return "Unknown"
     
-    def update_page(self, page_id, content):
+    async def update_page(self, page_id, content):
         """Update a Notion page with basic content"""
         try:
             # Get existing properties to preserve them
@@ -365,7 +388,7 @@ class NotionAISync:
                 "properties": clean_props
             }
             
-            self.notion.pages.update(
+            await self.notion.pages.update(
                 page_id=page_id,
                 **update_data
             )
@@ -374,11 +397,11 @@ class NotionAISync:
         except Exception as e:
             logger.error(f"Error updating page {page_id}: {str(e)}")
     
-    def verify_database_schema(self, database_id, db_type):
+    async def verify_database_schema(self, database_id, db_type):
         """Verify and update database schema if needed"""
         try:
             logger.info(f"Verifying schema for {db_type} database")
-            database = self.notion.databases.retrieve(database_id=database_id)
+            database = await self.notion.databases.retrieve(database_id=database_id)
             existing_props = database.get('properties', {})
             
             required_props = {
@@ -443,7 +466,7 @@ class NotionAISync:
                     'properties': missing_props
                 }
                 
-                self.notion.databases.update(
+                await self.notion.databases.update(
                     database_id=database_id,
                     **update_data
                 )
@@ -455,5 +478,6 @@ class NotionAISync:
             return False
 
 if __name__ == "__main__":
+    import asyncio
     sync = NotionAISync()
-    sync.sync()
+    asyncio.run(sync.sync())
