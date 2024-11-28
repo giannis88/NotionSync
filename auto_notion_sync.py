@@ -190,105 +190,108 @@ class NotionSync:
             return ""
         
         visited_pages.add(page_id)
+        processed_blocks = {}  # Track Block-IDs und deren Inhalt
         
         try:
-            page = self._retry_request(
-                lambda: self.notion.pages.retrieve(page_id=page_id),
-                retries=5
-            )
-            
-            content = []
-            processed_blocks = set()  # Track bereits verarbeitete Block-IDs
-            
-            if level == 0:
-                content.append("# Master Dashboard\n")
-            else:
-                title = self._process_rich_text(page['properties']['title']['title'])
-                content.append(f"{'#' * (level + 1)} {title}\n")
-            
-            # Hole alle Blöcke
+            # Hole alle Blöcke in einem Durchgang
             all_blocks = []
+            has_more = True
             start_cursor = None
-            page_size = 50
             
-            while True:
-                try:
-                    response = self._retry_request(
-                        lambda: self.notion.blocks.children.list(
-                            block_id=page_id,
-                            page_size=page_size,
-                            start_cursor=start_cursor
-                        ),
-                        retries=5
-                    )
-                    
-                    blocks = response.get('results', [])
-                    if not blocks:
-                        break
-                    
-                    # Füge nur neue Blöcke hinzu
-                    for block in blocks:
-                        if block['id'] not in processed_blocks:
-                            all_blocks.append(block)
-                            processed_blocks.add(block['id'])
-                    
-                    if not response.get('has_more'):
-                        break
-                        
-                    start_cursor = response.get('next_cursor')
-                    time.sleep(1)
-                    
-                except Exception as e:
-                    logging.error(f"Error fetching blocks: {str(e)}")
+            while has_more:
+                response = self._retry_request(
+                    lambda: self.notion.blocks.children.list(
+                        block_id=page_id,
+                        page_size=100,
+                        start_cursor=start_cursor
+                    ),
+                    retries=5
+                )
+                
+                blocks = response.get('results', [])
+                if not blocks:
                     break
+                    
+                # Dedupliziere Blöcke basierend auf Inhalt und ID
+                for block in blocks:
+                    block_id = block['id']
+                    block_content = self._get_block_content(block)
+                    
+                    if block_id not in processed_blocks and block_content not in processed_blocks.values():
+                        all_blocks.append(block)
+                        processed_blocks[block_id] = block_content
+                
+                has_more = response.get('has_more', False)
+                start_cursor = response.get('next_cursor')
+                
+                if has_more:
+                    time.sleep(0.5)
             
             # Verarbeite Blöcke
+            content = []
+            if level == 0:
+                content.append("# Master Dashboard\n")
+            
+            # Sortiere Blöcke nach ihrer Position
+            all_blocks.sort(key=lambda x: x.get('created_time', ''))
+            
             for block in all_blocks:
                 try:
                     block_content = self._process_block(block, level, visited_pages)
                     if block_content:
-                        block_content = self._normalize_text(block_content)
                         content.append(block_content)
                 except Exception as e:
                     logging.error(f"Error processing block: {str(e)}")
                     continue
             
-            # Bereinige und validiere Content
+            # Validiere und bereinige Content
             full_content = self._clean_section_content('\n'.join(content))
             
             if level == 0:
                 sections = self._split_into_sections(full_content)
-                # Stelle sicher, dass die Reihenfolge korrekt ist
                 ordered_content = []
+                
+                # Stelle sicher, dass jeder Abschnitt nur einmal vorkommt
+                seen_sections = set()
                 for section in self.validator.expected_sections:
-                    if section in sections:
+                    if section in sections and section not in seen_sections:
                         ordered_content.append(sections[section])
+                        seen_sections.add(section)
                 
                 full_content = '\n'.join(ordered_content)
                 
-                # Prüfe auf fehlende Abschnitte
-                missing_sections = []
-                for section in self.validator.expected_sections:
-                    if section not in sections:
-                        missing_sections.append(section)
+                # Prüfe auf Vollständigkeit
+                missing_sections = [
+                    section for section in self.validator.expected_sections 
+                    if section not in sections
+                ]
                 
-                if missing_sections:
-                    if retry_count < MAX_RETRIES:
-                        logging.info(f"Retrying page fetch (attempt {retry_count + 1}/{MAX_RETRIES})...")
-                        time.sleep(3)
-                        return self.get_page_content(page_id, level, set(), retry_count + 1)
-                    else:
-                        warning = f"\n\n> ⚠️ Warnung: Fehlende Abschnitte: {', '.join(missing_sections)}\n\n"
-                        full_content = full_content + warning
+                if missing_sections and retry_count < MAX_RETRIES:
+                    logging.info(f"Retrying page fetch (attempt {retry_count + 1}/{MAX_RETRIES})...")
+                    time.sleep(2)
+                    return self.get_page_content(page_id, level, set(), retry_count + 1)
             
             return full_content
             
         except Exception as e:
             logging.error(f"Error getting page {page_id}: {str(e)}")
             if level == 0 and retry_count < MAX_RETRIES:
-                time.sleep(3)
+                time.sleep(2)
                 return self.get_page_content(page_id, level, set(), retry_count + 1)
             return ""
+
+    def _get_block_content(self, block):
+        """Extrahiert den Inhalt eines Blocks für Deduplizierung"""
+        try:
+            block_type = block['type']
+            if block_type in ['paragraph', 'heading_1', 'heading_2', 'heading_3']:
+                return self._process_rich_text(block[block_type]['rich_text'])
+            elif block_type == 'table':
+                return f"table_{block['id']}"  # Unique ID für Tabellen
+            else:
+                return f"{block_type}_{block['id']}"
+        except:
+            return block['id']
 
     def _normalize_text(self, text):
         """Normalisiert Text und behandelt Umlaute"""
@@ -317,21 +320,23 @@ class NotionSync:
         if retries is None:
             retries = self.max_retries
             
+        api_logger = logging.getLogger('api')
         last_error = None
+        
         for attempt in range(retries):
             try:
                 response = request_func()
-                # Validiere Response
-                if not response:
-                    raise ValueError("Empty response received")
+                # Log nur wichtige API-Details
+                if api_logger.isEnabledFor(logging.DEBUG):
+                    api_logger.debug(f"API Request successful: {str(request_func)}")
                 return response
             except Exception as e:
                 last_error = e
                 wait_time = (2 ** attempt) + random.uniform(0, 1)
-                logging.warning(f"Request failed, retrying in {wait_time:.2f}s... ({attempt + 1}/{retries})")
+                api_logger.warning(f"Request failed ({attempt + 1}/{retries}): {str(e)}")
                 time.sleep(wait_time)
-                
-        logging.error(f"Request failed after {retries} attempts: {str(last_error)}")
+        
+        api_logger.error(f"Request failed after {retries} attempts: {str(last_error)}")
         raise last_error
 
     def _process_block(self, block, level, visited_pages):
@@ -339,28 +344,35 @@ class NotionSync:
         block_type = block['type']
         
         try:
-            if block_type == 'paragraph':
-                return self._process_paragraph(block)
-            elif block_type == 'heading_1':
-                return self._process_heading(block, 1, level)
-            elif block_type == 'heading_2':
-                return self._process_heading(block, 2, level)
-            elif block_type == 'heading_3':
-                return self._process_heading(block, 3, level)
-            elif block_type == 'bulleted_list_item':
-                return self._process_list_item(block, bullet=True)
-            elif block_type == 'numbered_list_item':
-                return self._process_list_item(block, bullet=False)
-            elif block_type == 'to_do':
-                return self._process_todo(block)
-            elif block_type == 'toggle':
-                return self._process_toggle(block)
-            elif block_type == 'table':
-                return self._process_table(block['id'])
-            elif block_type == 'child_page':
-                return self.get_page_content(block['id'], level + 1, visited_pages)
-            elif block_type == 'divider':
-                return "---\n"
+            # Spezielle Behandlung für leere Blöcke
+            if block_type == 'paragraph' and not block['paragraph']['rich_text']:
+                return "\n"
+            
+            # Mapping von Block-Typen zu Verarbeitungsfunktionen
+            processors = {
+                'paragraph': self._process_paragraph,
+                'heading_1': lambda b: self._process_heading(b, 1, level),
+                'heading_2': lambda b: self._process_heading(b, 2, level),
+                'heading_3': lambda b: self._process_heading(b, 3, level),
+                'bulleted_list_item': lambda b: self._process_list_item(b, bullet=True),
+                'numbered_list_item': lambda b: self._process_list_item(b, bullet=False),
+                'to_do': self._process_todo,
+                'toggle': self._process_toggle,
+                'table': lambda b: self._process_table(b['id']),
+                'child_page': lambda b: self.get_page_content(b['id'], level + 1, visited_pages),
+                'divider': lambda b: "---\n",
+                'callout': self._process_callout,
+                'quote': self._process_quote,
+                'code': self._process_code,
+                'column_list': self._process_column_list,
+                'column': self._process_column,
+                'synced_block': self._process_synced_block
+            }
+            
+            # Verarbeite Block mit entsprechendem Processor
+            if block_type in processors:
+                content = processors[block_type](block)
+                return self._clean_block_content(content) if content else ""
             else:
                 logging.debug(f"Unhandled block type: {block_type}")
                 return ""
@@ -368,6 +380,53 @@ class NotionSync:
         except Exception as e:
             logging.error(f"Error processing block {block['id']}: {str(e)}")
             return ""
+
+    def _clean_block_content(self, content):
+        """Bereinigt Block-Inhalt"""
+        if not content:
+            return ""
+        
+        # Entferne überflüssige Leerzeilen
+        lines = content.split('\n')
+        cleaned = []
+        last_empty = False
+        
+        for line in lines:
+            is_empty = not line.strip()
+            if is_empty and last_empty:
+                continue
+            cleaned.append(line)
+            last_empty = is_empty
+        
+        # Stelle sicher, dass Blöcke korrekt getrennt sind
+        result = '\n'.join(cleaned)
+        if not result.endswith('\n\n'):
+            result += '\n\n'
+        
+        return result
+
+    def _process_callout(self, block):
+        """Verarbeitet Callout-Blöcke"""
+        if not block['callout']['rich_text']:
+            return ""
+        icon = block['callout'].get('icon', {}).get('emoji', '💡')
+        text = self._process_rich_text(block['callout']['rich_text'])
+        return f"{icon} {text}\n\n"
+
+    def _process_quote(self, block):
+        """Verarbeitet Quote-Blöcke"""
+        if not block['quote']['rich_text']:
+            return ""
+        text = self._process_rich_text(block['quote']['rich_text'])
+        return f"> {text}\n\n"
+
+    def _process_code(self, block):
+        """Verarbeitet Code-Blöcke"""
+        if not block['code']['rich_text']:
+            return ""
+        language = block['code'].get('language', '')
+        code = self._process_rich_text(block['code']['rich_text'])
+        return f"```{language}\n{code}\n```\n\n"
 
     def _process_paragraph(self, block):
         """Processes paragraph blocks with full rich text content"""
@@ -615,62 +674,65 @@ class NotionSync:
             )
             
             # Finde den Abschnitt und seine Position
-            section_block = None
-            section_content_blocks = []
+            section_blocks = []
             in_section = False
+            section_start = None
+            section_end = None
             
-            for block in blocks['results']:
-                if block['type'] in ['heading_1', 'heading_2'] and \
-                   self._process_rich_text(block[block['type']]['rich_text']).lower() == section_name.lower():
-                    section_block = block
-                    in_section = True
-                elif in_section and block['type'] in ['heading_1', 'heading_2']:
-                    in_section = False
-                elif in_section:
-                    section_content_blocks.append(block)
+            for i, block in enumerate(blocks['results']):
+                if block['type'] in ['heading_1', 'heading_2']:
+                    current_heading = self._process_rich_text(block[block['type']]['rich_text']).lower()
+                    if current_heading == section_name.lower():
+                        section_start = i
+                        in_section = True
+                    elif in_section:
+                        section_end = i
+                        break
+                if in_section:
+                    section_blocks.append(block)
             
-            if not section_block:
-                # Wenn Abschnitt nicht gefunden, erstelle ihn
-                new_section = {
-                    "object": "block",
-                    "type": "heading_1",
-                    "heading_1": {
-                        "rich_text": [{"type": "text", "text": {"content": section_name}}]
-                    }
-                }
-                
-                response = self._retry_request(
-                    lambda: self.notion.blocks.children.append(
-                        block_id=page_id,
-                        children=[new_section]
-                    )
-                )
-                section_block = response['results'][0]
-                logging.info(f"Created new section: {section_name}")
+            if section_end is None and in_section:
+                section_end = len(blocks['results'])
             
             # Archiviere alte Blöcke
-            for block in section_content_blocks:
-                self._retry_request(
-                    lambda: self.notion.blocks.update(
-                        block_id=block['id'],
-                        archived=True
+            if section_blocks:
+                for block in section_blocks:
+                    self._retry_request(
+                        lambda: self.notion.blocks.update(
+                            block_id=block['id'],
+                            archived=True
+                        )
                     )
-                )
-                logging.info(f"Archived block {block['id']}")
+                    logging.info(f"Archived block {block['id']}")
             
-            # Konvertiere Markdown zu Notion-Blöcken
+            # Erstelle neue Blöcke
             new_blocks = self._convert_markdown_to_blocks(new_content)
             
-            # Füge neue Blöcke hinzu
-            for i in range(0, len(new_blocks), 100):  # Notion API Limit
-                chunk = new_blocks[i:i+100]
+            # Füge neue Blöcke an der richtigen Position ein
+            if not section_blocks:
+                # Wenn Abschnitt nicht existiert, erstelle ihn am Ende
                 self._retry_request(
                     lambda: self.notion.blocks.children.append(
                         block_id=page_id,
-                        children=chunk
+                        children=[{
+                            "object": "block",
+                            "type": "heading_1",
+                            "heading_1": {
+                                "rich_text": [{"type": "text", "text": {"content": section_name}}]
+                            }
+                        }]
                     )
                 )
-                logging.info(f"Added {len(chunk)} new blocks")
+                logging.info(f"Created new section: {section_name}")
+            
+            # Füge Inhalt hinzu
+            self._retry_request(
+                lambda: self.notion.blocks.children.append(
+                    block_id=page_id,
+                    children=new_blocks
+                )
+            )
+            logging.info(f"Added {len(new_blocks)} new blocks")
             
             return True
             
@@ -861,23 +923,143 @@ class NotionSync:
             logging.error(f"Fehler beim Optimieren des Inhalts: {str(e)}")
             return False
 
+    def _process_column_list(self, block):
+        """Verarbeitet Spalten-Listen"""
+        try:
+            columns = self._retry_request(
+                lambda: self.notion.blocks.children.list(block_id=block['id'])
+            )
+            
+            column_contents = []
+            for column in columns.get('results', []):
+                if column['type'] == 'column':
+                    content = self._process_column(column)
+                    if content:
+                        column_contents.append(content)
+            
+            return "\n".join(column_contents) + "\n\n"
+        except Exception as e:
+            logging.error(f"Error processing column list: {str(e)}")
+            return ""
+
+    def _process_column(self, block):
+        """Verarbeitet einzelne Spalten"""
+        try:
+            children = self._retry_request(
+                lambda: self.notion.blocks.children.list(block_id=block['id'])
+            )
+            
+            column_content = []
+            for child in children.get('results', []):
+                content = self._process_block(child, 0, set())
+                if content:
+                    column_content.append(content)
+            
+            return "\n".join(column_content)
+        except Exception as e:
+            logging.error(f"Error processing column: {str(e)}")
+            return ""
+
+    def _process_synced_block(self, block):
+        """Verarbeitet synchronisierte Blöcke"""
+        try:
+            if block['synced_block'].get('synced_from'):
+                # Hole Original-Block
+                original_id = block['synced_block']['synced_from']['block_id']
+                original = self._retry_request(
+                    lambda: self.notion.blocks.retrieve(block_id=original_id)
+                )
+                return self._process_block(original, 0, set())
+            else:
+                # Verarbeite Kinder des Sync-Blocks
+                children = self._retry_request(
+                    lambda: self.notion.blocks.children.list(block_id=block['id'])
+                )
+                content = []
+                for child in children.get('results', []):
+                    child_content = self._process_block(child, 0, set())
+                    if child_content:
+                        content.append(child_content)
+                return "\n".join(content)
+        except Exception as e:
+            logging.error(f"Error processing synced block: {str(e)}")
+            return ""
+
 def setup_logging():
-    """Sets up logging configuration"""
+    """Konfiguriert das Logging-System mit optimierter Struktur"""
     log_dir = Path("notion_export/logs")
     log_dir.mkdir(exist_ok=True, parents=True)
     
-    log_file = log_dir / "sync.log"
-    handler = RotatingFileHandler(
-        log_file,
-        maxBytes=1024 * 1024,  # 1MB
-        backupCount=5
+    # Basis-Formatter für alle Logger
+    base_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    
+    # Detaillierter Formatter für API-Logs
+    api_formatter = logging.Formatter(
+        '%(asctime)s - %(levelname)s - [%(name)s] - %(message)s\n'
+        'Request: %(http_method)s %(url)s\n'
+        'Response: %(status_code)s\n',
+        defaults={'http_method': '', 'url': '', 'status_code': ''}
     )
     
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        handlers=[handler, logging.StreamHandler()]
-    )
+    # Logger-Konfigurationen
+    loggers = {
+        'sync': {
+            'file': 'sync.log',
+            'maxBytes': 500_000,
+            'backupCount': 5,
+            'level': logging.INFO,
+            'formatter': base_formatter,
+            'console': True
+        },
+        'api': {
+            'file': 'api.log',
+            'maxBytes': 200_000,
+            'backupCount': 3,
+            'level': logging.INFO,
+            'formatter': api_formatter,
+            'console': False
+        },
+        'validation': {
+            'file': 'validation.log',
+            'maxBytes': 200_000,
+            'backupCount': 2,
+            'level': logging.INFO,
+            'formatter': base_formatter,
+            'console': True
+        }
+    }
+    
+    # Logger erstellen und konfigurieren
+    for name, config in loggers.items():
+        logger = logging.getLogger(name)
+        logger.setLevel(config['level'])
+        logger.propagate = False
+        
+        # Datei-Handler
+        file_handler = RotatingFileHandler(
+            log_dir / config['file'],
+            maxBytes=config['maxBytes'],
+            backupCount=config['backupCount'],
+            encoding='utf-8'
+        )
+        file_handler.setFormatter(config['formatter'])
+        logger.addHandler(file_handler)
+        
+        # Optional: Konsolen-Handler
+        if config['console']:
+            console = logging.StreamHandler()
+            console.setFormatter(config['formatter'])
+            logger.addHandler(console)
+        
+        # Alte Log-Dateien archivieren
+        archive_dir = log_dir / 'archive'
+        archive_dir.mkdir(exist_ok=True)
+        
+        log_file = log_dir / config['file']
+        if log_file.exists() and log_file.stat().st_size > config['maxBytes']:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            archive_file = archive_dir / f"{config['file']}.{timestamp}"
+            log_file.rename(archive_file)
 
 def main():
     setup_logging()

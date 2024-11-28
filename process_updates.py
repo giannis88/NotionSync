@@ -10,10 +10,10 @@ import time
 import sys
 
 class OllamaProcessor:
-    def __init__(self, model_name="qwen2.5-coder-extra-ctx:7b", api_base="http://localhost:11434"):
+    def __init__(self, model_name="dashboard-llama", api_base="http://localhost:11434"):
         self.model_name = model_name
         self.api_base = api_base
-        self.session = requests.Session()  # Wiederverwendbare Session
+        self.session = requests.Session()
         try:
             self._validate_connection()
         except Exception as e:
@@ -32,57 +32,53 @@ class OllamaProcessor:
             raise
 
     def optimize_section(self, content, section_name, retries=3):
+        """Optimiert einen Abschnitt mit LLM"""
+        llm_logger = logging.getLogger('llm')
+        
         if not content.strip():
-            logging.warning(f"Empty content received for section: {section_name}")
+            llm_logger.warning(f"Empty content received for section: {section_name}")
             return content
         
         for attempt in range(retries):
             try:
-                prompt = f"""Du bist ein KI-Assistent, der einen Dashboard-Abschnitt für {section_name} optimiert.
-Hier ist der aktuelle Inhalt:
+                prompt = f"""Du bist ein präziser Assistent für die Optimierung von Dashboard-Inhalten.
+Aufgabe: Optimiere den folgenden {section_name}-Abschnitt, behalte dabei ALLE wichtigen Informationen bei.
 
+Aktueller Inhalt:
 {content}
 
-Formatiere den Inhalt EXAKT nach diesem Schema:
+Formatierungsregeln:
+1. Verwende exakt diese Struktur:
+   # {section_name}
+   ### Übersicht & Status
+   ### Aktuelle Situation
+   ### Nächste Schritte
+   ### Tracking & Notizen
 
-# {section_name}
+2. Formatiere Tabellen einheitlich:
+   | Bereich | Status | Priorität | Nächste Aktion |
+   |---|---|---|---|
 
-### Übersicht & Status
-| Bereich | Status | Priorität | Nächste Aktion |
-| --- | --- | --- | --- |
-[Bestehende Tabelle mit Emojis für Status: ✅ ⚠️ ❌]
+3. Verwende diese Status-Emojis:
+   - ✅ für erledigt/gut
+   - ⚠️ für Warnung/in Arbeit
+   - ❌ für kritisch/nicht erledigt
 
-### Aktuelle Situation
-- Maximal 3 wichtigste Kernpunkte
-- Fokus auf aktuelle Herausforderungen
-- Klare, actionable Aussagen
+4. Spezifische Regeln für {section_name}:
+   - Gesundheit: Priorisiere Laborwerte und Medikation
+   - Business: Fokussiere auf konkrete Projekte und Deadlines
+   - Beziehung: Betone Grenzen und Kommunikationsziele
+   - ARCHIV: Behalte nur relevante Hintergrundinformationen
 
-### Nächste Schritte
-1. [Konkrete Aktion] bis [Datum]
-2. [Konkrete Aktion] bis [Datum]
-3. [Konkrete Aktion] bis [Datum]
-
-### Tracking & Notizen
-- Messbare Erfolge/KPIs
-- Blockaden & Lösungen
-- Wichtige Erkenntnisse
-
-Spezielle Regeln für {section_name}:
-- Gesundheit: Laborwerte und Medikation priorisieren
-- Business: Fokus auf konkrete Projekte und Deadlines
-- Beziehung: Klare Grenzen und Kommunikationsziele
-- ARCHIV: Nur relevante Hintergrundinformationen
-
-Wichtig:
-1. Behalte alle wichtigen Informationen bei
-2. Nutze klare, actionable Formulierungen
-3. Setze konkrete Termine
-4. Priorisiere nach Dringlichkeit
-5. Behalte medizinische Details bei
+5. Wichtig:
+   - Behalte ALLE medizinischen Details bei
+   - Setze konkrete Termine wo möglich
+   - Maximal 3 Kernpunkte pro Abschnitt
+   - Klare, actionable Formulierungen
 
 Gib NUR den formatierten Inhalt zurück."""
 
-                logging.info(f"Optimiere Abschnitt: {section_name}")
+                llm_logger.info(f"Optimiere Abschnitt: {section_name}")
                 
                 response = self.session.post(
                     f"{self.api_base}/api/generate",
@@ -91,24 +87,26 @@ Gib NUR den formatierten Inhalt zurück."""
                         "prompt": prompt,
                         "stream": False,
                         "options": {
-                            "temperature": 0.3,
+                            "temperature": 0.1,
                             "top_p": 0.9,
-                            "timeout": 30
+                            "num_ctx": 2048,
+                            "repeat_penalty": 1.1,
+                            "stop": ["<|im_start|>", "<|im_end|>"]
                         }
                     },
-                    timeout=35
+                    timeout=65
                 )
                 
                 response.raise_for_status()
                 result = response.json()
-                logging.info(f"Successfully optimized section: {section_name}")
+                llm_logger.info(f"Successfully optimized section: {section_name}")
                 return result['response']
                 
             except requests.exceptions.RequestException as e:
                 if attempt == retries - 1:
-                    logging.error(f"Failed to optimize section after {retries} attempts: {str(e)}")
+                    llm_logger.error(f"Failed to optimize section after {retries} attempts: {str(e)}")
                     return content
-                logging.warning(f"Attempt {attempt + 1} failed, retrying...")
+                llm_logger.warning(f"Attempt {attempt + 1} failed, retrying...")
                 time.sleep(2 ** attempt)
 
 def main():
