@@ -1,0 +1,68 @@
+# Business Center AI Configuration
+
+# Content Generation Settings
+content_generation:
+  min_suggestions: 3
+  max_suggestions: 5
+  languages:
+    - English
+    - German
+  content_types:
+    - Tutorial
+    - Analysis
+    - Case Study
+    - How-To Guide
+
+# Health Monitoring Settings
+health_monitoring:
+  metrics:
+    energy_impact:
+      weight: 0.3
+      threshold: 7
+    stress_level:
+      weight: 0.4
+      threshold: 6
+    sustainability:
+      weight: 0.3
+      threshold: 8
+  alert_threshold: 5
+
+# Financial Analysis Settings
+financial_analysis:
+  forecast_period_months: 12
+  confidence_threshold: 0.8
+  metrics:
+    - revenue
+    - costs
+    - roi
+    - cash_flow
+
+# Market Analysis Settings
+market_analysis:
+  update_frequency_days: 7
+  data_sources:
+    - market_trends
+    - competitor_analysis
+    - customer_feedback
+  metrics:
+    - market_size
+    - growth_rate
+    - competition_level
+
+# Learning Path Settings
+learning_path:
+  min_duration_weeks: 4
+  max_duration_weeks: 12
+  resource_types:
+    - online_courses
+    - books
+    - workshops
+    - mentoring
+
+# Notion Integration Settings
+notion:
+  sync_frequency_minutes: 30
+  databases:
+    content_pipeline: "content_pipeline_id"
+    financial_tracking: "financial_tracking_id"
+    health_monitoring: "health_monitoring_id"

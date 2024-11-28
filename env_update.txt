@@ -1,0 +1,18 @@
+# Notion API Configuration
+NOTION_TOKEN=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
+NOTION_DATABASE_ID=14ce4a7d-76a4-818a-9aa0-ededb9853917
+
+# Ollama Configuration
+OLLAMA_HOST=http://localhost:11434
+MODEL_NAME=llama2
+
+# Logging Configuration
+LOG_LEVEL=INFO
+LOG_FILE=notion_sync.log
+
+# Optional: Database Backup Configuration
+BACKUP_ENABLED=true
+BACKUP_DIR=./backups
+
+# Additional Database IDs
+HEALTH_DATABASE_ID=14ce4a7d-76a4-8140-9de6-ea86a4de5dfa

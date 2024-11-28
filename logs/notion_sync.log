@@ -1,0 +1,259 @@
+2024-11-28 11:08:24,751 - ai_sync - INFO - Starting AI content generation
+2024-11-28 11:08:24,751 - ai_sync - INFO - Generated content suggestions
+2024-11-28 11:08:24,752 - ai_sync - INFO - Activity extraction not yet implemented
+2024-11-28 11:08:24,752 - ai_sync - INFO - Generated health metrics
+2024-11-28 11:08:24,752 - ai_sync - INFO - Business data extraction not yet implemented
+2024-11-28 11:08:24,752 - ai_sync - INFO - Generated financial forecast
+2024-11-28 11:08:24,752 - ai_sync - INFO - Generated market analysis
+2024-11-28 11:08:24,752 - ai_sync - INFO - Generated wellness score
+2024-11-28 11:08:24,752 - ai_sync - INFO - Generated AI goals
+2024-11-28 11:08:24,753 - ai_sync - INFO - Generated weekly report
+2024-11-28 11:08:24,753 - ai_sync - INFO - Skills extraction not yet implemented
+2024-11-28 11:08:24,753 - ai_sync - INFO - Generated learning path
+2024-11-28 11:08:25,236 - ai_sync - INFO - Starting AI content sync for test_templates\test_business_center.md
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generating AI content
+2024-11-28 11:08:25,237 - ai_sync - INFO - Starting AI content generation
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated content suggestions
+2024-11-28 11:08:25,237 - ai_sync - INFO - Activity extraction not yet implemented
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated health metrics
+2024-11-28 11:08:25,237 - ai_sync - INFO - Business data extraction not yet implemented
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated financial forecast
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated market analysis
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated wellness score
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated AI goals
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated weekly report
+2024-11-28 11:08:25,237 - ai_sync - INFO - Skills extraction not yet implemented
+2024-11-28 11:08:25,237 - ai_sync - INFO - Generated learning path
+2024-11-28 11:08:25,237 - ai_sync - INFO - Updating template with AI content
+2024-11-28 11:08:25,237 - ai_sync - INFO - Starting template update with AI content
+2024-11-28 11:08:25,237 - ai_sync - INFO - Updated content suggestions
+2024-11-28 11:08:25,237 - ai_sync - INFO - Updated health metrics
+2024-11-28 11:08:25,237 - ai_sync - INFO - Updated financial forecast
+2024-11-28 11:08:25,237 - ai_sync - INFO - Updated market analysis
+2024-11-28 11:08:25,238 - ai_sync - INFO - Updated wellness score
+2024-11-28 11:08:25,238 - ai_sync - INFO - Updated AI goals
+2024-11-28 11:08:25,238 - ai_sync - INFO - Updated weekly report
+2024-11-28 11:08:25,238 - ai_sync - INFO - Updated learning path
+2024-11-28 11:08:25,238 - ai_sync - INFO - Updated timestamp
+2024-11-28 11:08:25,239 - ai_sync - INFO - Syncing with Notion in chunks
+2024-11-28 11:08:28,231 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:08:28,231 - ai_sync - INFO - Created Notion page: test_business_center (Part 1/3)
+2024-11-28 11:08:29,765 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:08:29,765 - ai_sync - INFO - Created Notion page: test_business_center (Part 2/3)
+2024-11-28 11:08:32,252 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:08:32,252 - ai_sync - INFO - Created Notion page: test_business_center (Part 3/3)
+2024-11-28 11:08:32,737 - ai_sync - INFO - Starting template update with AI content
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated content suggestions
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated health metrics
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated financial forecast
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated market analysis
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated wellness score
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated AI goals
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated weekly report
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated learning path
+2024-11-28 11:08:32,737 - ai_sync - INFO - Updated timestamp
+2024-11-28 11:12:16,930 - ai_sync - INFO - Starting AI content generation
+2024-11-28 11:12:16,930 - ai_sync - INFO - Generated content suggestions
+2024-11-28 11:12:16,931 - ai_sync - INFO - Activity extraction not yet implemented
+2024-11-28 11:12:16,931 - ai_sync - INFO - Generated health metrics
+2024-11-28 11:12:16,931 - ai_sync - INFO - Business data extraction not yet implemented
+2024-11-28 11:12:16,931 - ai_sync - INFO - Generated financial forecast
+2024-11-28 11:12:16,931 - ai_sync - INFO - Generated market analysis
+2024-11-28 11:12:16,931 - ai_sync - INFO - Generated wellness score
+2024-11-28 11:12:16,931 - ai_sync - INFO - Generated AI goals
+2024-11-28 11:12:16,931 - ai_sync - INFO - Generated weekly report
+2024-11-28 11:12:16,931 - ai_sync - INFO - Skills extraction not yet implemented
+2024-11-28 11:12:16,931 - ai_sync - INFO - Generated learning path
+2024-11-28 11:12:17,913 - ai_sync - INFO - Starting template update with AI content
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated content suggestions
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated health metrics
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated financial forecast
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated market analysis
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated wellness score
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated AI goals
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated weekly report
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated learning path
+2024-11-28 11:12:17,914 - ai_sync - INFO - Updated timestamp
+2024-11-28 11:12:29,398 - __main__ - INFO - Starting AI content sync for templates\business_center.md
+2024-11-28 11:12:29,399 - __main__ - INFO - Generating AI content
+2024-11-28 11:12:29,399 - __main__ - INFO - Starting AI content generation
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated content suggestions
+2024-11-28 11:12:29,399 - __main__ - INFO - Activity extraction not yet implemented
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated health metrics
+2024-11-28 11:12:29,399 - __main__ - INFO - Business data extraction not yet implemented
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated financial forecast
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated market analysis
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated wellness score
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated AI goals
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated weekly report
+2024-11-28 11:12:29,399 - __main__ - INFO - Skills extraction not yet implemented
+2024-11-28 11:12:29,399 - __main__ - INFO - Generated learning path
+2024-11-28 11:12:29,399 - __main__ - INFO - Updating template with AI content
+2024-11-28 11:12:29,399 - __main__ - INFO - Starting template update with AI content
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated content suggestions
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated health metrics
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated financial forecast
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated market analysis
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated wellness score
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated AI goals
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated weekly report
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated learning path
+2024-11-28 11:12:29,400 - __main__ - INFO - Updated timestamp
+2024-11-28 11:12:29,401 - __main__ - INFO - Syncing with Notion in chunks
+2024-11-28 11:12:31,288 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:12:31,289 - __main__ - INFO - Created Notion page: business_center (Part 1/3)
+2024-11-28 11:12:33,941 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:12:33,942 - __main__ - INFO - Created Notion page: business_center (Part 2/3)
+2024-11-28 11:12:36,281 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:12:36,281 - __main__ - INFO - Created Notion page: business_center (Part 3/3)
+2024-11-28 11:12:36,281 - __main__ - INFO - AI content synced successfully! Created pages: ['14ce4a7d-76a4-81ed-afc7-ebe707819197', '14ce4a7d-76a4-8182-a686-c4cb7be97be3', '14ce4a7d-76a4-8101-847c-d0936570f798']
+2024-11-28 11:15:26,448 - ai_sync - INFO - Starting AI content generation
+2024-11-28 11:15:26,448 - ai_sync - INFO - Generated content suggestions
+2024-11-28 11:15:26,448 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:15:26,448 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:15:26,448 - ai_sync - INFO - Generated health metrics
+2024-11-28 11:15:26,448 - ai_sync - INFO - Extracting business data
+2024-11-28 11:15:26,450 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:15:26,450 - ai_sync - INFO - Generated financial forecast
+2024-11-28 11:15:26,450 - ai_sync - INFO - Generated market analysis
+2024-11-28 11:15:26,450 - ai_sync - INFO - Generated wellness score
+2024-11-28 11:15:26,450 - ai_sync - INFO - Generated AI goals
+2024-11-28 11:15:26,450 - ai_sync - INFO - Generated weekly report
+2024-11-28 11:15:26,450 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:15:26,450 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:15:26,450 - ai_sync - INFO - Generated learning path
+2024-11-28 11:15:27,430 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:15:27,430 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:15:27,915 - ai_sync - INFO - Extracting business data
+2024-11-28 11:15:27,915 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:15:28,416 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:15:28,416 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:15:28,922 - ai_sync - INFO - Starting template update with AI content
+2024-11-28 11:15:28,922 - ai_sync - INFO - Updated content suggestions
+2024-11-28 11:15:28,922 - ai_sync - INFO - Updated health metrics
+2024-11-28 11:15:28,923 - ai_sync - INFO - Updated financial forecast
+2024-11-28 11:15:28,923 - ai_sync - INFO - Updated market analysis
+2024-11-28 11:15:28,923 - ai_sync - INFO - Updated wellness score
+2024-11-28 11:15:28,923 - ai_sync - INFO - Updated AI goals
+2024-11-28 11:15:28,923 - ai_sync - INFO - Updated weekly report
+2024-11-28 11:15:28,923 - ai_sync - INFO - Updated learning path
+2024-11-28 11:15:28,923 - ai_sync - INFO - Updated timestamp
+2024-11-28 11:15:47,024 - __main__ - INFO - Starting AI content sync for templates\business_center.md
+2024-11-28 11:15:47,025 - __main__ - INFO - Generating AI content
+2024-11-28 11:15:47,025 - __main__ - INFO - Starting AI content generation
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated content suggestions
+2024-11-28 11:15:47,025 - __main__ - INFO - Extracting business activities
+2024-11-28 11:15:47,025 - __main__ - INFO - Extracted 0 activities
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated health metrics
+2024-11-28 11:15:47,025 - __main__ - INFO - Extracting business data
+2024-11-28 11:15:47,025 - __main__ - INFO - Extracted business data: 0 metrics, 10 goals
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated financial forecast
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated market analysis
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated wellness score
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated AI goals
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated weekly report
+2024-11-28 11:15:47,025 - __main__ - INFO - Extracting skills needed
+2024-11-28 11:15:47,025 - __main__ - INFO - Extracted skills: 18 technical, 0 business, 0 soft skills
+2024-11-28 11:15:47,025 - __main__ - INFO - Generated learning path
+2024-11-28 11:15:47,026 - __main__ - INFO - Updating template with AI content
+2024-11-28 11:15:47,026 - __main__ - INFO - Starting template update with AI content
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated content suggestions
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated health metrics
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated financial forecast
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated market analysis
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated wellness score
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated AI goals
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated weekly report
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated learning path
+2024-11-28 11:15:47,026 - __main__ - INFO - Updated timestamp
+2024-11-28 11:15:47,027 - __main__ - INFO - Syncing with Notion in chunks
+2024-11-28 11:15:49,054 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:15:49,055 - __main__ - INFO - Created Notion page: business_center (Part 1/3)
+2024-11-28 11:15:55,697 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:15:55,701 - __main__ - INFO - Created Notion page: business_center (Part 2/3)
+2024-11-28 11:15:59,707 - httpx - INFO - HTTP Request: POST https://api.notion.com/v1/pages "HTTP/1.1 200 OK"
+2024-11-28 11:15:59,707 - __main__ - INFO - Created Notion page: business_center (Part 3/3)
+2024-11-28 11:15:59,707 - __main__ - INFO - AI content synced successfully! Created pages: ['14ce4a7d-76a4-818b-a669-f64071a7dd0d', '14ce4a7d-76a4-8141-bbd6-fa9e226d3c17', '14ce4a7d-76a4-8144-be7f-cf11c392fc31']
+2024-11-28 11:18:36,677 - ai_sync - INFO - Starting AI content generation
+2024-11-28 11:18:36,677 - ai_sync - INFO - Generated content suggestions
+2024-11-28 11:18:36,677 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:18:36,677 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:18:36,677 - ai_sync - INFO - Generated health metrics
+2024-11-28 11:18:36,677 - ai_sync - INFO - Extracting business data
+2024-11-28 11:18:36,677 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:18:36,677 - ai_sync - INFO - Generated financial forecast
+2024-11-28 11:18:36,677 - ai_sync - INFO - Generated market analysis
+2024-11-28 11:18:36,677 - ai_sync - INFO - Generated wellness score
+2024-11-28 11:18:36,677 - ai_sync - INFO - Generated AI goals
+2024-11-28 11:18:36,677 - ai_sync - INFO - Generated weekly report
+2024-11-28 11:18:36,678 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:18:36,678 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:18:36,678 - ai_sync - INFO - Generated learning path
+2024-11-28 11:18:37,697 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:18:37,698 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:18:38,194 - ai_sync - INFO - Extracting business data
+2024-11-28 11:18:38,194 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:18:41,618 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:18:41,618 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:18:42,101 - ai_sync - INFO - Starting template update with AI content
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated content suggestions
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated health metrics
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated financial forecast
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated market analysis
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated wellness score
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated AI goals
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated weekly report
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated learning path
+2024-11-28 11:18:42,101 - ai_sync - INFO - Updated timestamp
+2024-11-28 11:27:15,048 - ai_sync - INFO - Starting AI content generation
+2024-11-28 11:27:15,048 - ai_sync - INFO - Generated content suggestions
+2024-11-28 11:27:15,048 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:27:15,048 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:27:15,048 - ai_sync - INFO - Generated health metrics
+2024-11-28 11:27:15,048 - ai_sync - INFO - Extracting business data
+2024-11-28 11:27:15,048 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:27:15,048 - ai_sync - INFO - Generated financial forecast
+2024-11-28 11:27:15,048 - ai_sync - INFO - Generated market analysis
+2024-11-28 11:27:15,049 - ai_sync - INFO - Generated wellness score
+2024-11-28 11:27:15,049 - ai_sync - INFO - Generated AI goals
+2024-11-28 11:27:15,049 - ai_sync - INFO - Generating weekly summary report
+2024-11-28 11:27:15,049 - ai_sync - ERROR - Error generating weekly summary: float() argument must be a string or a real number, not 'NoneType'
+2024-11-28 11:27:15,049 - ai_sync - INFO - Generated weekly report
+2024-11-28 11:27:15,049 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:27:15,049 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:27:15,049 - ai_sync - INFO - Generated learning path
+2024-11-28 11:27:16,077 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:27:16,077 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:27:16,574 - ai_sync - INFO - Extracting business data
+2024-11-28 11:27:16,574 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:27:20,025 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:27:20,025 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:27:21,994 - ai_sync - INFO - Generating weekly summary report
+2024-11-28 11:27:22,490 - ai_sync - INFO - Starting template update with AI content
+2024-11-28 11:27:22,491 - ai_sync - ERROR - Error updating template with AI content: 'challenges'
+2024-11-28 11:35:02,351 - ai_sync - INFO - Starting AI content generation
+2024-11-28 11:35:02,351 - ai_sync - INFO - Generated content suggestions
+2024-11-28 11:35:02,351 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:35:02,353 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:35:02,353 - ai_sync - INFO - Generated health metrics
+2024-11-28 11:35:02,353 - ai_sync - INFO - Extracting business data
+2024-11-28 11:35:02,353 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:35:02,353 - ai_sync - INFO - Generated financial forecast
+2024-11-28 11:35:02,353 - ai_sync - INFO - Generated market analysis
+2024-11-28 11:35:02,353 - ai_sync - INFO - Generated wellness score
+2024-11-28 11:35:02,353 - ai_sync - INFO - Generated AI goals
+2024-11-28 11:35:02,353 - ai_sync - INFO - Generating weekly summary report
+2024-11-28 11:35:02,354 - ai_sync - ERROR - Error generating weekly summary: float() argument must be a string or a real number, not 'NoneType'
+2024-11-28 11:35:02,354 - ai_sync - INFO - Generated weekly report
+2024-11-28 11:35:02,354 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:35:02,354 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:35:02,354 - ai_sync - INFO - Generated learning path
+2024-11-28 11:35:03,324 - ai_sync - INFO - Extracting business activities
+2024-11-28 11:35:03,325 - ai_sync - INFO - Extracted 4 activities
+2024-11-28 11:35:03,802 - ai_sync - INFO - Extracting business data
+2024-11-28 11:35:03,802 - ai_sync - INFO - Extracted business data: 4 metrics, 4 goals
+2024-11-28 11:35:07,198 - ai_sync - INFO - Extracting skills needed
+2024-11-28 11:35:07,199 - ai_sync - INFO - Extracted skills: 4 technical, 4 business, 4 soft skills
+2024-11-28 11:35:09,133 - ai_sync - INFO - Generating weekly summary report
+2024-11-28 11:35:09,615 - ai_sync - INFO - Starting template update with AI content
+2024-11-28 11:35:09,616 - ai_sync - ERROR - Error updating template with AI content: 'challenges'

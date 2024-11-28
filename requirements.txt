@@ -1,0 +1,9 @@
+notion-client>=2.0.0
+numpy>=1.24.0
+pandas>=2.1.0
+python-dotenv>=1.0.0
+httpx>=0.15.0
+rich>=13.6.0
+ollama>=0.1.0
+python-dateutil>=2.8.2
+requests>=2.31.0
