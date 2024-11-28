@@ -10,6 +10,9 @@
 | MCV | 68.8 fl | 80-99 | ⚠️ -14% | ↘️ |
 | MCH | 20.6 pg | 27-33.5 | ⚠️ -23.7% | ↘️ |
 | Ery | 6.0 c/pl | 4.3-5.8 | ⚠️ +3.4% | ↗️ |
+| Liver Values | Normal | - | ✅ |
+| Kidney Values | Normal | - | ✅ |
+| Electrolytes | Normal | - | ✅ |
 
 ### Historical Tracking
 - [View Blood Work History](blood_work_history.md)
@@ -60,7 +63,7 @@
 ### Upcoming
 | Date | Doctor | Purpose | Prep Needed |
 |------|---------|---------|-------------|
-| 2024-11-28 | _______ | _______ | ________ |
+| 2024-11-27 | _______ | _______ | ________ |
 
 ### Recent Visits
 - Last Visit: 2024-11-28
@@ -71,9 +74,9 @@
 ## 🎯 Health Goals
 
 ### Short-term
-- [ ] Goal 1: _______
-- [ ] Goal 2: _______
-- [ ] Goal 3: _______
+- [ ] Track energy levels (3x daily)
+- [ ] Optimize activity timing
+- [ ] Monitor hydration
 
 ### Long-term
 1. Thalassämie Management
