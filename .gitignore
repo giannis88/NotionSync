@@ -3,6 +3,12 @@
 .env.*
 !.env.example
 
+# Notion exports and personal data
+notion_export/
+notion_export/**/*
+exports/
+backups/
+
 # Python virtual environment
 notion_sync_env/
 venv/
