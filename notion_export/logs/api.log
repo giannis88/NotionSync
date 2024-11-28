@@ -18,3 +18,59 @@ Number of cells in table row must match the table width of the parent table
 Request:  
 Response: 
 
+2024-11-28 02:33:04,865 - WARNING - [api] - Request failed (1/3): Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+
+2024-11-28 02:33:06,463 - WARNING - [api] - Request failed (2/3): Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+
+2024-11-28 02:33:09,510 - WARNING - [api] - Request failed (3/3): Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+
+2024-11-28 02:33:14,047 - ERROR - [api] - Request failed after 3 attempts: Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+
+2024-11-28 02:35:07,007 - WARNING - [api] - Request failed (1/3): Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+
+2024-11-28 02:35:09,178 - WARNING - [api] - Request failed (2/3): Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+
+2024-11-28 02:35:11,758 - WARNING - [api] - Request failed (3/3): Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+
+2024-11-28 02:35:15,775 - ERROR - [api] - Request failed after 3 attempts: Content creation Failed. Fix the following: 
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Number of cells in table row must match the table width of the parent table
+Request:  
+Response: 
+

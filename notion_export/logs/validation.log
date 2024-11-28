@@ -573,3 +573,49 @@ Number of cells in table row must match the table width of the parent table
 2024-11-28 01:53:59,589 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
 2024-11-28 01:53:59,590 - INFO - Added 11 new blocks
 2024-11-28 01:53:59,590 - INFO - Successfully updated section: ARCHIV
+2024-11-28 02:08:35,605 - INFO - Successfully connected to Ollama server
+2024-11-28 02:08:35,605 - INFO - Optimiere Abschnitt: Master Dashboard
+2024-11-28 02:08:44,894 - INFO - Successfully optimized section: Master Dashboard
+2024-11-28 02:08:44,894 - INFO - Attempting to update section 'Master Dashboard'
+2024-11-28 02:08:46,311 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
+2024-11-28 02:08:46,875 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:08:46,876 - INFO - Created new section: Master Dashboard
+2024-11-28 02:08:55,972 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:08:55,973 - INFO - Added 15 new blocks
+2024-11-28 02:08:55,973 - INFO - Successfully updated section: Master Dashboard
+2024-11-28 02:08:55,974 - INFO - Optimiere Abschnitt: Gesundheit
+2024-11-28 02:09:06,696 - INFO - Successfully optimized section: Gesundheit
+2024-11-28 02:09:06,696 - INFO - Attempting to update section 'Gesundheit'
+2024-11-28 02:09:07,839 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
+2024-11-28 02:09:15,272 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:15,273 - INFO - Created new section: Gesundheit
+2024-11-28 02:09:20,827 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:20,829 - INFO - Added 44 new blocks
+2024-11-28 02:09:20,829 - INFO - Successfully updated section: Gesundheit
+2024-11-28 02:09:20,829 - INFO - Optimiere Abschnitt: Business
+2024-11-28 02:09:26,988 - INFO - Successfully optimized section: Business
+2024-11-28 02:09:26,988 - INFO - Attempting to update section 'Business'
+2024-11-28 02:09:27,961 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
+2024-11-28 02:09:28,461 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:28,461 - INFO - Created new section: Business
+2024-11-28 02:09:30,022 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:30,023 - INFO - Added 14 new blocks
+2024-11-28 02:09:30,023 - INFO - Successfully updated section: Business
+2024-11-28 02:09:30,023 - INFO - Optimiere Abschnitt: Beziehung
+2024-11-28 02:09:36,585 - INFO - Successfully optimized section: Beziehung
+2024-11-28 02:09:36,585 - INFO - Attempting to update section 'Beziehung'
+2024-11-28 02:09:37,669 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
+2024-11-28 02:09:38,144 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:38,145 - INFO - Created new section: Beziehung
+2024-11-28 02:09:39,750 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:39,751 - INFO - Added 17 new blocks
+2024-11-28 02:09:39,751 - INFO - Successfully updated section: Beziehung
+2024-11-28 02:09:39,751 - INFO - Optimiere Abschnitt: ARCHIV
+2024-11-28 02:09:45,729 - INFO - Successfully optimized section: ARCHIV
+2024-11-28 02:09:45,729 - INFO - Attempting to update section 'ARCHIV'
+2024-11-28 02:09:46,612 - INFO - HTTP Request: GET https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children?page_size=100 "HTTP/1.1 200 OK"
+2024-11-28 02:09:47,315 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:47,316 - INFO - Created new section: ARCHIV
+2024-11-28 02:09:48,878 - INFO - HTTP Request: PATCH https://api.notion.com/v1/blocks/14be4a7d76a480009895dd4b3b843b5a/children "HTTP/1.1 200 OK"
+2024-11-28 02:09:48,879 - INFO - Added 11 new blocks
+2024-11-28 02:09:48,879 - INFO - Successfully updated section: ARCHIV
