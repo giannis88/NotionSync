@@ -47,9 +47,27 @@ class DashboardValidator:
             content = filepath.read_text(encoding='utf-8')
             missing_sections = []
             
+            # Split content into sections
+            sections = {}
+            current_section = None
+            current_content = []
+            
+            for line in content.split('\n'):
+                if line.startswith('# '):
+                    if current_section:
+                        sections[current_section] = '\n'.join(current_content)
+                    current_section = line[2:].strip()
+                    current_content = [line]
+                else:
+                    if current_section:
+                        current_content.append(line)
+            
+            if current_section:
+                sections[current_section] = '\n'.join(current_content)
+            
             # Check for expected sections
             for section in self.expected_sections:
-                if not re.search(rf"#\s*{section}", content, re.IGNORECASE):
+                if section not in sections:
                     missing_sections.append(section)
             
             # Check word count
@@ -62,7 +80,8 @@ class DashboardValidator:
                 'complete': len(missing_sections) == 0,
                 'missing_sections': missing_sections,
                 'word_count': word_count,
-                'file_size': filepath.stat().st_size
+                'file_size': filepath.stat().st_size,
+                'sections': list(sections.keys())
             }
             
         except Exception as e:
@@ -120,7 +139,7 @@ class DashboardValidator:
         for line in content.split('\n'):
             if line.startswith('# '):
                 if current_section:
-                    sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
+                    sections[current_section] = '\n'.join(current_content)
                 current_section = line[2:].strip()
                 current_content = [line]
             else:
@@ -128,7 +147,7 @@ class DashboardValidator:
                     current_content.append(line)
         
         if current_section:
-            sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
+            sections[current_section] = '\n'.join(current_content)
         
         return sections
 
@@ -177,10 +196,11 @@ class NotionSync:
     def get_page_content(self, page_id, level=0, visited_pages=None, retry_count=0):
         """Gets the content of a page and all subpages with pagination and retry logic"""
         MAX_RETRIES = 3
+        RETRY_DELAY = 5  # Increased delay between retries
         
         if retry_count >= MAX_RETRIES:
             logging.error(f"Failed to get complete content after {MAX_RETRIES} attempts")
-            return "# Master Dashboard\n\n> ⚠️ Warnung: Unvollständiger Export\n\n"
+            return "# Master Dashboard\n\n> ⚠️ Warnung: Unvollständiger Export - Bitte versuchen Sie es später erneut\n\n"
         
         if visited_pages is None:
             visited_pages = set()
@@ -193,46 +213,90 @@ class NotionSync:
         processed_blocks = {}  # Track Block-IDs und deren Inhalt
         
         try:
-            # Hole alle Blöcke in einem Durchgang
+            # First verify the token by trying to access the page
+            try:
+                page = self._retry_request(
+                    lambda: self.notion.pages.retrieve(page_id),
+                    retries=5  # Increased retries for initial page access
+                )
+                logging.info(f"Successfully accessed page: {page.get('id')}")
+            except Exception as e:
+                logging.error(f"Failed to access page {page_id}. This might be due to invalid permissions or incorrect page ID. Error: {str(e)}")
+                return "# Master Dashboard\n\n> ⚠️ Error: Could not access page. Please verify your token and page ID.\n\n"
+
+            # Fetch all blocks in batches with improved error handling
             all_blocks = []
             has_more = True
             start_cursor = None
+            consecutive_failures = 0
+            MAX_CONSECUTIVE_FAILURES = 3
             
-            while has_more:
-                response = self._retry_request(
-                    lambda: self.notion.blocks.children.list(
-                        block_id=page_id,
-                        page_size=100,
-                        start_cursor=start_cursor
-                    ),
-                    retries=5
-                )
-                
-                blocks = response.get('results', [])
-                if not blocks:
-                    break
+            while has_more and consecutive_failures < MAX_CONSECUTIVE_FAILURES:
+                try:
+                    response = self._retry_request(
+                        lambda: self.notion.blocks.children.list(
+                            block_id=page_id,
+                            page_size=100,
+                            start_cursor=start_cursor
+                        ),
+                        retries=5  # Increased retries for block fetching
+                    )
                     
-                # Dedupliziere Blöcke basierend auf Inhalt und ID
-                for block in blocks:
-                    block_id = block['id']
-                    block_content = self._get_block_content(block)
+                    blocks = response.get('results', [])
+                    if not blocks:
+                        if not all_blocks:  # If we haven't gotten any blocks yet, this is a problem
+                            consecutive_failures += 1
+                            logging.warning(f"Received empty block list (attempt {consecutive_failures}/{MAX_CONSECUTIVE_FAILURES})")
+                            time.sleep(RETRY_DELAY)
+                            continue
+                        else:  # If we have blocks already, we can break
+                            break
                     
-                    if block_id not in processed_blocks and block_content not in processed_blocks.values():
-                        all_blocks.append(block)
-                        processed_blocks[block_id] = block_content
+                    # Reset failure counter on success
+                    consecutive_failures = 0
+                    
+                    # Deduplicate blocks based on content and ID
+                    for block in blocks:
+                        block_id = block['id']
+                        block_content = self._get_block_content(block)
+                        
+                        if block_id not in processed_blocks and block_content not in processed_blocks.values():
+                            all_blocks.append(block)
+                            processed_blocks[block_id] = block_content
+                    
+                    has_more = response.get('has_more', False)
+                    start_cursor = response.get('next_cursor')
+                    
+                    if has_more:
+                        time.sleep(1)  # Increased delay between pagination requests
                 
-                has_more = response.get('has_more', False)
-                start_cursor = response.get('next_cursor')
-                
-                if has_more:
-                    time.sleep(0.5)
+                except Exception as e:
+                    consecutive_failures += 1
+                    logging.error(f"Error fetching blocks (attempt {consecutive_failures}): {str(e)}")
+                    if consecutive_failures < MAX_CONSECUTIVE_FAILURES:
+                        time.sleep(RETRY_DELAY)
+                    continue
             
-            # Verarbeite Blöcke
+            if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
+                logging.error("Failed to fetch blocks after maximum consecutive failures")
+                if retry_count < MAX_RETRIES:
+                    time.sleep(RETRY_DELAY)
+                    return self.get_page_content(page_id, level, set(), retry_count + 1)
+                return "# Master Dashboard\n\n> ⚠️ Error: Failed to fetch page content after multiple attempts\n\n"
+            
+            if not all_blocks:
+                logging.error("No blocks were fetched from the page")
+                if retry_count < MAX_RETRIES:
+                    time.sleep(RETRY_DELAY)
+                    return self.get_page_content(page_id, level, set(), retry_count + 1)
+                return "# Master Dashboard\n\n> ⚠️ Error: No content could be retrieved from the page\n\n"
+            
+            # Process blocks
             content = []
             if level == 0:
                 content.append("# Master Dashboard\n")
             
-            # Sortiere Blöcke nach ihrer Position
+            # Sort blocks by position
             all_blocks.sort(key=lambda x: x.get('created_time', ''))
             
             for block in all_blocks:
@@ -241,17 +305,17 @@ class NotionSync:
                     if block_content:
                         content.append(block_content)
                 except Exception as e:
-                    logging.error(f"Error processing block: {str(e)}")
+                    logging.error(f"Error processing block {block.get('id')}: {str(e)}")
                     continue
             
-            # Validiere und bereinige Content
+            # Validate and clean content
             full_content = self._clean_section_content('\n'.join(content))
             
             if level == 0:
                 sections = self._split_into_sections(full_content)
                 ordered_content = []
                 
-                # Stelle sicher, dass jeder Abschnitt nur einmal vorkommt
+                # Ensure each section appears only once
                 seen_sections = set()
                 for section in self.validator.expected_sections:
                     if section in sections and section not in seen_sections:
@@ -260,23 +324,25 @@ class NotionSync:
                 
                 full_content = '\n'.join(ordered_content)
                 
-                # Prüfe auf Vollständigkeit
+                # Check for completeness
                 missing_sections = [
                     section for section in self.validator.expected_sections 
                     if section not in sections
                 ]
                 
-                if missing_sections and retry_count < MAX_RETRIES:
-                    logging.info(f"Retrying page fetch (attempt {retry_count + 1}/{MAX_RETRIES})...")
-                    time.sleep(2)
-                    return self.get_page_content(page_id, level, set(), retry_count + 1)
+                if missing_sections:
+                    logging.warning(f"Missing sections: {', '.join(missing_sections)}")
+                    if retry_count < MAX_RETRIES:
+                        logging.info(f"Retrying page fetch (attempt {retry_count + 1}/{MAX_RETRIES})...")
+                        time.sleep(RETRY_DELAY)
+                        return self.get_page_content(page_id, level, set(), retry_count + 1)
             
             return full_content
             
         except Exception as e:
             logging.error(f"Error getting page {page_id}: {str(e)}")
             if level == 0 and retry_count < MAX_RETRIES:
-                time.sleep(2)
+                time.sleep(RETRY_DELAY)
                 return self.get_page_content(page_id, level, set(), retry_count + 1)
             return ""
 
@@ -596,56 +662,6 @@ class NotionSync:
         except Exception as e:
             logging.error(f"Error finding updates: {str(e)}")
             return None
-
-    def _split_into_sections(self, content):
-        """Splits content into sections"""
-        sections = {}
-        current_section = None
-        current_content = []
-        
-        for line in content.split('\n'):
-            if line.startswith('# '):
-                if current_section:
-                    sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
-                current_section = line[2:].strip()
-                current_content = [line]
-            else:
-                if current_section:
-                    current_content.append(line)
-        
-        if current_section:
-            sections[current_section] = '\n'.join(current_content).strip() + '\n\n'
-        
-        return sections
-
-    def _clean_section_content(self, content):
-        """Bereinigt den Inhalt eines Abschnitts"""
-        # Entferne aufeinanderfolgende Leerzeilen
-        lines = content.split('\n')
-        cleaned_lines = []
-        last_line_empty = False
-        
-        for line in lines:
-            is_empty = not line.strip()
-            if is_empty and last_line_empty:
-                continue
-            cleaned_lines.append(line)
-            last_line_empty = is_empty
-        
-        # Entferne Leerzeilen am Ende
-        while cleaned_lines and not cleaned_lines[-1].strip():
-            cleaned_lines.pop()
-        
-        # Füge eine Leerzeile am Ende hinzu
-        cleaned_lines.append('')
-        
-        return '\n'.join(cleaned_lines)
-
-    def _find_new_lines(self, old_content, new_content):
-        """Finds new lines in new_content that aren't in old_content"""
-        old_lines = set(old_content.split('\n'))
-        new_lines = new_content.split('\n')
-        return [line for line in new_lines if line and line not in old_lines]
 
     def save_updates_for_llm(self, updates):
         """Saves updates to a JSON file for LLM processing"""
@@ -985,8 +1001,165 @@ class NotionSync:
             logging.error(f"Error processing synced block: {str(e)}")
             return ""
 
+    def _split_into_sections(self, content):
+        """Splits content into sections and removes duplicates"""
+        sections = {}
+        current_section = None
+        current_content = []
+        
+        # Split into sections
+        for line in content.split('\n'):
+            if line.startswith('# '):
+                if current_section:
+                    # Only add section if it's not already present or if new content is longer
+                    if (current_section not in sections or 
+                        len('\n'.join(current_content)) > len(sections[current_section])):
+                        sections[current_section] = '\n'.join(current_content)
+                current_section = line[2:].strip()
+                current_content = [line]
+            else:
+                if current_section:
+                    current_content.append(line)
+        
+        # Add the last section
+        if current_section:
+            if (current_section not in sections or 
+                len('\n'.join(current_content)) > len(sections[current_section])):
+                sections[current_section] = '\n'.join(current_content)
+        
+        # Clean up empty sections
+        sections = {k: v for k, v in sections.items() if v.strip()}
+        
+        return sections
+
+    def _clean_section_content(self, content):
+        """Bereinigt den Inhalt eines Abschnitts"""
+        if not content:
+            return ""
+        
+        # Split into sections and recombine to remove duplicates
+        sections = self._split_into_sections(content)
+        
+        # Keep sections in the order they appear in expected_sections
+        ordered_content = []
+        seen_sections = set()
+        seen_content = set()  # Track unique content to avoid duplicates
+        
+        # First add sections in the expected order
+        for section in self.validator.expected_sections:
+            if section in sections and section not in seen_sections:
+                section_content = self._fix_table_formatting(sections[section])
+                # Only add content if it's not a duplicate
+                content_hash = hash(section_content.strip())
+                if content_hash not in seen_content:
+                    ordered_content.append(section_content)
+                    seen_content.add(content_hash)
+                seen_sections.add(section)
+        
+        # Add any remaining sections not in expected_sections
+        for section, content in sections.items():
+            if section not in seen_sections:
+                section_content = self._fix_table_formatting(content)
+                # Only add content if it's not a duplicate
+                content_hash = hash(section_content.strip())
+                if content_hash not in seen_content:
+                    ordered_content.append(section_content)
+                    seen_content.add(content_hash)
+                seen_sections.add(section)
+        
+        # Remove any empty sections and join with double newlines
+        cleaned_content = '\n\n'.join(section for section in ordered_content if section.strip())
+        
+        # Remove any test/debug content
+        cleaned_content = self._remove_test_content(cleaned_content)
+        
+        return cleaned_content
+        
+    def _remove_test_content(self, content):
+        """Removes test/debug content from the text"""
+        lines = content.split('\n')
+        cleaned_lines = []
+        
+        for line in lines:
+            # Skip lines that look like test/debug content
+            if any(test_marker in line.lower() for test_marker in ['test', 'debug', '123']):
+                continue
+            cleaned_lines.append(line)
+        
+        return '\n'.join(cleaned_lines)
+        
+    def _fix_table_formatting(self, content):
+        """Ensures table rows have consistent column count"""
+        lines = content.split('\n')
+        fixed_lines = []
+        in_table = False
+        header_cols = 0
+        
+        for line in lines:
+            stripped_line = line.strip()
+            if stripped_line.startswith('|'):
+                if not in_table:
+                    # Start of new table, count columns in header
+                    header_cols = len([col for col in stripped_line.split('|') if col.strip()])
+                    in_table = True
+                    fixed_lines.append(line)
+                    
+                    # Add separator line if next line isn't one
+                    if len(lines) > lines.index(line) + 1:
+                        next_line = lines[lines.index(line) + 1].strip()
+                        if not (next_line.startswith('|') and all(c in '-|' for c in next_line)):
+                            separator = '|' + '---|' * header_cols
+                            fixed_lines.append(separator)
+                else:
+                    # Check if this is a separator line
+                    if all(c in '-|' for c in stripped_line):
+                        # Ensure separator has correct number of columns
+                        separator = '|' + '---|' * header_cols
+                        fixed_lines.append(separator)
+                        continue
+                        
+                    # Fix column count if needed
+                    cols = [col for col in stripped_line.split('|') if col.strip()]
+                    if len(cols) < header_cols:
+                        # Add empty columns to match header
+                        missing_cols = header_cols - len(cols)
+                        line = line.rstrip('|') + ' |' * missing_cols
+                    elif len(cols) > header_cols:
+                        # Truncate extra columns
+                        parts = line.split('|')
+                        line = '|'.join(parts[:header_cols+2]) # +2 to include empty edges
+                    fixed_lines.append(line)
+            else:
+                if stripped_line:  # Only add non-empty lines
+                    in_table = False
+                    fixed_lines.append(line)
+        
+        # Remove consecutive empty lines
+        result_lines = []
+        prev_empty = False
+        for line in fixed_lines:
+            is_empty = not line.strip()
+            if not (is_empty and prev_empty):
+                result_lines.append(line)
+            prev_empty = is_empty
+            
+        return '\n'.join(result_lines)
+
+    def _find_new_lines(self, old_content, new_content):
+        """Finds new lines in new_content that aren't in old_content"""
+        old_lines = set(old_content.split('\n'))
+        new_lines = new_content.split('\n')
+        return [line for line in new_lines if line and line not in old_lines]
+
 def setup_logging():
     """Konfiguriert das Logging-System mit optimierter Struktur"""
+    # Configure root logger first
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[logging.StreamHandler()]
+    )
+    
     log_dir = Path("notion_export/logs")
     log_dir.mkdir(exist_ok=True, parents=True)
     
@@ -1081,11 +1254,25 @@ def main():
             logging.error("No Dashboard ID found in .env!")
             return
             
+        # Validate token format
+        if not NOTION_TOKEN.startswith('secret_') and not NOTION_TOKEN.startswith('ntn_'):
+            logging.error("Invalid Notion token format. Token should start with 'secret_' or 'ntn_'")
+            return
+            
         # Log start of synchronization with Dashboard ID
         logging.info(f"Starting sync for Dashboard: {DASHBOARD_ID}")
         
         # Initialize and start sync
         syncer = NotionSync(NOTION_TOKEN)
+        
+        # Test API connection
+        try:
+            test_response = syncer.notion.users.me()
+            logging.info(f"Successfully connected to Notion as: {test_response.get('name', 'Unknown User')}")
+        except Exception as e:
+            logging.error(f"Failed to connect to Notion API: {str(e)}")
+            return
+            
         success = syncer.sync_dashboard(DASHBOARD_ID)
         
         if not success:
