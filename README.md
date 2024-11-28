@@ -6,6 +6,8 @@ A robust Python-based tool for synchronizing and optimizing Notion dashboards us
 
 - Automated Notion page synchronization
 - LLM-powered content optimization using Ollama
+- Template watcher service for real-time synchronization
+- Automated backup system for templates
 - Support for medical data preservation
 - Multilingual support (German/English)
 - Robust error handling and retry mechanisms
@@ -43,19 +45,33 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Basic synchronization:
+1. Install and start the template watcher service (Windows):
+```bash
+# Run as administrator
+install_service.bat
+```
+
+2. Basic synchronization:
 ```bash
 python auto_notion_sync.py
 ```
 
-2. Using the batch file (Windows):
+3. Using the batch file (Windows):
 ```bash
 run_notion_sync.bat
 ```
 
-3. With dashboard analysis:
+4. With dashboard analysis:
 ```bash
 run_dashboard_analysis.bat
+```
+
+5. Managing the template watcher service:
+```bash
+python install_template_service.py start   # Start the service
+python install_template_service.py stop    # Stop the service
+python install_template_service.py restart # Restart the service
+python install_template_service.py remove  # Uninstall the service
 ```
 
 ## Configuration
@@ -71,6 +87,9 @@ The tool can be configured through environment variables in your `.env` file:
 ## Project Structure
 
 - `auto_notion_sync.py`: Main synchronization script
+- `template_watcher.py`: Real-time template synchronization service
+- `template_sync.py`: Template to Notion conversion logic
+- `install_template_service.py`: Windows service installation script
 - `claude_formatter.py`: Content formatting utilities
 - `dashboard-processor.tsx`: Dashboard processing component
 - `run_notion_sync.bat`: Windows batch file for easy execution

@@ -11,14 +11,20 @@ backups/
 
 # Python virtual environment
 notion_sync_env/
+notion_sync_env/**/*
 venv/
 env/
 ENV/
+**/__pycache__/
+**/Lib/site-packages/**/*
+**/Lib/site-packages/
 
 # Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
+**/*.py[cod]
+**/__pycache__/**/*
 
 # Distribution / packaging
 dist/
