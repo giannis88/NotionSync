@@ -20,14 +20,19 @@ ENV/
 
 # Environment variables
 .env
+env_update.txt
 
-# Logs
-*.log
-logs/
+# Temporary files
+*.tmp
+*.temp
 
 # Data files
 data/
 
-# Test coverage
+# Testing
 .coverage
 .pytest_cache/
+
+# Logs
+*.log
+logs/
